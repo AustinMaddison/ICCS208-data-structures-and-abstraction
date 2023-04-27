@@ -6,10 +6,9 @@ public class Diamond {
     public static void printDiamond(int k){
         int width = k*2 + 1;
         int height = k*2 -1;
-
         char[][] map = new char[k][width];
 
-        // render half+middle of diamond to map
+        /* render half+middle of diamond to map */
         for(int row = 0; row < k; row++){
             int hashes = k*2 -(row*2);
             int stars = width - hashes;
@@ -28,7 +27,7 @@ public class Diamond {
             }
         }
 
-        // print map to console including reflection for bottom
+        /* print map to console including reflection for bottom */
         for(int row = 0; row < k; row++){
             for(int col = 0; col < width; col++){
                 System.out.print(map[row][col]);
@@ -41,8 +40,5 @@ public class Diamond {
             }
             System.out.printf("%n");
         }
-
-
-
     }
 }
