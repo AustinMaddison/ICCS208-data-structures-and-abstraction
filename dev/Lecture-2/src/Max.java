@@ -1,6 +1,7 @@
 public class Max {
 
     /**
+     * Computes and return the max of an array.
      * @param arr array of numbers.
      * @return max value from the array.
      */
@@ -16,6 +17,7 @@ public class Max {
     }
 
     /**
+     * Computes and return the max of an array.
      * @param arr array of numbers.
      * @return max value from the array.
      */
@@ -24,6 +26,20 @@ public class Max {
         for(int num: arr) {
             if(num > max)
                 max = num;
+        }
+        return max;
+    }
+
+    /**
+     * Computes and return the max of an array.
+     * @param arr array of numbers.
+     * @return max value from the array.
+     */
+    public static int maxCStyleFor(int[] arr) {
+        int max = arr[0];
+        for(int idx = 1; idx < arr.length; idx++) {
+            if(arr[idx] > max)
+                max = arr[idx];
         }
         return max;
     }
