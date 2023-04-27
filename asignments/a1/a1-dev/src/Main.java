@@ -1,7 +1,15 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        Diamond.printDiamond(5);
+
+        /* Task 2 - Diamond */
+        Diamond.printDiamond(10);
+        
+        /* Task 3 - Roman to Number */
+        System.out.println(Roman.romanToInt("IV"));
+        System.out.println(Roman.romanToInt("I"));
+        System.out.println(Roman.romanToInt("VII"));
+        System.out.println(Roman.romanToInt("MCMLIV"));
+        System.out.println(Roman.romanToInt("MCMXC"));
     }
+
 }
