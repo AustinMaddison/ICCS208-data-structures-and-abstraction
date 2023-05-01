@@ -2,7 +2,13 @@
  * @author Austin Maadison
  * @date 27/04/2023
  */
+package A1;
+
 public class Diamond {
+    /**
+     * Renders a diamond to console.
+     * @param k render dimension scale factor where width = k*2+1,  height=k*2-1.
+     */
     public static void printDiamond(int k){
         int width = k*2 + 1;
         int height = k*2 -1;

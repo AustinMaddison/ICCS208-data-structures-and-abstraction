@@ -1,3 +1,10 @@
+/**
+ * @author Austin Maadison
+ * @date 27/04/2023
+ */
+
+package A1;
+
 import java.math.BigInteger;
 
 import static java.lang.Math.pow;

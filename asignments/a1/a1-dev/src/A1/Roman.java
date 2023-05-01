@@ -1,3 +1,10 @@
+/**
+ * @author Austin Maadison
+ * @date 27/04/2023
+ */
+
+package A1;
+
 public class Roman {
     public static int romanToInt(String romanNum) {
         int previous = 0, result = 0;
