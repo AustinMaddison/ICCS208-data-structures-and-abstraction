@@ -51,18 +51,20 @@ public class Main {
 //        assert Happy.isHappy(100) == true;
 //        assert Happy.isHappy(111) == false;
 //        assert Happy.isHappy(1234) == false;
-//        assert Happy.isHappy(989) == true;
 
-//        System.out.println(Arrays.toString(Happy.firstK(11)));
+
+//        if ((Happy.isHappy(20000000) == true)) throw new AssertionError();
+
+        System.out.println(Arrays.toString(Happy.firstK(200000)));
 
 
         /* Task 6 - Hidden String */
 
-        assert Hidden.isHidden("welcometothehotelcalifornia","melon") == true;
-        assert Hidden.isHidden("welcometothehotelcalifornia","space") == false;
-        assert Hidden.isHidden("TQ89MnQU3IC7t6","MUIC") == true;
-        assert Hidden.isHidden("VhHTdipc07","htc") == false;
-        assert Hidden.isHidden("VhHTdipc07","hTc") == true;
+//        assert Hidden.isHidden("welcometothehotelcalifornia","melon") == true;
+//        assert Hidden.isHidden("welcometothehotelcalifornia","space") == false;
+//        assert Hidden.isHidden("TQ89MnQU3IC7t6","MUIC") == true;
+//        assert Hidden.isHidden("VhHTdipc07","htc") == false;
+//        assert Hidden.isHidden("VhHTdipc07","hTc") == true;
 
 
 
