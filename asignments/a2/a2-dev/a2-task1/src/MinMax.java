@@ -2,166 +2,192 @@ import java.util.Arrays;
 
 class MinMax{
     public static double minMaxAverage(int[] numbers) {
+        if(numbers.length == 0)
+            return 0;
+        if(numbers.length == 1)
+            return numbers[0];
+
+        /* Debug: counts and prints the amount of comparisons taking place */
+        boolean debug = true;
+        int debugCount = 0;
 
         int min, max;
-        int min_index;
+
+        /* numbersPurged will store all numbers excluding min, so later in computing max can use 1 less comparison */
+        int purgedIndex = 0;
+        int[] numbersPurged = new int[numbers.length - 1];
 
         int[] numbersCurrent = Arrays.copyOf(numbers, numbers.length);
         int[] numbersNext;
 
-        int[] indexesCurrent = new int[numbers.length];
-        int[] indexesNext;
-
-        /* keeps tracks of indexes during purging of numbers */
-        for(int index = 0; index < numbers.length; index++)
-            indexesCurrent[index] = index;
-
+        /* Computes min using n-1 comparisons */
         while(numbersCurrent.length != 1) {
-            int currentPair = 0;
             int currentSize = numbersCurrent.length;
             boolean isCurrentEven = currentSize % 2 == 0;
             numbersNext = new int[ ( currentSize % 2 == 0 ) ? currentSize / 2 : (currentSize / 2) + 1];
-            indexesNext = new int[numbersNext.length];
 
             for(int index = 0; index*2 < (isCurrentEven ? currentSize : currentSize - 1); index++) {
-                if (numbersCurrent[index * 2] > numbersCurrent[index * 2 + 1]){
+                if(debug) ++debugCount;
+                if (numbersCurrent[index * 2] > numbersCurrent[index * 2 + 1]) {
                     numbersNext[index] = numbersCurrent[index * 2 + 1];
-                    indexesNext[index] = indexesCurrent[index * 2 + 1];
+                    numbersPurged[purgedIndex++] = numbersCurrent[index * 2];
                 }
                 else {
                     numbersNext[index] = numbersCurrent[index * 2];
-                    indexesNext[index] = indexesCurrent[index * 2];
+                    numbersPurged[purgedIndex++] = numbersCurrent[index * 2 + 1];
                 }
             }
-            if(!isCurrentEven) {
+            if(!isCurrentEven)
                 numbersNext[numbersNext.length - 1] = numbersCurrent[currentSize - 1];
-                indexesNext[indexesNext.length - 1] = indexesCurrent[currentSize - 1];
-            }
             numbersCurrent = numbersNext;
-            indexesCurrent = indexesNext;
         }
         min = numbersCurrent[0];
 
+        /* Using purged to computer max numbers only reducing the number of comparisons by 1 */
+        /* Computes max with n-2 comparisons */
+        numbersCurrent = numbersPurged;
+        while(numbersCurrent.length != 1) {
+            int currentSize = numbersCurrent.length;
+            boolean isCurrentEven = currentSize % 2 == 0;
+            numbersNext = new int[ ( currentSize % 2 == 0 ) ? currentSize / 2 : (currentSize / 2) + 1];
 
-        return min;
+            for(int index = 0; index*2 < (isCurrentEven ? currentSize : currentSize - 1); index++) {
+                if(debug) ++debugCount;
+                if (numbersCurrent[index * 2] < numbersCurrent[index * 2 + 1]){
+                    numbersNext[index] = numbersCurrent[index * 2 + 1];
+                }
+                else {
+                    numbersNext[index] = numbersCurrent[index * 2];
+                }
+            }
+            if(!isCurrentEven)
+                numbersNext[numbersNext.length - 1] = numbersCurrent[currentSize - 1];
+            numbersCurrent = numbersNext;
+        }
+        max = numbersCurrent[0];
+
+        if(debug) System.out.printf("Purged numbers are:\n%s\n", Arrays.toString(numbersPurged));
+        if(debug) System.out.printf("Number of allowed comparisons: %f\n", (3 * numbers.length) / 2.0 );
+        if(debug) System.out.printf("Number of used comparisons: %d\n", debugCount);
+        return (min + max) / 2.0;
     }
 
     public static void main(String[] args) {
-        int[] a = {2, 3, 0, -20, 5, 5, 6, 1, -1, 6, 10};
-//        int[] a = {16, 6, 47, 51, 56, 8, 27, 97, 77, 19, 41, 99, 91, -1, 31, 42, 33, 38};
+//        int[] a = {2, 3, 0, -20, 5, 5, 6, 1, -1, 6, 10};
+//        int[] a = {2, 3, 0, -20, 10, 100};
+//        int[] a = {69, 46, 79, 25, 93, 59, 65, 99, 60, 70, 1, 78, 52, 68, 82, 89, 78, 90, 65, 47};
 
 //        assert(minMaxAverage({}) == 400);
 
 //        double min = min(a);
 //        double max = max(a);
-        double avg = minMaxAverage(a);
+//        double avg = minMaxAverage(a);
 
 //        System.out.println(min);
 //        System.out.println(max);
-        System.out.println(avg);
+//        System.out.println(avg);
 
-
-        if(false){
-            if (minMaxAverage(new int[]{16, 6, 47, 51, 56, 8, 27, 97, 77, 19, 41, 99, 91, 96, 31, 42, 33, 38}) != 55.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{30, 35}) != 47.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{52, 70, 13, 43, 18}) != 48.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{99, 38, 20, 49, 89, 16}) != 65.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{58, 39, 83, 98, 19, 49, 79, 72, 44}) != 68.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{36, 64, 60, 1, 78, 33, 70}) != 40.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{21}) != 31.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{70, 26, 72, 56, 63, 65}) != 62.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{70, 78, 6}) != 45.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{15, 71, 37, 43, 33, 61, 79}) != 54.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{68, 82, 33}) != 74.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{38, 100, 8, 12, 51, 62, 92, 97, 81, 88, 9, 82, 17, 88}) != 58.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{59, 64, 32, 76, 69, 53, 78, 1, 59, 82, 14, 35}) != 42.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{97, 54, 86, 81, 86, 49, 61, 91}) != 97.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{89, 91, 71}) != 116.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{89, 35, 56, 76, 11, 5, 35, 6, 11, 49, 65, 38, 43, 32, 60, 4, 71, 67, 80}) != 48.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{49, 18, 89, 41, 80, 32}) != 62.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{1, 17, 18, 4, 50, 57, 75, 36, 13, 84, 7, 5, 6, 17, 85, 72, 6, 85}) != 43.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{51, 3, 96, 10, 42, 84, 7, 96, 24, 51, 38, 65, 54}) != 51.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{3, 27, 5, 53, 42, 14, 91, 37, 51, 41, 24, 53, 39, 6, 38, 30, 49}) != 48.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{37, 31, 29, 89}) != 73.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{60, 1, 6, 23}) != 31.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{4, 64, 64, 63, 9, 95, 70, 62, 39, 23, 92, 45, 72, 18, 99, 20}) != 53.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{10, 6, 75, 26, 45, 66, 97, 53, 78, 13, 48, 83}) != 54.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{64}) != 96.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{40, 88, 96, 40, 8}) != 56.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{23, 50, 18, 29, 72, 93, 94, 23, 67, 66, 42, 60, 5, 78, 67, 1, 100}) != 51.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{68, 94, 79, 20, 63, 91, 4, 4, 7, 31, 81, 32, 19, 40, 90, 7, 3, 58, 85, 27}) != 50.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{40, 18, 29, 20, 78, 81, 68, 55, 63, 18, 97, 79, 9, 32, 99}) != 58.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{87, 12, 51, 64, 16}) != 55.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{4, 67, 68, 46, 47, 65, 93, 36, 49, 54, 50, 57}) != 50.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{32, 76, 81, 54}) != 72.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{16}) != 24.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{14, 98, 69, 73, 21, 28, 71, 73, 11, 52, 8, 82, 59, 81, 54, 19}) != 57.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{59, 46, 3, 14, 33, 100, 47, 36, 85, 81, 10, 28, 46, 43, 65, 24}) != 53.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{51, 59, 86, 15, 80, 73, 53, 17, 96, 90, 17, 26, 19, 56, 58, 37, 35, 62, 98, 50}) != 64.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{42, 34, 55, 94, 98, 99, 33, 95, 47, 45, 24, 2, 89, 1}) != 50.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{16, 95, 58, 28, 17, 83, 27, 88, 99, 23, 68, 76, 42, 56, 38, 11, 29, 69, 36, 55}) != 60.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{45, 60, 75, 48, 26, 4, 39, 81, 58, 35}) != 44.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{94, 66, 87, 45, 20, 20, 83, 96}) != 68.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{45, 59, 46, 72, 54}) != 81.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{69, 78, 48}) != 87.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{57, 88, 20, 50, 36, 35, 41, 57, 2, 52, 23, 86, 87, 87, 69, 33, 12}) != 46.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{20, 5, 35, 18, 54, 45, 98, 35, 82, 12, 50, 20, 52, 42, 14}) != 54.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{70, 22, 51, 46, 37, 95, 91, 38}) != 69.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{47, 4, 23, 17, 45, 19, 32, 86, 3, 56, 27}) != 46.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{87, 89, 1, 78, 94, 17, 17}) != 48.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{1, 95, 80, 77, 25, 91, 43, 65, 83, 31, 57, 48, 17, 29, 76}) != 48.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{73, 72, 22, 94, 44, 63, 54, 34, 38, 31, 36, 19, 33, 22, 82, 50, 88, 47, 49, 33}) != 66.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{31, 92, 86, 75, 91, 52, 99, 9, 100, 43, 31, 45, 12, 48, 1, 7, 99, 61, 86, 12}) != 51.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{79, 88, 83, 10, 18, 47, 51, 35, 88, 19, 63, 82, 25, 98, 57, 64, 77, 94, 33}) != 59.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{4}) != 6.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{53, 44, 80, 8, 33, 82, 24, 40, 52, 69, 65, 12}) != 49.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{76, 16, 73, 10, 43, 56, 56, 24, 23, 18, 58, 98}) != 59.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{29, 29, 20, 69, 42, 55, 68, 47, 92, 33, 32, 52, 63, 85, 92, 46, 84, 72}) != 66.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{50, 58, 35, 26, 93, 60, 24, 63, 50, 53}) != 70.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{87, 33, 86, 35, 3, 69, 59, 75}) != 46.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{97, 37, 31, 15, 82, 14, 56, 3, 75, 19, 25, 25, 18, 94, 82, 54, 36, 55, 81, 94}) != 51.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{70, 33, 78, 75, 65, 48, 75, 22, 57, 79, 61, 75, 54}) != 61.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{9, 98, 92, 45, 59, 78, 32, 8, 96, 44, 23, 62, 34, 91, 93, 99, 86, 45}) != 57.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{89, 42, 37, 21, 89, 7, 47, 29, 49, 32, 74, 43, 3}) != 47.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{52, 59, 20}) != 49.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{58, 54, 60, 61, 7, 6, 40, 17, 1, 70}) != 36.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{44, 58, 33, 78, 67, 84}) != 75.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{89, 96, 59, 93, 73, 68, 9, 92, 5, 12, 16, 83, 94}) != 53.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{41, 67, 64, 66, 42, 41, 58, 28, 68, 38, 95, 4, 30, 87, 77, 93, 11, 66, 75}) != 51.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{26, 98, 58, 33, 48, 55, 92, 57, 3, 26, 83, 85, 43, 65, 47, 83, 36, 2, 65}) != 51.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{88, 31, 32, 25, 16, 87, 14}) != 58.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{27, 80, 87, 3, 67, 27, 76, 82, 7}) != 46.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{68, 71, 58, 43, 9, 100, 100, 90, 33, 39, 72, 76}) != 59.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{56, 49, 89, 3, 24, 51, 12, 98, 51, 79, 26, 86, 38, 89, 36, 18}) != 52.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{32, 44, 44, 62, 51, 35, 67, 46, 19, 72}) != 55.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{12, 12, 60, 55, 95, 35, 40, 57}) != 59.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{9, 39, 30, 25, 85, 44, 91, 63, 73, 91, 1, 81, 54, 86, 4, 79, 35, 97}) != 49.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{45, 3, 49, 52, 87, 85, 11, 22, 46, 63, 37, 79, 99, 34, 67}) != 52.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{4, 32, 82, 30, 51, 97, 4, 91, 86, 65, 15}) != 52.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{22, 59, 56, 44, 39, 33, 46, 22, 7, 99}) != 56.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{84, 17, 82, 65, 25, 84, 73, 53, 3, 24, 59, 89, 11, 29, 46, 26, 85, 9, 72, 42}) != 47.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{47}) != 70.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{66, 36, 54, 87, 82, 19, 96, 55, 77, 48, 10, 58, 34, 64, 70, 39, 28, 97, 22, 2}) != 50.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{23, 39, 32}) != 42.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{97, 41, 25, 80, 98, 51, 70, 56, 85, 34, 74, 35}) != 74.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{87, 79, 91, 85, 14, 23, 7, 5, 32, 78, 27, 18}) != 50.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{32, 62, 29, 71, 50, 63, 40, 68, 94, 44, 6, 52, 89, 50, 89, 90, 57, 32, 33}) != 53.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{18, 29, 3, 11, 79, 32, 18, 85, 28, 51, 61, 76, 91, 87}) != 48.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{16, 35, 99, 56, 46, 57, 28, 52, 98, 44, 63, 61, 3}) != 52.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{15, 86, 61, 70}) != 58.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{38, 17, 62, 20, 73, 35, 12, 35, 74, 92}) != 58.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{77, 41, 56, 84, 6, 94, 53, 46}) != 53.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{41, 38, 90, 14, 91, 99, 87, 7, 82, 49, 39, 42, 82, 41, 39, 54, 63, 55}) != 56.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{52, 26, 51, 97, 96, 54, 6, 73, 62, 93, 10, 6, 31, 86, 74, 9, 73, 33, 22}) != 54.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{55, 7, 12, 63, 82}) != 48.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{69, 74, 57, 33, 15, 73, 59, 76, 38, 75, 63, 17, 5, 95, 46, 77}) != 52.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{3, 39, 84, 52, 46, 7, 4, 18, 49, 73, 33, 46}) != 45.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{2, 75, 5, 64, 8, 83, 87, 98, 81, 62, 74, 25}) != 51.0) throw new AssertionError();
-            if (minMaxAverage(new int[]{53, 18}) != 44.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{34, 81, 45}) != 74.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{19}) != 28.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{67}) != 100.5) throw new AssertionError();
-            if (minMaxAverage(new int[]{48, 78, 86, 31, 97, 29}) != 77.5) throw new AssertionError();
+        if(true){
+            if (minMaxAverage(new int[]{92, 40, 74, 84, 63, 80, 37, 80, 74, 20, 7}) != 49.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{23, 75, 100, 38, 68, 68, 22, 78, 23, 86}) != 61.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{40, 49, 64, 3, 45, 69, 24, 36, 31, 62, 3, 8, 9, 54, 78}) != 40.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{37, 58, 75, 2, 82, 9, 68, 5, 21}) != 42.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{2, 98}) != 50.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{12, 93, 4, 76, 85, 8, 53, 10, 73, 5, 30, 75, 1, 67, 28, 25}) != 47.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{31, 76, 30, 76, 86, 73, 92, 18, 36, 84, 85, 22, 39, 9, 26, 16, 25, 85, 67}) != 50.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{40, 25, 23}) != 31.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{10, 14, 83, 84, 84, 44}) != 47.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{23, 73, 30, 75, 75}) != 49.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{91, 96, 86, 38, 73, 9, 77, 28, 77, 13, 18, 85, 25, 73, 91, 14}) != 52.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{95, 8, 29, 25, 40, 41, 6, 5}) != 50.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{4, 77, 88, 64, 47, 24, 13}) != 46.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{81}) != 81.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{16, 19, 73, 93}) != 54.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{85, 12, 55, 14, 13, 9, 18}) != 47.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{68, 17, 27, 66}) != 42.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{52, 98, 90, 64, 86, 24, 83, 67, 100, 7, 87, 93}) != 53.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{74, 15, 42, 37, 34, 50, 47, 38, 41, 42, 70, 53, 96, 6, 96, 58, 85, 19}) != 51.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{35, 60}) != 47.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{70, 71, 50}) != 60.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{22, 97, 56, 7, 97, 6, 3, 11, 85, 22, 63, 72}) != 50.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{1, 84, 14, 23, 26}) != 42.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{65, 4, 97, 73, 47, 7, 54}) != 50.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{53, 40, 21, 15, 39, 24, 70, 41, 55, 12, 16}) != 41.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{94, 59, 51, 93}) != 72.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{11, 52, 70}) != 40.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{22, 76, 52, 60, 24, 58, 6}) != 41.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{30, 51, 91, 12, 68, 38, 97, 97, 62, 56, 93, 46, 22, 84}) != 54.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{73, 59, 8, 30, 93, 50, 48, 42, 73, 25}) != 50.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{65, 71, 23, 78, 44, 47, 20, 47, 59, 29, 39, 80, 38, 58, 26, 27, 59}) != 50.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{81, 51, 41, 24, 11, 23, 94, 1, 3, 98, 55, 69, 47}) != 49.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{60, 13, 90, 75, 90, 21, 79, 8, 62, 96, 9, 56}) != 52.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{52, 25, 35}) != 38.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{90}) != 90.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{34, 93, 80, 90, 35, 97, 44, 87, 86, 83, 92, 18, 81, 75}) != 57.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{93, 64, 42, 33, 15, 45, 99, 29, 74, 23, 46, 19, 9, 89, 46}) != 54.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{82, 52, 79, 31, 60, 97, 5, 29, 39, 87, 80, 27, 17, 7, 88, 67, 34, 82, 86}) != 51.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{18, 20, 56, 27, 44, 13, 25, 40, 33, 91, 71, 16, 100, 15}) != 56.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{74, 59, 32, 4, 18, 18, 90}) != 47.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{36, 71, 58, 72, 57, 75, 4, 15, 85, 80, 34, 92, 67, 57, 44, 22, 61}) != 48.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{20, 33, 31, 31, 76, 26, 89, 25, 52, 58, 69, 60}) != 54.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{79, 45, 58}) != 62.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{80, 24, 23, 49, 11, 85, 55, 16, 72, 85, 4, 50, 94, 73, 34, 27, 56, 70, 68, 34}) != 49.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{52, 76, 74, 95, 5, 44, 98, 89, 6, 91, 94, 98, 51, 23, 54, 19, 67, 60}) != 51.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{90, 92, 44, 13, 14, 67}) != 52.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{63, 90, 50, 27, 5, 85, 19, 68, 58, 93, 63, 93, 74, 53, 92, 84, 72}) != 49.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{99, 53, 99, 61, 7, 44, 54, 52, 74, 95, 78, 33, 45, 15, 29, 44}) != 53.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{42, 20, 66, 100, 9, 21, 58, 26, 53, 48, 56, 76, 47, 26, 56, 50}) != 54.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{90, 39, 29, 12, 69, 63, 43}) != 51.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{25, 44, 25, 53, 72, 78, 52, 14, 56, 74, 56, 16, 80, 1, 65, 50, 81}) != 41.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{35, 16, 48, 22, 67, 79, 67, 81, 46, 80, 4, 62, 56, 58, 49, 88, 2, 2}) != 45.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{63, 21, 22, 63, 23, 56, 44, 75, 92, 95, 23, 33, 55, 33, 23, 2, 47}) != 48.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{78, 69, 41, 90, 33, 98, 63, 82}) != 65.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{95, 69, 50}) != 72.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{3, 56, 14, 50, 47, 98, 83, 76, 17, 79, 39, 60}) != 50.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{92}) != 92.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{26, 15, 56, 45, 54, 79}) != 47.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{70, 54, 7, 2}) != 36.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{96, 82}) != 89.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{95, 28, 37, 81, 10, 89}) != 52.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{55}) != 55.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{41, 73, 74, 92, 74, 2, 95, 89, 1, 82, 53, 81}) != 48.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{14, 11, 18}) != 14.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{98, 28, 24, 28, 53, 49, 98, 61, 76, 76, 30, 72, 19, 66}) != 58.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{37, 57, 3, 54, 20, 86, 41, 46, 6, 83, 30, 41, 86, 56, 79, 63, 47}) != 44.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{23, 23, 24, 66, 71, 53, 85, 59, 29, 4, 42}) != 44.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{67, 98, 17, 95, 49, 83, 84, 38, 15, 65, 56, 46, 86, 32, 26, 80}) != 56.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{84, 24, 53, 34, 55, 13, 5, 70, 1, 32, 16, 80, 65, 53}) != 42.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{85, 33, 86, 19, 81, 97, 62, 60, 84, 37, 83, 81, 89, 67}) != 58.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{1, 91, 39, 52, 82, 69}) != 46.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{48, 43, 60, 87, 8, 57, 74, 29, 37}) != 47.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{49, 56, 25, 11, 41, 31, 14, 53, 24, 53, 94, 65, 24, 30, 36, 35, 47, 64, 32, 32}) != 52.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{75, 29, 24, 2, 67, 21, 4, 6, 23, 71, 90, 19, 59, 28, 40, 87}) != 46.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{15, 88, 58, 60, 3, 9, 2, 82, 51, 60, 65, 85, 100, 52, 13}) != 51.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{79, 93, 75, 6, 95, 85, 53, 88, 6, 5, 70, 98, 13, 66, 94, 46}) != 51.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{74, 26, 62, 66, 48, 84, 56, 52, 85, 59, 46, 58}) != 55.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{97, 34, 33}) != 65.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{19, 85, 12, 91, 51, 12, 90, 61, 55, 5, 56, 100, 64, 89, 87, 93, 66, 89, 36, 38}) != 52.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{4, 89, 51, 15, 35, 54, 73, 79, 93, 83, 18, 43, 34, 58, 73}) != 48.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{12, 45, 14, 87, 83, 16, 86, 22, 97, 11, 26, 37, 61, 18, 51}) != 54.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{10, 43, 45}) != 27.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{51, 35, 23, 80, 16, 87}) != 51.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{77, 29, 79, 10, 83, 17, 64, 19, 43}) != 46.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{23, 49, 9, 2, 33, 30, 40, 100, 14, 1, 21, 89}) != 50.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{31, 81, 38, 24, 16, 54, 44, 59}) != 48.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{70, 28, 76, 3, 59, 30, 34, 12, 41, 99, 81}) != 51.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{44, 60, 23, 70, 8, 21}) != 39.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{13, 50, 80, 35, 79}) != 46.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{13, 69, 52, 55, 18, 92, 50, 75}) != 52.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{89, 22, 34, 15, 58, 11, 54, 98, 66}) != 54.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{50}) != 50.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{72, 22, 44, 56, 42, 43, 18, 50, 31, 6, 13, 31, 47, 16, 69, 4, 2, 24, 19}) != 37.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{60, 58, 79, 29}) != 54.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{36, 16, 57, 1}) != 29.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{4, 73, 37, 31, 92, 53, 36, 95, 55, 55, 78, 43}) != 49.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{9, 26, 39, 99, 44}) != 54.0) throw new AssertionError();
+            if (minMaxAverage(new int[]{11, 50, 70, 11, 86, 48, 68, 34, 88}) != 49.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{5, 96, 38, 76, 43, 51, 30, 44, 5, 98, 54, 95, 39, 53, 91, 90}) != 51.5) throw new AssertionError();
+            if (minMaxAverage(new int[]{51, 14, 2, 9, 51, 91}) != 46.5) throw new AssertionError();
         }
 
 
