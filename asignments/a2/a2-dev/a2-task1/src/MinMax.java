@@ -57,6 +57,8 @@ class MinMax{
 //        int[] a = {2, 3, 0, 5, 5, 5, 6, 1, -1, 6, 10};
         int[] a = {2, 3, 0, 5, 5 };
 
+        assert(minMaxAverage({}) == 400);
+
         double min = min(a);
         double max = max(a);
         double avg = minMaxAverage(a);
