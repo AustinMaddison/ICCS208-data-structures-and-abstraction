@@ -52,18 +52,22 @@ public class Lecture3 {
 //        System.out.println(list7.size()); // Prints size using recursion
 //        System.out.println(Node.iterSize(list7)); // Prints size using iteratively
 
-        /* Recursivley Implement Linked List */
-        IntNode list = null;
-        IntNode list1 = new IntNode(9, list);
-        IntNode list2 = new IntNode(10, list1);
-        IntNode list3 = new IntNode(45, list2);
-        IntNode list4 = new IntNode(90, list3);
-        IntNode list5 = new IntNode(67, list4);
-        IntNode list6 = new IntNode(46, list5);
-        IntNode list7 = new IntNode(3, list6);
+        /* Inclass IntNode */
 
-        System.out.println(list7.toString()); // Prints list contents using iteratively
-        System.out.println(list7.get(0));
+        IntNode head;
+        head = new IntNode(0, null);
+
+        /* Construct Linked List */
+        int i = 0;
+
+        for(IntNode current = head;i < 10; i++) {
+            current.next = new IntNode(i, null);
+            current = current.next;
+        }
+
+
+
+
 
     }
 }
