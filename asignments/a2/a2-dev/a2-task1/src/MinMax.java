@@ -13,7 +13,7 @@ class MinMax{
 
         int min, max;
 
-        /* numbersPurged will store all numbers excluding min, so later in computing max can use 1 less comparison */
+        /* numbersPurged will store all numbe       rs excluding min, so later in computing max can use 1 less comparison */
         int purgedIndex = 0;
         int[] numbersPurged = new int[numbers.length - 1];
 
