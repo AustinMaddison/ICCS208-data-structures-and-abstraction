@@ -22,7 +22,9 @@ public class DanceCompetition {
     // DanceCompetition's constructor that allows for customizing the weights
     // of popping dance and hip-hop dance.
     public DanceCompetition(double poppingDance, double hipHop) {
-        //CODE HERE
+        this.poppingDanceFraction = poppingDance;
+        this.hiphopFraction = hipHop;
+        this.competitors = new ArrayList<>();
     }
     
     // DanceCompetition's constructor that will set the default weights to
@@ -30,27 +32,32 @@ public class DanceCompetition {
     // (Hint: Use this(...) to call the other constructor instead of rewriting the
     // same logic)
     public DanceCompetition() {
-        //CODE HERE
-        //HINT: this(0.7, 0.3);
+        new DanceCompetition(0.7, 0.3);
     }
 
     // Return a list of competitors whose total dance score (as given by
     // getTotalDanceScore) is at least 8.0
     public List<Competitor> getGoldMedal(){
-        //CODE HERE
-        return null; // TODO: Change me
+
+        List<Competitor> competitorsGetGoldMedal = new ArrayList<>(List.copyOf(this.competitors));
+        for(int index = 0; index < competitorsGetGoldMedal.size(); ) {
+            if(competitorsGetGoldMedal.get(index).getTotalDanceScore() < 8.0) {
+                competitorsGetGoldMedal.remove(index);
+                continue;
+            }
+            index++;
+        }
+        return competitorsGetGoldMedal;
     }
     
     // Return the weight (i.e., fraction) of hip-hop dance
     public double getHipHopFraction() {
-        //CODE HERE
-        return 0.0; // TODO: Change me
+        return this.hiphopFraction;
     }
 
     // Return the weight (i.e., fraction) of popping dance
     public double getPoppingDanceFraction() {
-        //CODE HERE
-        return 0.0; // TODO: Change me
+        return this.poppingDanceFraction;
     }
     
     // Add Competitor c into the list of competitors and also
@@ -58,7 +65,8 @@ public class DanceCompetition {
     // by invoking c.setDanceCompetition suitably. 
     // Did you already inform the competitor?
     public void addCompetitor(Competitor c) {
-        //CODE HERE
+        c.setDanceCompetition(this);
+        this.competitors.add(c);
     }
 
     public static void main(String[] args) {
