@@ -32,7 +32,7 @@ public class DanceCompetition {
     // (Hint: Use this(...) to call the other constructor instead of rewriting the
     // same logic)
     public DanceCompetition() {
-        new DanceCompetition(0.7, 0.3);
+        this(0.7, 0.3);
     }
 
     // Return a list of competitors whose total dance score (as given by
