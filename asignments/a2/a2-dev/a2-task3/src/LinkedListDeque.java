@@ -86,7 +86,6 @@ public class LinkedListDeque<T> {
         size--;
         T item = this.sen.start.data;
         this.sen.start = this.sen.start.next;
-        this.sen.start.prev = null;
         return item;
     }
 
