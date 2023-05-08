@@ -125,4 +125,8 @@ public class LinkedListDeque<T> {
         }
         return current.data;
     }
+
+    public void printDeque() {
+        System.out.println(this.toString());
+    }
 }
