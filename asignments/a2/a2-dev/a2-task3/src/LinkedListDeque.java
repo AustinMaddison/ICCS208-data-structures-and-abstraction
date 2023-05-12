@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Deque;
 
 public class LinkedListDeque<T> {
@@ -6,9 +7,9 @@ public class LinkedListDeque<T> {
         Node<T> prev;
         T data;
 
-        Node(T data) {
-            this.next = null;
-            this.prev = null;
+        Node(T data, Node<T> next, Node<T> prev) {
+            this.next = next;
+            this.prev = prev;
             this.data = data;
         }
     }
@@ -16,46 +17,33 @@ public class LinkedListDeque<T> {
     private int size;
 
     LinkedListDeque() {
-        this.sen = new Node<>(null);
-        this.sen.next = this.sen.prev;
-        this.sen.prev = this.sen.next;
+        sen = new Node<>(null, null, null);
+        sen.next = sen;
+        sen.prev = sen;
 
-        this.size = 0;
+        size = 0;
     }
 
     // Adds an item of type T to the front of the deque.
     public void addFirst(T data) {
+        sen.next = new Node<>(data, sen.next, sen);
+        sen.next.next.prev = sen.next;
         this.size++;
-        Node<T> newNode = new Node<T>(data);
-        newNode.next = this.sen.next;
-        newNode.prev = null;
-        this.sen.next = newNode;
-
-        if(size == 1)
-            this.sen.prev = newNode;
-        else
-            newNode.next.prev = newNode;
     }
     
     // Adds an item of type T to the back of the deque.
     public void addLast(T data) {
+        sen.prev = new Node<>(data,sen,sen.prev);
+        sen.prev.prev.next = sen.prev;
         this.size++;
-        Node<T> newNode = new Node<T>(data);
-        newNode.next = null;
-        newNode.prev = this.sen.prev;
-        this.sen.prev = newNode;
-
-        if(size == 1)
-            this.sen.next = newNode;
-        else
-            newNode.prev.next = newNode;
     }
     
     // Returns true if deque is empty, false otherwise.
     public boolean isEmpty() {
-        return this.size == 0;
+        return this.sen.next == sen;
     }
-    
+
+
     // Returns the number of items in the deque.
     public int size() {
         return this.size;
@@ -65,7 +53,7 @@ public class LinkedListDeque<T> {
 // separated by a space.
     public String toString() {
         String s = "";
-        for(Node<T> current = sen.next; current != null; current = current.next) {
+        for(Node<T> current = sen.next; current != sen; current = current.next) {
             s = s + current.data.toString() + ", ";
         }
         return s;
@@ -74,59 +62,91 @@ public class LinkedListDeque<T> {
     // Removes and returns the item at the front of the deque.
     // If no such item exists, returns null.
     public T removeFirst() {
-        if(this.size <= 0)
+        if(isEmpty())
             return null;
 
-        this.size--;
-        T item = this.sen.next.data;
+        T removedData = sen.next.data;
+        sen.next = sen.next.next;
+        sen.next.prev = sen;
+        size--;
 
-        if(size > 0) {
-            this.sen.next = this.sen.next.next;
-        }
-        else {
-            this.sen.next = null;
-            this.sen.prev = this.sen.next;
-        }
-
-        return item;
-
+        return removedData;
     }
 
     // Removes and returns the item at the back of the deque.
     // If no such item exists, returns null.
     public T removeLast() {
-        if(this.size <= 0)
+        if(isEmpty())
             return null;
 
-        this.size--;
-        T item = this.sen.prev.data;
+        T removedData = sen.prev.data;
+        sen.prev = sen.prev.prev;
+        sen.prev.next = sen;
+        size--;
 
-        if(this.size > 0) {
-            this.sen.prev = sen.prev.prev;
-            this.sen.prev.next = null;
-        }
-        /* else, no items therefore sen next points to prev */
-        else {
-            this.sen.prev = null;
-            this.sen.next = this.sen.prev;
-        }
-        return item;
+        return removedData;
     }
 
     // Gets the item at the given index, where 0 is the front, 1 is the next item,
     // and so forth. If no such item exists, returns null. Must not alter the deque!
     public T get(int index) {
-        if(index> this.size-1)
+        if( index < 0 | index > size-1)
             return  null;
 
         Node<T> current = sen.next;
         for(int currentIndex = 0 ; currentIndex < index; index ++) {
             current = current.next;
         }
+
         return current.data;
     }
 
     public void printDeque() {
         System.out.println(this.toString());
+    }
+
+    public static void main(String[] args) {
+        LinkedListDeque<String> a = new LinkedListDeque<>();
+
+        a.addFirst("a");
+        a.addFirst("b");
+        a.addFirst("c");
+        a.addFirst("d");
+        a.addFirst("e");
+        a.printDeque();
+        System.out.println("size: " + a.size);
+        System.out.println((a.removeLast()));
+        System.out.println((a.removeFirst()));
+        System.out.println("size: " + a.size);
+        a.printDeque();
+        a.addLast("last");
+        a.addLast("last");
+        a.addLast("last");
+        a.printDeque();
+        System.out.println("size: " + a.size);
+        a.removeFirst();
+        a.removeFirst();
+        a.removeFirst();
+        a.removeFirst();
+        a.removeFirst();
+        a.removeFirst();
+        a.removeFirst();
+        a.removeFirst();
+        a.removeFirst();
+        a.removeFirst();
+        a.printDeque();
+        System.out.println(a.isEmpty());
+        System.out.println("size: " + a.size);
+
+
+        a.addLast("last");
+        a.addFirst("first");
+        a.printDeque();
+        System.out.println(a.isEmpty());
+
+
+
+
+
     }
 }
