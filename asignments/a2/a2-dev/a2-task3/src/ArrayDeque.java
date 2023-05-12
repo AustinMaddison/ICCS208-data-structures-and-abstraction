@@ -1,2 +1,68 @@
-public class ArrayDeque {
+public class ArrayDeque <T> {
+    private T[] items;
+    private int size;
+
+    public ArrayDeque() {
+        this.items = (T[]) new Object[1];
+        size = 0;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public T get(int i) {
+        return items[i];
+    }
+
+    public T getFirst() {
+        return items[0];
+    }
+
+    public T getLast() {
+        return items[size];
+    }
+
+    public void grow(int newCap) {
+        T[] newItems = (T[]) new Object[newCap];
+        System.arraycopy(items, 0, newItems, 0, items.length);
+        items = newItems;
+    }
+
+    public void addFirst(T item) {
+        if(size == items.length)
+            grow(size * 2);
+        for(int i = size-1; i >= 0; i--) {
+            items[i+1] = items[i];
+        }
+        items[0] = item;
+        size++;
+    }
+    public void addLast(T item) {
+        if(size == items.length)
+            grow(size * 2);
+        items[size++] = item;
+    }
+
+    public T removeLast() {
+        T itemToRemove = items[size - 1];
+        items[size - 1] = null; // important: see below
+        size--;
+
+        return itemToRemove;
+    }
+
+    public T removeFirst() {
+        T itemToRemove = items[0];
+    }
+}
+
+
+    public String toString() {
+        String s = "";
+        for(int i = 0; i < size; i++) {
+            s = s + items[i].toString() + ", ";
+        }
+
+        return s;
 }

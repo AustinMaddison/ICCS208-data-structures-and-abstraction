@@ -3,11 +3,10 @@ package Lecture5;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-
 /* Exercise I: Actions in the Front */
+/* n+1 */
 
-
-/* Exercise II: Array List with Generic Types¶ */
+/* Exercise II: Array List with Generic Types */
 public class AList <T>  {
 
     private T[] items;
