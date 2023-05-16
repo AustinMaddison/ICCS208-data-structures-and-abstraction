@@ -1,38 +1,47 @@
 public class ArrayDeque <T> {
+    private final int startCap = 4;
     private T[] items;
     private int size;
-    private int resizeFactor = 2;
-
+    private final int resizeFactor = 2;
+    private final double usedCapMin = 0.25;
 
     //front and back index
     private int front;
     private int back;
 
-
     public ArrayDeque() {
         // capacity starts with 8
-        items = (T[]) new Object[8];
+        items = (T[]) new Object[startCap];
         size = 0;
-        front = (items.length/2) - 1;
-        back = front;
-    }
-
-    public int wrapIndex(int index) {
-        if(index)
     }
 
     public void addFirst(T item) {
-        if(size + 1 > items.length)
+        if(isEmpty()) {
+            resetIndex();
+            items[front] = item;
+            size++;
+            return;
+        }
+        if(++size > items.length) {
             grow();
-        items[wrapIndex(front--)] = item;
+        }
+        front--;
+        items[wrapIndex(front)] = item;
     }
 
     public void addLast(T item) {
-        if(size + 1 > items.length)
+        if (isEmpty()) {
+            resetIndex();
+            items[back] = item;
+            size++;
+            return;
+        }
+        if (++size > items.length) {
             grow();
-        items[wrapIndex(front++)] = item;
+        }
+        back++;
+        items[wrapIndex(back)] = item;
     }
-
 
     public int size() {
         return size;
@@ -44,19 +53,37 @@ public class ArrayDeque <T> {
 
     public String toString() {
         String s = "";
-        for(int i = front; i < size; i++) {
+        for(int i = front; i <= back; i++) {
             s = s + items[wrapIndex(i)].toString() + ", ";
         }
         return s;
     }
 
     public T removeFirst() {
-        T itemToRemove = items[0];
+        if(isEmpty()) {
+            return null;
+        }
+        if(size > startCap && size-1 < usedCapMin*(double)items.length) {
+            shrink();
+        }
+        T itemToRemove = items[wrapIndex(front)];
+        items[wrapIndex(front)] = null;
+        front++;
+        size--;
+
+        return itemToRemove;
     }
 
     public T removeLast() {
-        T itemToRemove = items[size - 1];
-        items[size - 1] = null; // important: see below
+        if(isEmpty()) {
+            return null;
+        }
+        if(size > startCap && size-1 < usedCapMin*(double)items.length) {
+            shrink();
+        }
+        T itemToRemove = items[wrapIndex(back)];
+        items[wrapIndex(back)] = null;
+        back--;
         size--;
 
         return itemToRemove;
@@ -74,26 +101,81 @@ public class ArrayDeque <T> {
         resize(items.length / resizeFactor);
     }
 
+    public int wrapIndex(int index) {
+        if(index > 0 & index < items.length)
+            return index;
+
+        /* calculate wrapped index */
+        if(index >= items.length) {
+            return index - items.length;
+        }
+        if(index < 0) {
+            return index + items.length;
+        }
+        return index;
+    }
+
     public void resize(int newCap) {
         T[] newItems = (T[]) new Object[newCap];
         copyItems(newItems);
         items = newItems;
+        front = (newItems.length / (resizeFactor * 2));
+        back =  newItems.length - (newItems.length / (resizeFactor * 2));
+    }
 
-        /* Reset indexing */
-        front = newCap / (resizeFactor * 2) - 1;
-        back = newCap - (newCap / (resizeFactor * 2)) - 1;
+    public void resetIndex() {
+        front = (items.length/2) - 1;
+        back = (items.length/2) - 1;
     }
 
     public void copyItems(T[] newItems) {
-        int offset = (newItems.length / (resizeFactor * 2));
-        for(int i = front; i < size; i++) {
-            newItems[i + offset] = items[wrapIndex(i)];
+        int offset = (newItems.length / (resizeFactor * 2)) ;
+
+        for(int i = front; i <= back; i++) {
+            newItems[offset++] = items[wrapIndex(i)];
         }
     }
 
+    public void printDeque() {
+        System.out.println(this.toString());
+    }
 
+    public static void main(String[] args) {
+        ArrayDeque<Integer> a1 = new ArrayDeque<Integer>();
 
+        for(int i = 0; i < 8; i++)
+            a1.addLast(i);
+        a1.printDeque();
+        for(int i = 0; i < 8; i++)
+            a1.removeLast();
+        a1.printDeque();
 
+        for(int i = 0; i < 8; i++)
+            a1.addFirst(i);
+        a1.printDeque();
+        for(int i = 0; i < 8; i++)
+            a1.removeFirst();
+        a1.printDeque();
+
+        for(int i = 0; i < 16; i++)
+            a1.addFirst(i);
+        a1.printDeque();
+        for(int i = 0; i < 16; i++)
+            a1.removeFirst();
+        a1.printDeque();
+
+//        for(int i = 0; i < 8; i++)
+//            a1.addLast(i);
+
+//        a1.addFirst(1);
+//        a1.addLast(2);
+//        a1.printDeque();
+////        a1.removeFirst();
+//        a1.removeLast();
+//        a1.addLast(2);
+//
+//        a1.printDeque();
+    }
 }
 
 
