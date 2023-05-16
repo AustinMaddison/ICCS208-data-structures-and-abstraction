@@ -1,47 +1,53 @@
-class ArrayDeque <T>{
+public class ArrayDeque <T>{
 
     private final int startCap = 8;
     private final double minUsedCap = 0.25;
     private final int resizeFactor = 2;
-    private int front, back, size = 0;
+    private int front, back, size;
 
     T[] items;
 
     ArrayDeque() {
         items = (T[]) new Object[startCap];
+        size = 0;
+        front = 0;
+        back = 0;
     }
 
     // Adds an item of type T to the front of the deque.
     public void addFirst(T data) {
         if(isEmpty()) {
+            items[front] = data;
+            size++;
             return;
         }
         if(size + 1 > items.length) {
             grow();
         }
+        front--;
+        size++;
         items[front] = data;
-
     }
 
     // Adds an item of type T to the back of the deque.
     public void addLast(T data) {
         if(isEmpty()) {
+            items[back] = data;
+            size++;
             return;
         }
         if(size + 1 > items.length) {
             grow();
         }
+        back++;
+        size++;
         items[back] = data;
-
-
     }
 
     // Returns true if deque is empty, false otherwise.
     public boolean isEmpty() {
         return size == 0;
     }
-
-
     // Returns the number of items in the deque.
     public int size() {
         return size;
@@ -51,10 +57,9 @@ class ArrayDeque <T>{
 // separated by a space.
     public String toString() {
         String s = "";
-
         boolean isSameIndex = wrapIndex(front) == wrapIndex(back) && size > 0;
-        for (int i = front; front <= back - (isSameIndex? 1:0); i++) {
-            s = s + items[i] + ", ";
+        for (int i = front; i - front < size; i++) {
+            s = s + items[wrapIndex(i)] + ", ";
         }
 
         return s;
@@ -68,7 +73,6 @@ class ArrayDeque <T>{
         if((double)(size - 1) / items.length < minUsedCap) {
             shrink();
         }
-
         items[wrapIndex(front)] = null;
         T removedData = items[wrapIndex(front)];
         front++;
@@ -109,14 +113,21 @@ class ArrayDeque <T>{
 
     private void resize(int newCap) {
         T[] newItems = (T[]) new Object[newCap];
+        for (int i = front; i - front < size; i++) {
+            newItems[wrapIndex(i-front*2)] =  items[wrapIndex(i)];
+        }
+        items = newItems;
     }
 
     private int wrapIndex (int index) {
-        return Math.abs(index % 8);
+       return wrapIndex(index, items.length);
+    }
+    private int wrapIndex (int index, int cap) {
+        return Math.abs(index % cap);
     }
 
     private void reset_index() {
-        front = (items.length / 2) - 1;
+        front = 0;
         back = front;
     }
 
@@ -124,6 +135,13 @@ class ArrayDeque <T>{
         System.out.println(this.toString());
     }
 
+    public static void main(String[] args) {
+        ArrayDeque<Integer> a1 = new ArrayDeque<>();
+        for(int i = 0; i < 16; i++) {
+            a1.addLast(i);
+        }
+        a1.printDeque();
+    }
 
 
 }
