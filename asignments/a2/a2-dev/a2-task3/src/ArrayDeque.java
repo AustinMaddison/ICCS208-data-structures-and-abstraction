@@ -1,182 +1,129 @@
-public class ArrayDeque <T> {
-    private final int startCap = 4;
-    private T[] items;
-    private int size;
+class ArrayDeque <T>{
+
+    private final int startCap = 8;
+    private final double minUsedCap = 0.25;
     private final int resizeFactor = 2;
-    private final double usedCapMin = 0.25;
+    private int front, back, size = 0;
 
-    //front and back index
-    private int front;
-    private int back;
+    T[] items;
 
-    public ArrayDeque() {
-        // capacity starts with 8
+    ArrayDeque() {
         items = (T[]) new Object[startCap];
-        size = 0;
     }
 
-    public void addFirst(T item) {
+    // Adds an item of type T to the front of the deque.
+    public void addFirst(T data) {
         if(isEmpty()) {
-            resetIndex();
-            items[front] = item;
-            size++;
             return;
         }
-        if(++size > items.length) {
+        if(size + 1 > items.length) {
             grow();
         }
-        front--;
-        items[wrapIndex(front)] = item;
+        items[front] = data;
+
     }
 
-    public void addLast(T item) {
-        if (isEmpty()) {
-            resetIndex();
-            items[back] = item;
-            size++;
+    // Adds an item of type T to the back of the deque.
+    public void addLast(T data) {
+        if(isEmpty()) {
             return;
         }
-        if (++size > items.length) {
+        if(size + 1 > items.length) {
             grow();
         }
-        back++;
-        items[wrapIndex(back)] = item;
+        items[back] = data;
+
+
     }
 
-    public int size() {
-        return size;
-    }
-
+    // Returns true if deque is empty, false otherwise.
     public boolean isEmpty() {
         return size == 0;
     }
 
+
+    // Returns the number of items in the deque.
+    public int size() {
+        return size;
+    }
+
+    // Returns a string showing the items in the deque from first to last,
+// separated by a space.
     public String toString() {
         String s = "";
-        for(int i = front; i <= back; i++) {
-            s = s + items[wrapIndex(i)].toString() + ", ";
+
+        boolean isSameIndex = wrapIndex(front) == wrapIndex(back) && size > 0;
+        for (int i = front; front <= back - (isSameIndex? 1:0); i++) {
+            s = s + items[i] + ", ";
         }
+
         return s;
     }
 
+    // Removes and returns the item at the front of the deque.
+    // If no such item exists, returns null.
     public T removeFirst() {
-        if(isEmpty()) {
+        if(isEmpty())
             return null;
-        }
-        if(size > startCap && size-1 < usedCapMin*(double)items.length) {
+        if((double)(size - 1) / items.length < minUsedCap) {
             shrink();
         }
-        T itemToRemove = items[wrapIndex(front)];
+
         items[wrapIndex(front)] = null;
+        T removedData = items[wrapIndex(front)];
         front++;
         size--;
 
-        return itemToRemove;
+        return removedData;
     }
 
+    // Removes and returns the item at the back of the deque.
+    // If no such item exists, returns null.
     public T removeLast() {
-        if(isEmpty()) {
+        if(isEmpty())
             return null;
-        }
-        if(size > startCap && size-1 < usedCapMin*(double)items.length) {
-            shrink();
-        }
-        T itemToRemove = items[wrapIndex(back)];
+
         items[wrapIndex(back)] = null;
+        T removedData = items[wrapIndex(back)];
         back--;
         size--;
 
-        return itemToRemove;
+        return removedData;
     }
 
-    public T get(int i) {
-        return items[i];
+    // Gets the item at the given index, where 0 is the front, 1 is the next item,
+    // and so forth. If no such item exists, returns null. Must not alter the deque!
+    public T get(int index) {
+        if( index < 0 | index > size-1)
+            return  null;
+        return items[wrapIndex(index+front)];
     }
 
-    public void grow() {
+    private void grow() {
         resize(items.length * resizeFactor);
     }
 
-    public void shrink() {
+    private void shrink() {
         resize(items.length / resizeFactor);
     }
 
-    public int wrapIndex(int index) {
-        if(index > 0 & index < items.length)
-            return index;
-
-        /* calculate wrapped index */
-        if(index >= items.length) {
-            return index - items.length;
-        }
-        if(index < 0) {
-            return index + items.length;
-        }
-        return index;
-    }
-
-    public void resize(int newCap) {
+    private void resize(int newCap) {
         T[] newItems = (T[]) new Object[newCap];
-        copyItems(newItems);
-        items = newItems;
-        front = (newItems.length / (resizeFactor * 2));
-        back =  newItems.length - (newItems.length / (resizeFactor * 2));
     }
 
-    public void resetIndex() {
-        front = (items.length/2) - 1;
-        back = (items.length/2) - 1;
+    private int wrapIndex (int index) {
+        return Math.abs(index % 8);
     }
 
-    public void copyItems(T[] newItems) {
-        int offset = (newItems.length / (resizeFactor * 2)) ;
-
-        for(int i = front; i <= back; i++) {
-            newItems[offset++] = items[wrapIndex(i)];
-        }
+    private void reset_index() {
+        front = (items.length / 2) - 1;
+        back = front;
     }
 
     public void printDeque() {
         System.out.println(this.toString());
     }
 
-    public static void main(String[] args) {
-        ArrayDeque<Integer> a1 = new ArrayDeque<Integer>();
 
-        for(int i = 0; i < 8; i++)
-            a1.addLast(i);
-        a1.printDeque();
-        for(int i = 0; i < 8; i++)
-            a1.removeLast();
-        a1.printDeque();
 
-        for(int i = 0; i < 8; i++)
-            a1.addFirst(i);
-        a1.printDeque();
-        for(int i = 0; i < 8; i++)
-            a1.removeFirst();
-        a1.printDeque();
-
-        for(int i = 0; i < 16; i++)
-            a1.addFirst(i);
-        a1.printDeque();
-        for(int i = 0; i < 16; i++)
-            a1.removeFirst();
-        a1.printDeque();
-
-//        for(int i = 0; i < 8; i++)
-//            a1.addLast(i);
-
-//        a1.addFirst(1);
-//        a1.addLast(2);
-//        a1.printDeque();
-////        a1.removeFirst();
-//        a1.removeLast();
-//        a1.addLast(2);
-//
-//        a1.printDeque();
-    }
 }
-
-
-
