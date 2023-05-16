@@ -28,25 +28,25 @@ public class LinkedListDeque<T> {
     public void addFirst(T data) {
         sen.next = new Node<>(data, sen.next, sen);
         sen.next.next.prev = sen.next;
-        this.size++;
+        size++;
     }
     
     // Adds an item of type T to the back of the deque.
     public void addLast(T data) {
         sen.prev = new Node<>(data,sen,sen.prev);
         sen.prev.prev.next = sen.prev;
-        this.size++;
+        size++;
     }
     
     // Returns true if deque is empty, false otherwise.
     public boolean isEmpty() {
-        return this.sen.next == sen;
+        return sen.next == sen;
     }
 
 
     // Returns the number of items in the deque.
     public int size() {
-        return this.size;
+        return size;
     }
 
     // Returns a string showing the items in the deque from first to last,
