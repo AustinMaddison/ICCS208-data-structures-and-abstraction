@@ -26,18 +26,23 @@ public class LinkedListDeque<T> {
         if(other.isEmpty())
             return;
         /* Copies all elements from other. */
-        for(int index = 0 ; index < other.size(); index++) {
-            this.addLast(other.get(index));
+        Node<T> current = other.sen;
+        for(int currentIndex = 0; currentIndex < other.size; currentIndex++ ) {
+            this.addLast(current.data);
+            current = current.next;
         }
+
     }
 
-    // Initializes member variables, by called by ctor.
+    // Initializes member variables, called by ctor.
     private void initialize() {
         sen = new Node<>(null, null, null);
         sen.next = sen;
         sen.prev = sen;
         size = 0;
     }
+
+
 
     // Adds an item of type T to the front of the deque.
     public void addFirst(T data) {
@@ -118,6 +123,7 @@ public class LinkedListDeque<T> {
 
         return current.data;
     }
+
 
     public void printDeque() {
         System.out.println(this.toString());

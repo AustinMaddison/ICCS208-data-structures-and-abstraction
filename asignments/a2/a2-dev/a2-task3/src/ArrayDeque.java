@@ -12,23 +12,30 @@ public class ArrayDeque <T>{
     }
 
     ArrayDeque(ArrayDeque<T> other) {
-        initialize();
-
-        if(other.isEmpty())
+        initialize(other.items.length, other.size, other.front, other.back);
+        if(other.isEmpty()) {
             return;
-
-        resize(other.cap());
+        }
         /* Copies all elements from other. */
-        for(int index = 0 ; index < other.size(); index++) {
-            this.addLast(other.get(index));
+        for(int index = 0 ; index < other.items.length; index++) {
+            items[index] = other.items[index];
         }
     }
 
+    // Initializes member variables, called by ctor.
+    private void initialize(int initCap, int initSize, int initFront, int initBack) {
+        items = (T[]) new Object[initCap];
+        size = initSize;
+        front = initFront;
+        back = initBack;
+    }
+
+    private void initialize(int initCap) {
+        initialize(initCap, 0, 0, 0);
+    }
+
     private void initialize() {
-        items = (T[]) new Object[startCap];
-        size = 0;
-        front = 0;
-        back = 0;
+       initialize(startCap, 0, 0, 0);
     }
 
     // Adds an item of type T to the front of the deque.
