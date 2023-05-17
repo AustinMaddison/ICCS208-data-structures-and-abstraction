@@ -52,6 +52,9 @@ public class LinkedListDeque<T> {
     // Returns a string showing the items in the deque from first to last,
 // separated by a space.
     public String toString() {
+        if(isEmpty())
+            return "";
+
         String s = "";
         for(Node<T> current = sen.next; current != sen; current = current.next) {
             s = s + current.data.toString() + ", ";
@@ -94,7 +97,7 @@ public class LinkedListDeque<T> {
             return  null;
 
         Node<T> current = sen.next;
-        for(int currentIndex = 0 ; currentIndex < index; index ++) {
+        for(int currentIndex = 0; currentIndex < index; currentIndex++ ) {
             current = current.next;
         }
 

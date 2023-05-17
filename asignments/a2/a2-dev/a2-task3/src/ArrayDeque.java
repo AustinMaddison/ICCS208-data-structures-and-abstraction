@@ -17,31 +17,33 @@ public class ArrayDeque <T>{
     // Adds an item of type T to the front of the deque.
     public void addFirst(T data) {
         if(isEmpty()) {
+            reset_index();
             items[front] = data;
             size++;
             return;
         }
-        if(size + 1 > items.length) {
+        if(shouldGrow()) {
             grow();
         }
         front--;
         size++;
-        items[front] = data;
+        items[wrapIndex(front)] = data;
     }
 
     // Adds an item of type T to the back of the deque.
     public void addLast(T data) {
         if(isEmpty()) {
+            reset_index();
             items[back] = data;
             size++;
             return;
         }
-        if(size + 1 > items.length) {
+        if(shouldGrow()) {
             grow();
         }
         back++;
         size++;
-        items[back] = data;
+        items[wrapIndex(back)] = data;
     }
 
     // Returns true if deque is empty, false otherwise.
@@ -57,7 +59,6 @@ public class ArrayDeque <T>{
 // separated by a space.
     public String toString() {
         String s = "";
-        boolean isSameIndex = wrapIndex(front) == wrapIndex(back) && size > 0;
         for (int i = front; i - front < size; i++) {
             s = s + items[wrapIndex(i)] + ", ";
         }
@@ -70,11 +71,11 @@ public class ArrayDeque <T>{
     public T removeFirst() {
         if(isEmpty())
             return null;
-        if((double)(size - 1) / items.length < minUsedCap) {
+        if(shouldShrink()) {
             shrink();
         }
-        items[wrapIndex(front)] = null;
         T removedData = items[wrapIndex(front)];
+        items[wrapIndex(front)] = null;
         front++;
         size--;
 
@@ -86,9 +87,11 @@ public class ArrayDeque <T>{
     public T removeLast() {
         if(isEmpty())
             return null;
-
-        items[wrapIndex(back)] = null;
+        if(shouldShrink()) {
+            shrink();
+        }
         T removedData = items[wrapIndex(back)];
+        items[wrapIndex(back)] = null;
         back--;
         size--;
 
@@ -103,6 +106,13 @@ public class ArrayDeque <T>{
         return items[wrapIndex(index+front)];
     }
 
+    private boolean shouldShrink() {
+        return (double)(size - 1) / items.length < minUsedCap && items.length > startCap;
+    }
+    private boolean shouldGrow() {
+        return size + 1 > items.length;
+    }
+
     private void grow() {
         resize(items.length * resizeFactor);
     }
@@ -114,8 +124,16 @@ public class ArrayDeque <T>{
     private void resize(int newCap) {
         T[] newItems = (T[]) new Object[newCap];
         for (int i = front; i - front < size; i++) {
-            newItems[wrapIndex(i-front*2)] =  items[wrapIndex(i)];
+            newItems[wrapIndex(i-front, newCap)] =  items[wrapIndex(i)];
         }
+
+        /* update indexes */
+        front = 0;
+        if(newCap > items.length) // if grows
+            back = items.length - 1;
+        else
+            back = size -1; // if shrinks
+
         items = newItems;
     }
 
@@ -123,7 +141,12 @@ public class ArrayDeque <T>{
        return wrapIndex(index, items.length);
     }
     private int wrapIndex (int index, int cap) {
-        return Math.abs(index % cap);
+        if(index >= 0){
+            return index % cap;
+        }
+        else {
+            return index + cap;
+        }
     }
 
     private void reset_index() {
@@ -135,12 +158,145 @@ public class ArrayDeque <T>{
         System.out.println(this.toString());
     }
 
+    public int getCapacity() {
+        return items.length;
+    }
+
     public static void main(String[] args) {
         ArrayDeque<Integer> a1 = new ArrayDeque<>();
-        for(int i = 0; i < 16; i++) {
-            a1.addLast(i);
+
+        // testing if em
+
+//        for(int i = 0; i < 16; i++) {
+//            a1.addLast(i);
+//        }
+//        a1.printDeque();
+//        for(int i = 0; i < 16; i++) {
+//            a1.removeLast();
+//        }
+//        a1.printDeque();
+//        System.out.println(a1.getCapacity());
+
+        /* Test addFirst and removeLast */
+//        for(int i = 0; i < 32; i++) {
+//            a1.addFirst(i);
+//            System.out.println(a1.getCapacity());
+//
+//            a1.printDeque();
+//
+//        }
+//        a1.printDeque();
+//        for(int i = 0; i < 32; i++) {
+//            System.out.println(a1.removeFirst());
+////            a1.removeFirst();
+//            a1.printDeque();
+//
+//            System.out.println(a1.getCapacity());
+//        }
+//        a1.printDeque();
+//        if ((a1.isEmpty() != true)) throw new AssertionError();
+
+
+        /* Test addFirst and addLast */
+//        for(int i = 0; i < 32; i++) {
+//            a1.addLast(i);
+//            System.out.println(a1.getCapacity());
+//
+//            a1.printDeque();
+//
+//        }
+//        a1.printDeque();
+//        for(int i = 0; i < 32; i++) {
+//            System.out.println(a1.removeLast());
+//            a1.printDeque();
+//            System.out.println(a1.getCapacity());
+//        }
+//        a1.printDeque();
+//
+//        if ((a1.isEmpty() != true)) throw new AssertionError();
+
+
+        /* Test addFirst and addLast alternating then removeLast */
+        boolean flip = true;
+        for(int i = 0; i < 32; i++) {
+            if(flip)
+                a1.addFirst(i);
+            else
+                a1.addLast(i);
+            flip = !flip;
+            System.out.println("Capacity: " + a1.getCapacity());
+
+            a1.printDeque();
+
+        }
+        flip = !flip;
+        a1.printDeque();
+        int x;
+        for(int i = 0; i < 32; i++) {
+            x = a1.removeLast();
+            System.out.println(x);
+            a1.printDeque();
+            System.out.println("Capacity: " + a1.getCapacity());
         }
         a1.printDeque();
+        if ((a1.isEmpty() != true)) throw new AssertionError();
+
+        /* Test addFirst and addLast alternating then removeFirst */
+        flip = true;
+        for(int i = 0; i < 32; i++) {
+            if(flip)
+                a1.addFirst(i);
+            else
+                a1.addLast(i);
+            flip = !flip;
+            System.out.println("Capacity: " + a1.getCapacity());
+
+            a1.printDeque();
+
+        }
+        flip = !flip;
+        a1.printDeque();
+        for(int i = 0; i < 32; i++) {
+            x = a1.removeFirst();
+            System.out.println(x);
+            a1.printDeque();
+            System.out.println("Capacity: " + a1.getCapacity());
+        }
+        a1.printDeque();
+        if ((a1.isEmpty() != true)) throw new AssertionError();
+
+
+        /* Test addFirst and addLast alternating then alternating remove */
+        flip = true;
+        for(int i = 0; i < 32; i++) {
+            if(flip)
+                a1.addFirst(i);
+            else
+                a1.addLast(i);
+            flip = !flip;
+            System.out.println("Capacity: " + a1.getCapacity());
+
+            a1.printDeque();
+
+        }
+        flip = !flip;
+        a1.printDeque();
+        for(int i = 0; i < 32; i++) {
+
+            if(flip) {
+                x = a1.removeFirst();
+                System.out.println(x);
+            }
+            else {
+                x = a1.removeLast();
+                System.out.println(x);
+            }
+            flip = !flip;
+            a1.printDeque();
+            System.out.println("Capacity: " + a1.getCapacity());
+        }
+        a1.printDeque();
+        if ((a1.isEmpty() != true)) throw new AssertionError();
     }
 
 
