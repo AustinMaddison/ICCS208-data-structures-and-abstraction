@@ -135,16 +135,128 @@ public class LinkedListDequeTest {
 		printTestStatus(passed);
 	}
 
+	public static void deepCopyTest() {
+		System.out.println("Running deep copy test.");
+//		System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
+		LinkedListDeque<Integer> lld1 = new LinkedListDeque<>();
+		boolean passed = checkEmpty(true, lld1.isEmpty());
+		lld1.addFirst(32);
+		lld1.addFirst(1);
+		lld1.addLast(45);
+		lld1.addLast(12);
+
+		LinkedListDeque<Integer> lld2 = new LinkedListDeque<>(lld1);
+		System.out.println(lld2.get(0));
+		System.out.println(lld2.get(1));
+		System.out.println(lld2.get(2));
+		System.out.println(lld2.get(3));
+
+
+		passed = lld1.get(0) == lld2.get(0) && passed;
+		passed = lld1.get(1) == lld2.get(1) && passed;
+		passed = lld1.get(2) == lld2.get(2) && passed;
+		passed = lld1.get(3) == lld2.get(3) && passed;
+		System.out.println("Printing out deque: ");
+		lld1.printDeque();
+		System.out.println("Printing out deep copy deque: ");
+		lld2.printDeque();
+		lld2.printDeque();
+		printTestStatus(passed);
+	}
+
+	public static void addRemoveLargeIsEmpty(int numberOfItems) {
+		System.out.println("Running add/isEmpty/Size test of large array test.");
+//		System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
+		LinkedListDeque<Integer> lld1 = new LinkedListDeque<>();
+		boolean passed = checkEmpty(true, lld1.isEmpty());
+
+		/* Test addFirst and addLast alternating then removeLast */
+		boolean flip = true;
+		for(int i = 0; i < numberOfItems; i++) {
+			if(flip)
+				lld1.addFirst(i);
+			else
+				lld1.addLast(i);
+			flip = !flip;
+
+			lld1.printDeque();
+		}
+
+		flip = !flip;
+		lld1.printDeque();
+		int x;
+		for(int i = 0; i < numberOfItems; i++) {
+			x = lld1.removeLast();
+			System.out.println(x);
+			lld1.printDeque();
+		}
+		lld1.printDeque();
+		passed = lld1.isEmpty() && passed;
+
+		/* Test addFirst and addLast alternating then removeFirst */
+		flip = true;
+		for(int i = 0; i < numberOfItems; i++) {
+			if(flip)
+				lld1.addFirst(i);
+			else
+				lld1.addLast(i);
+			flip = !flip;
+
+			lld1.printDeque();
+
+		}
+		flip = !flip;
+		lld1.printDeque();
+		for(int i = 0; i < numberOfItems; i++) {
+			x = lld1.removeFirst();
+			System.out.println(x);
+			lld1.printDeque();
+		}
+		lld1.printDeque();
+		passed = lld1.isEmpty() && passed;
+
+
+		/* Test addFirst and addLast alternating then alternating remove */
+		flip = true;
+		for(int i = 0; i < numberOfItems; i++) {
+			if(flip)
+				lld1.addFirst(i);
+			else
+				lld1.addLast(i);
+			flip = !flip;
+
+			lld1.printDeque();
+
+		}
+		flip = !flip;
+		lld1.printDeque();
+		for(int i = 0; i < numberOfItems; i++) {
+
+			if(flip) {
+				x = lld1.removeFirst();
+				System.out.println(x);
+			} else {
+				x = lld1.removeLast();
+				System.out.println(x);
+			}
+			flip = !flip;
+			lld1.printDeque();
+		}
+		lld1.printDeque();
+		passed = lld1.isEmpty() && passed;
+
+		lld1.printDeque();
+		printTestStatus(passed);
+	}
+
+
 	public static void main(String[] args) {
 		System.out.println("Running tests.\n");
 		addIsEmptySizeTest();
 		addRemoveTest();
+		addRemoveLargeIsEmpty(100);
 		addGetRemoveTest();
+		deepCopyTest();
 
-//		LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>();
-//		lld1.addFirst(1);
-//		lld1.printDeque();
-//		lld1.removeLast();
-//		lld1.printDeque();
 	}
 } 

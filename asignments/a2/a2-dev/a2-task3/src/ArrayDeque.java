@@ -8,6 +8,23 @@ public class ArrayDeque <T>{
     T[] items;
 
     ArrayDeque() {
+        initialize();
+    }
+
+    ArrayDeque(ArrayDeque<T> other) {
+        initialize();
+
+        if(other.isEmpty())
+            return;
+
+        resize(other.cap());
+        /* Copies all elements from other. */
+        for(int index = 0 ; index < other.size(); index++) {
+            this.addLast(other.get(index));
+        }
+    }
+
+    private void initialize() {
         items = (T[]) new Object[startCap];
         size = 0;
         front = 0;
@@ -55,12 +72,14 @@ public class ArrayDeque <T>{
         return size;
     }
 
+    public int cap() { return items.length; }
+
     // Returns a string showing the items in the deque from first to last,
 // separated by a space.
     public String toString() {
         String s = "";
         for (int i = front; i - front < size; i++) {
-            s = s + items[wrapIndex(i)] + ", ";
+            s = s + items[wrapIndex(i)] + " ";
         }
 
         return s;
@@ -158,145 +177,7 @@ public class ArrayDeque <T>{
         System.out.println(this.toString());
     }
 
-    public int getCapacity() {
-        return items.length;
-    }
-
     public static void main(String[] args) {
-        ArrayDeque<Integer> a1 = new ArrayDeque<>();
-
-        // testing if em
-
-//        for(int i = 0; i < 16; i++) {
-//            a1.addLast(i);
-//        }
-//        a1.printDeque();
-//        for(int i = 0; i < 16; i++) {
-//            a1.removeLast();
-//        }
-//        a1.printDeque();
-//        System.out.println(a1.getCapacity());
-
-        /* Test addFirst and removeLast */
-//        for(int i = 0; i < 32; i++) {
-//            a1.addFirst(i);
-//            System.out.println(a1.getCapacity());
-//
-//            a1.printDeque();
-//
-//        }
-//        a1.printDeque();
-//        for(int i = 0; i < 32; i++) {
-//            System.out.println(a1.removeFirst());
-////            a1.removeFirst();
-//            a1.printDeque();
-//
-//            System.out.println(a1.getCapacity());
-//        }
-//        a1.printDeque();
-//        if ((a1.isEmpty() != true)) throw new AssertionError();
-
-
-        /* Test addFirst and addLast */
-//        for(int i = 0; i < 32; i++) {
-//            a1.addLast(i);
-//            System.out.println(a1.getCapacity());
-//
-//            a1.printDeque();
-//
-//        }
-//        a1.printDeque();
-//        for(int i = 0; i < 32; i++) {
-//            System.out.println(a1.removeLast());
-//            a1.printDeque();
-//            System.out.println(a1.getCapacity());
-//        }
-//        a1.printDeque();
-//
-//        if ((a1.isEmpty() != true)) throw new AssertionError();
-
-
-        /* Test addFirst and addLast alternating then removeLast */
-        boolean flip = true;
-        for(int i = 0; i < 32; i++) {
-            if(flip)
-                a1.addFirst(i);
-            else
-                a1.addLast(i);
-            flip = !flip;
-            System.out.println("Capacity: " + a1.getCapacity());
-
-            a1.printDeque();
-
-        }
-        flip = !flip;
-        a1.printDeque();
-        int x;
-        for(int i = 0; i < 32; i++) {
-            x = a1.removeLast();
-            System.out.println(x);
-            a1.printDeque();
-            System.out.println("Capacity: " + a1.getCapacity());
-        }
-        a1.printDeque();
-        if ((a1.isEmpty() != true)) throw new AssertionError();
-
-        /* Test addFirst and addLast alternating then removeFirst */
-        flip = true;
-        for(int i = 0; i < 32; i++) {
-            if(flip)
-                a1.addFirst(i);
-            else
-                a1.addLast(i);
-            flip = !flip;
-            System.out.println("Capacity: " + a1.getCapacity());
-
-            a1.printDeque();
-
-        }
-        flip = !flip;
-        a1.printDeque();
-        for(int i = 0; i < 32; i++) {
-            x = a1.removeFirst();
-            System.out.println(x);
-            a1.printDeque();
-            System.out.println("Capacity: " + a1.getCapacity());
-        }
-        a1.printDeque();
-        if ((a1.isEmpty() != true)) throw new AssertionError();
-
-
-        /* Test addFirst and addLast alternating then alternating remove */
-        flip = true;
-        for(int i = 0; i < 32; i++) {
-            if(flip)
-                a1.addFirst(i);
-            else
-                a1.addLast(i);
-            flip = !flip;
-            System.out.println("Capacity: " + a1.getCapacity());
-
-            a1.printDeque();
-
-        }
-        flip = !flip;
-        a1.printDeque();
-        for(int i = 0; i < 32; i++) {
-
-            if(flip) {
-                x = a1.removeFirst();
-                System.out.println(x);
-            }
-            else {
-                x = a1.removeLast();
-                System.out.println(x);
-            }
-            flip = !flip;
-            a1.printDeque();
-            System.out.println("Capacity: " + a1.getCapacity());
-        }
-        a1.printDeque();
-        if ((a1.isEmpty() != true)) throw new AssertionError();
     }
 
 

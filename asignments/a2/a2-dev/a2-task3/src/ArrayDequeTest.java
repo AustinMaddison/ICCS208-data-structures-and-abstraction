@@ -110,7 +110,6 @@ public class ArrayDequeTest {
 		printTestStatus(passed);
 	}
 
-
 	public static void addRemoveLargeIsEmpty(int numberOfItems) {
 		System.out.println("Running add/isEmpty/Size test of large array test.");
 //		System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
@@ -125,7 +124,7 @@ public class ArrayDequeTest {
 			else
 				lld1.addLast(i);
 			flip = !flip;
-			System.out.println("Capacity: " + lld1.getCapacity());
+			System.out.println("Capacity: " + lld1.cap());
 
 			lld1.printDeque();
 		}
@@ -137,7 +136,7 @@ public class ArrayDequeTest {
 			x = lld1.removeLast();
 			System.out.println(x);
 			lld1.printDeque();
-			System.out.println("Capacity: " + lld1.getCapacity());
+			System.out.println("Capacity: " + lld1.cap());
 		}
 		lld1.printDeque();
 		passed = lld1.isEmpty() && passed;
@@ -150,7 +149,7 @@ public class ArrayDequeTest {
 			else
 				lld1.addLast(i);
 			flip = !flip;
-			System.out.println("Capacity: " + lld1.getCapacity());
+			System.out.println("Capacity: " + lld1.cap());
 
 			lld1.printDeque();
 
@@ -161,7 +160,7 @@ public class ArrayDequeTest {
 			x = lld1.removeFirst();
 			System.out.println(x);
 			lld1.printDeque();
-			System.out.println("Capacity: " + lld1.getCapacity());
+			System.out.println("Capacity: " + lld1.cap());
 		}
 		lld1.printDeque();
 		passed = lld1.isEmpty() && passed;
@@ -175,7 +174,7 @@ public class ArrayDequeTest {
 			else
 				lld1.addLast(i);
 			flip = !flip;
-			System.out.println("Capacity: " + lld1.getCapacity());
+			System.out.println("Capacity: " + lld1.cap());
 
 			lld1.printDeque();
 
@@ -193,20 +192,17 @@ public class ArrayDequeTest {
 			}
 			flip = !flip;
 			lld1.printDeque();
-			System.out.println("Capacity: " + lld1.getCapacity());
+			System.out.println("Capacity: " + lld1.cap());
 		}
 		lld1.printDeque();
 		passed = lld1.isEmpty() && passed;
 
-
         lld1.printDeque();
 		printTestStatus(passed);
-
 }
 
 	public static void addGetRemoveTest() {
 		System.out.println("Running add/get/remove test.");
-//		System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
 		ArrayDeque<Integer> lld1 = new ArrayDeque<>();
 		boolean passed = checkEmpty(true, lld1.isEmpty());
 		lld1.addFirst(32);
@@ -225,6 +221,33 @@ public class ArrayDequeTest {
 		printTestStatus(passed);
 	}
 
+	public static void deepCopyTest() {
+		System.out.println("Running deep copy test.");
+		ArrayDeque<Integer> lld1 = new ArrayDeque<>();
+		boolean passed = checkEmpty(true, lld1.isEmpty());
+		lld1.addFirst(32);
+		lld1.addFirst(1);
+		lld1.addLast(45);
+		lld1.addLast(12);
+
+		ArrayDeque<Integer> lld2 = new ArrayDeque<>(lld1);
+		System.out.println(lld2.get(0));
+		System.out.println(lld2.get(1));
+		System.out.println(lld2.get(2));
+		System.out.println(lld2.get(3));
+
+
+		passed = lld1.get(0) == lld2.get(0) && passed;
+		passed = lld1.get(1) == lld2.get(1) && passed;
+		passed = lld1.get(2) == lld2.get(2) && passed;
+		passed = lld1.get(3) == lld2.get(3) && passed;
+		System.out.println("Printing out deque: ");
+		lld1.printDeque();
+		System.out.println("Printing out deep copy deque: ");
+		lld2.printDeque();
+		lld2.printDeque();
+		printTestStatus(passed);
+	}
 
 	public static void main(String[] args) {
 		System.out.println("Running tests.\n");
@@ -232,11 +255,6 @@ public class ArrayDequeTest {
 		addRemoveTest();
 		addRemoveLargeIsEmpty(100);
 		addGetRemoveTest();
-
-//		ArrayDeque<Integer> lld1 = new ArrayDeque<Integer>();
-//		lld1.addFirst(1);
-//		lld1.printDeque();
-//		lld1.removeLast();
-//		lld1.printDeque();
+		deepCopyTest();
 	}
 } 

@@ -13,14 +13,29 @@ public class LinkedListDeque<T> {
             this.data = data;
         }
     }
-    private final Node<T> sen;
+    private Node<T> sen;
     private int size;
 
     LinkedListDeque() {
+        initialize();
+    }
+
+    // Creates deep copy of linked list deque;
+    LinkedListDeque(LinkedListDeque<T> other) {
+        initialize();
+        if(other.isEmpty())
+            return;
+        /* Copies all elements from other. */
+        for(int index = 0 ; index < other.size(); index++) {
+            this.addLast(other.get(index));
+        }
+    }
+
+    // Initializes member variables, by called by ctor.
+    private void initialize() {
         sen = new Node<>(null, null, null);
         sen.next = sen;
         sen.prev = sen;
-
         size = 0;
     }
 
@@ -50,14 +65,14 @@ public class LinkedListDeque<T> {
     }
 
     // Returns a string showing the items in the deque from first to last,
-// separated by a space.
+    // separated by a space.
     public String toString() {
         if(isEmpty())
             return "";
 
         String s = "";
         for(Node<T> current = sen.next; current != sen; current = current.next) {
-            s = s + current.data.toString() + ", ";
+            s = s + current.data.toString() + " ";
         }
         return s;
     }
