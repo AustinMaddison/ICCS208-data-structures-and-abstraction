@@ -26,7 +26,7 @@ public class LinkedListDeque<T> {
         if(other.isEmpty())
             return;
         /* Copies all elements from other. */
-        Node<T> current = other.sen;
+        Node<T> current = other.sen.next;
         for(int currentIndex = 0; currentIndex < other.size; currentIndex++ ) {
             this.addLast(current.data);
             current = current.next;
