@@ -17,4 +17,51 @@ public class TestPalindrome {
         }
         assertEquals("persiflage", actual);
     }
+
+    @Test
+    public void testOddPalindrome() {
+        String word = "";
+
+        for (int length = 0; length < 26; length++) {
+            for (char middle = 'a'; middle < 'z'; middle++) {
+
+                word += middle;
+                int offset = 0;
+                char letter = 'a';
+
+                for (int idx = 0; idx < length; idx++) {
+
+                    word = letter + word + letter;
+                    letter++;
+                }
+                assertTrue(palindrome.isPalindrome(word));
+                word = "";
+            }
+        }
+    }
+
+
+    @Test
+    public void testEvenPalindrome() {
+        String word = "";
+
+        for (int length = 0; length < 26; length++) {
+
+                char letter = 'a';
+                for (int idx = 0; idx < length; idx++) {
+
+                    word = letter + word + letter;
+                    letter++;
+                }
+
+                assertTrue(palindrome.isPalindrome(word));
+                word = "";
+        }
+    }
+
+
+
+
+
 }
+
