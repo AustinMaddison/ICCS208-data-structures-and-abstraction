@@ -1,5 +1,4 @@
-/** IMPORTANT: Uncomment this file after you're done with the Deque interface and wordToDeque 
- *
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
  
@@ -19,4 +18,3 @@ public class TestPalindrome {
         assertEquals("persiflage", actual);
     }
 }
-*/
