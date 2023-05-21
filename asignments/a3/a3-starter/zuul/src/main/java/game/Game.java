@@ -1,5 +1,5 @@
 package game;
-import game.color.StringColor;
+import game.color.TerminalColor;
 import game.parser.Parser;
 import game.room.Room;
 import game.command.*;
@@ -8,7 +8,7 @@ import game.command.*;
 import static game.command.CommandDirection.*;
 
 /* use ANSI escape codes without StringColor prefix */
-import static game.color.StringColor.*;
+import static game.color.TerminalColor.*;
 
 /**
  *  This class is the main class of the "World of Zuul" application. 
@@ -30,6 +30,7 @@ import static game.color.StringColor.*;
 public class Game {
     private Parser parser;
     private Room currentRoom;
+    private TerminalColor terminalColor;
         
     /**
      * Create the game and initialise its internal map.
@@ -37,6 +38,7 @@ public class Game {
     public Game() {
         createRooms();
         parser = new Parser();
+        terminalColor = new TerminalColor(ANSI_RESET, ANSI_BLACK_BACKGROUND);
     }
 
     /**
@@ -46,15 +48,15 @@ public class Game {
         Room outside, theater, bathroom, lab, office, hallwayFl1, hallwayFl2, stairwayFl1, stairwayFl2;
       
         // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        theater = new Room("in a lecture theater");
-        bathroom = new Room("in the bathroom");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
-        hallwayFl1 = new Room("in the 1st Floor hallway");
-        hallwayFl2 = new Room("in the 2nd Floor hallway");
-        stairwayFl1 = new Room("in the 1st Floor stairway");
-        stairwayFl2 = new Room("in the 1st Floor stairway");
+        outside = new Room("outside the main entrance of the university.");
+        theater = new Room("in a lecture theater.");
+        bathroom = new Room("in the bathroom.");
+        lab = new Room("in a computing lab.");
+        office = new Room("in the computing admin office.");
+        hallwayFl1 = new Room("in the 1st Floor hallway.");
+        hallwayFl2 = new Room("in the 2nd Floor hallway.");
+        stairwayFl1 = new Room("in the 1st Floor stairway.");
+        stairwayFl2 = new Room("in the 1st Floor stairway.");
 
         // initialise room exits
 
@@ -106,17 +108,10 @@ public class Game {
     private String getWelcomeMessage() {
         StringBuilder welcomeMsg = new StringBuilder();
 
-        welcomeMsg.append(StringColor.ANSI_BLACK_BACKGROUND);
-
         welcomeMsg.append("Welcome to the World of Zuul!\n");
         welcomeMsg.append("World of Zuul is a new, incredibly boring adventure game.\n");
 
-        welcomeMsg.append(StringColor.ANSI_GREEN);
-        welcomeMsg.append("Type 'help' if you need help.");
-        welcomeMsg.append(StringColor.ANSI_RESET);
-        welcomeMsg.append(StringColor.ANSI_BLACK_BACKGROUND);
-
-
+        welcomeMsg.append(ANSI_GREEN + "Type 'help' if you need help." + terminalColor.reset());
 
         return welcomeMsg.toString();
     }
@@ -131,8 +126,9 @@ public class Game {
         StringBuilder info = new StringBuilder();
         info.append("You are ").append(currentRoom.getDescription());
         info.append('\n');
-        info.append("Exits: ");
-        info.append(currentRoom.getAllExits());
+
+        info.append(ANSI_YELLOW + "Exits: " + terminalColor.reset());
+        info.append(ANSI_YELLOW + currentRoom.getAllExits() + terminalColor.reset());
 
         return info.toString();
     }
@@ -150,7 +146,9 @@ public class Game {
         CommandAction commandWord = command.getCommandAction();
         switch (commandWord) {
             case UNKNOWN:
+                System.out.print(ANSI_RED);
                 System.out.println("I don't know what you mean...");
+                System.out.print(terminalColor.reset());
                 break;
 
             case GO:
@@ -188,8 +186,8 @@ public class Game {
 
         // Prints all possible commands automatically from CommandAction.
 
-        helpMsg.append("Your command words are:\n");
-        helpMsg.append(CommandAction.getCommandActions());
+        helpMsg.append(ANSI_YELLOW + "Your command words are:\n" + terminalColor.reset());
+        helpMsg.append(ANSI_YELLOW + CommandAction.getCommandActions() + terminalColor.reset());
 
         return helpMsg.toString();
     }
@@ -199,10 +197,10 @@ public class Game {
      * the new room, otherwise print an error message.
      */
     private void goRoom(Command command) {
+
         if(command.isDirectionUnknown()) {
             // if there is no second word, we don't know where to go...
-            System.out.println(ANSI_BLUE);
-            System.out.println("Go where?");
+            System.out.println(ANSI_RED + "Go where?" + terminalColor.reset());
             return;
         }
 
@@ -210,7 +208,7 @@ public class Game {
         Room nextRoom = currentRoom.getExit(command.getCommandDirection());
 
         if (nextRoom == null) {
-            System.out.println("There is no door!");
+            System.out.println(ANSI_RED + "There is no door!" +terminalColor.reset());
         }
         else {
             currentRoom = nextRoom;
@@ -225,7 +223,9 @@ public class Game {
     private boolean quit(Command command) 
     {
         if(command.hasSecondWord()) {
+            System.out.println(ANSI_RED);
             System.out.println("Quit what?");
+            System.out.println(terminalColor.reset());
             return false;
         }
         else {
