@@ -20,13 +20,14 @@ public class Palindrome {
 
     public boolean isPalindrome(String word, CharacterComparator cc) {
         Deque<Character> wordDeque = wordToDeque(word);
-        boolean isPalindrome = true;
 
         for(int idx = 0; idx < wordDeque.size() / 2; idx++) {
-            isPalindrome = cc.equalChars(wordDeque.removeFirst(), wordDeque.removeLast()) && isPalindrome;
+            if(! cc.equalChars(wordDeque.removeFirst(), wordDeque.removeLast())) {
+                return false;
+            };
         }
 
-        return isPalindrome;
+        return true;
     }
 
 
