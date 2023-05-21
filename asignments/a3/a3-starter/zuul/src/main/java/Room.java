@@ -12,8 +12,7 @@
  * @author  Michael Kölling and David J. Barnes
  * @version 2016.02.29
  */
-public class Room 
-{
+public class Room {
     public String description;
     public Room northExit;
     public Room southExit;
@@ -39,8 +38,7 @@ public class Room
      * @param south The south exit.
      * @param west The west exit.
      */
-    public void setExits(Room north, Room east, Room south, Room west) 
-    {
+    public void setExits(Room north, Room east, Room south, Room west) {
         if(north != null) {
             northExit = north;
         }
@@ -58,8 +56,7 @@ public class Room
     /**
      * @return The description of the room.
      */
-    public String getDescription()
-    {
+    public String getDescription() {
         return description;
     }
 
