@@ -6,7 +6,7 @@ plugins {
 sourceCompatibility = 1.11 
 
 application {
-    mainClass = "Main"
+    mainClass = "game.Main"
 }
 
 run {

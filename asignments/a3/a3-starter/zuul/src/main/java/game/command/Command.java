@@ -55,8 +55,12 @@ public class Command {
     /**
      * @return true if this command was not understood.
      */
-    public boolean isUnknown() {
-        return (commandAction == null);
+    public boolean isActionUnknown() {
+        return (commandAction == CommandAction.UNKNOWN);
+    }
+
+    public boolean isDirectionUnknown() {
+        return (commandDirection == CommandDirection.UNKNOWN);
     }
 
     /**

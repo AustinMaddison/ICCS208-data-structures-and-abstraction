@@ -1,10 +1,14 @@
 package game;
+import game.color.StringColor;
 import game.parser.Parser;
 import game.room.Room;
 import game.command.*;
 
-/* use NORTH EAST SOUTH WEST without Command.Direction prefix*/
+/* use NORTH EAST SOUTH WEST without CommandDirection prefix */
 import static game.command.CommandDirection.*;
+
+/* use ANSI escape codes without StringColor prefix */
+import static game.color.StringColor.*;
 
 /**
  *  This class is the main class of the "World of Zuul" application. 
@@ -80,13 +84,14 @@ public class Game {
      *  game.Main play routine. Loops until end of play.
      */
     public void play() {
-        System.out.println('\n' + getWelcomeMessage() + '\n');
+        System.out.println(getWelcomeMessage());
 
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
 
         boolean finished = false;
         while (!finished) {
+            System.out.print('\n');
             System.out.println(getLocationInfo());
             Command command = parser.getCommand();
             finished = processCommand(command);
@@ -100,12 +105,23 @@ public class Game {
      */
     private String getWelcomeMessage() {
         StringBuilder welcomeMsg = new StringBuilder();
-        welcomeMsg.append("Welcome to the World of Zuul!");
-        welcomeMsg.append("World of Zuul is a new, incredibly boring adventure game.");
+
+        welcomeMsg.append(StringColor.ANSI_BLACK_BACKGROUND);
+
+        welcomeMsg.append("Welcome to the World of Zuul!\n");
+        welcomeMsg.append("World of Zuul is a new, incredibly boring adventure game.\n");
+
+        welcomeMsg.append(StringColor.ANSI_GREEN);
         welcomeMsg.append("Type 'help' if you need help.");
+        welcomeMsg.append(StringColor.ANSI_RESET);
+        welcomeMsg.append(StringColor.ANSI_BLACK_BACKGROUND);
+
+
 
         return welcomeMsg.toString();
     }
+
+//    private String ge
 
     /**
      * Return details of the current location and exits.
@@ -172,7 +188,7 @@ public class Game {
 
         // Prints all possible commands automatically from CommandAction.
 
-        helpMsg.append("Your command words are:");
+        helpMsg.append("Your command words are:\n");
         helpMsg.append(CommandAction.getCommandActions());
 
         return helpMsg.toString();
@@ -183,13 +199,14 @@ public class Game {
      * the new room, otherwise print an error message.
      */
     private void goRoom(Command command) {
-        if(!command.hasSecondWord()) {
+        if(command.isDirectionUnknown()) {
             // if there is no second word, we don't know where to go...
+            System.out.println(ANSI_BLUE);
             System.out.println("Go where?");
             return;
         }
 
-        /* Uses hash map to retrieve next room */
+        // Uses hash map to retrieve next room
         Room nextRoom = currentRoom.getExit(command.getCommandDirection());
 
         if (nextRoom == null) {

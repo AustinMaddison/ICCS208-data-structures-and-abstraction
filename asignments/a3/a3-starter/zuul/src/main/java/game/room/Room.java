@@ -30,6 +30,7 @@ public class Room {
      * @param description The room's description.
      */
     public Room(String description) {
+        exits = new HashMap<CommandDirection, Exit>();
         this.description = description;
     }
 
@@ -40,14 +41,14 @@ public class Room {
      * @param adjacentRoom  the adjacent exiting room at given direction.
      */
     public void setExit(CommandDirection direction, Room adjacentRoom) {
-        exits = new HashMap<CommandDirection, Exit>();
 
         // Automatically sets corresponding room exits to each other.
         exits.put(direction, new Exit(direction, adjacentRoom));
         if(adjacentRoom != null) {
-            adjacentRoom.setExit(getOppositeDirection(direction), this);
+            adjacentRoom.exits.put(getOppositeDirection(direction), new Exit(getOppositeDirection(direction), this));
         }
     }
+
 
 
     /**
@@ -55,6 +56,9 @@ public class Room {
      * @return returns the adjacent room according to direction.
      */
     public Room getExit(CommandDirection direction) {
+        if(exits.get(direction) == null){
+            return null;
+        }
         return exits.get(direction).getAdjacentRoom();
     }
 
