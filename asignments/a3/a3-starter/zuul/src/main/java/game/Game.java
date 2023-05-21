@@ -100,7 +100,6 @@ public class Game {
 
         welcomeMsg.append("Welcome to the World of Zuul!\n");
         welcomeMsg.append("World of Zuul is a new, incredibly boring adventure game.\n");
-
         welcomeMsg.append(ANSI_GREEN + "Type 'help' if you need help." + terminalColor.reset());
 
         return welcomeMsg.toString();
@@ -114,9 +113,9 @@ public class Game {
      * */
     private String getLocationInfo() {
         StringBuilder info = new StringBuilder();
+
         info.append("You are ").append(currentRoom.getDescription());
         info.append('\n');
-
         info.append(ANSI_YELLOW + "Exits: " + terminalColor.reset());
         info.append(ANSI_YELLOW + currentRoom.getAllExits() + terminalColor.reset());
 
@@ -129,8 +128,7 @@ public class Game {
      * @param command The command to be processed.
      * @return true If the command ends the game, false otherwise.
      */
-    private boolean processCommand(Command command) 
-    {
+    private boolean processCommand(Command command) {
         boolean wantToQuit = false;
 
         CommandAction commandWord = command.getCommandAction();
@@ -160,7 +158,7 @@ public class Game {
         return wantToQuit;
     }
 
-    // implementations of user commands:
+    /* implementations of user commands */
 
     /**
      * Print out some help information.
@@ -173,9 +171,7 @@ public class Game {
         helpMsg.append("You are lost. You are alone. You wander");
         helpMsg.append("around at the university.");
         helpMsg.append('\n');
-
         // Prints all possible commands automatically from CommandAction.
-
         helpMsg.append(ANSI_YELLOW + "Your command words are:\n" + terminalColor.reset());
         helpMsg.append(ANSI_YELLOW + CommandAction.getCommandActions() + terminalColor.reset());
 
@@ -210,8 +206,7 @@ public class Game {
      * whether we really quit the game.
      * @return true, if this command quits the game, false otherwise.
      */
-    private boolean quit(Command command) 
-    {
+    private boolean quit(Command command) {
         if(command.hasSecondWord()) {
             System.out.println(ANSI_RED);
             System.out.println("Quit what?");
