@@ -1,3 +1,5 @@
+package game.command;
+
 /**
  * This class is part of the "World of Zuul" application. 
  * "World of Zuul" is a very simple, text based adventure game.  
@@ -18,19 +20,19 @@
  */
 
 public class Command {
-    private CommandWord commandWord;
-    private String secondWord;
+    private CommandAction commandAction;
+    private CommandDirection commandDirection;
 
     /**
      * Create a command object. First and second word must be supplied, but
      * either one (or both) can be null.
-     * @param commandWord The first word of the command. Null if the command
+     * @param commandAction The first word of the command. Null if the command
      *                  was not recognised.
-     * @param secondWord The second word of the command.
+     * @param commandDirection The second word of the command.
      */
-    public Command(CommandWord commandWord, String secondWord) {
-        this.commandWord = commandWord;
-        this.secondWord = secondWord;
+    public Command(CommandAction commandAction, CommandDirection commandDirection) {
+        this.commandAction = commandAction;
+        this.commandDirection = commandDirection;
     }
 
     /**
@@ -38,30 +40,30 @@ public class Command {
      * command was not understood, the result is null.
      * @return The command word.
      */
-    public CommandWord getCommandWord() {
-        return commandWord;
+    public CommandAction getCommandAction() {
+        return commandAction;
     }
 
     /**
      * @return The second word of this command. Returns null if there was no
      * second word.
      */
-    public String getSecondWord() {
-        return secondWord;
+    public CommandDirection getCommandDirection() {
+        return commandDirection;
     }
 
     /**
      * @return true if this command was not understood.
      */
     public boolean isUnknown() {
-        return (commandWord == null);
+        return (commandAction == null);
     }
 
     /**
      * @return true if the command has a second word.
      */
     public boolean hasSecondWord() {
-        return (secondWord != null);
+        return (commandDirection != null);
     }
 }
 

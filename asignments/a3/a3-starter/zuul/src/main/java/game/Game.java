@@ -1,3 +1,11 @@
+package game;
+import game.parser.Parser;
+import game.room.Room;
+import game.command.*;
+
+/* use NORTH EAST SOUTH WEST without Command.Direction prefix*/
+import static game.command.CommandDirection.*;
+
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -31,7 +39,7 @@ public class Game {
      * Create all the rooms and link their exits together.
      */
     private void createRooms() {
-        Room outside, theater, bathroom, lab, office, arcade;
+        Room outside, theater, bathroom, lab, office, hallwayFl1, hallwayFl2, stairwayFl1, stairwayFl2;
       
         // create the rooms
         outside = new Room("outside the main entrance of the university");
@@ -39,49 +47,64 @@ public class Game {
         bathroom = new Room("in the bathroom");
         lab = new Room("in a computing lab");
         office = new Room("in the computing admin office");
-        arcade = new Room("in the arcade");
-        
+        hallwayFl1 = new Room("in the 1st Floor hallway");
+        hallwayFl2 = new Room("in the 2nd Floor hallway");
+        stairwayFl1 = new Room("in the 1st Floor stairway");
+        stairwayFl2 = new Room("in the 1st Floor stairway");
+
         // initialise room exits
-        outside.setExits(arcade, theater, lab, bathroom);
-        theater.setExits(null, null, null, outside);
-        bathroom.setExits(null, outside, null, null);
-        lab.setExits(outside, null, office, null);
-        office.setExits(lab, null, null, null);
-        arcade.setExits(null, null, outside, null);
+
+        outside.setExit(NORTH, hallwayFl1);
+        hallwayFl1.setExit(NORTH, stairwayFl1);
+        hallwayFl1.setExit(EAST, lab);
+        lab.setExit(SOUTH, office);
+        hallwayFl1.setExit(WEST, bathroom);
+        stairwayFl1.setExit(UP, stairwayFl2);
+        stairwayFl2.setExit(SOUTH, hallwayFl2);
+        stairwayFl2.setExit(EAST, theater);
+
+//        outside.setExits(hallwayFl1, null, null, null);
+//        hallwayFl1.setExits(stairwayFl1, lab, outside, bathroom);
+//        stairwayFl1.setExits(null, null, hallwayFl1, null, hallwayFl2, null);
+//        stairwayFl2.setExits(null, null, hallwayFl2, null, null, stairwayFl1);
+//        hallwayFl1.setExits(stairwayFl1, theater, null, null);
+//        lab.setExits(null, null, office, hallwayFl1);
+//        office.setExits(lab, null, null, null);
+//        theater.setExits(null, null, null, outside);
+//        bathroom.setExits(null, hallwayFl1, null, null);
 
         currentRoom = outside;  // start game outside
     }
 
     /**
-     *  Main play routine.  Loops until end of play.
+     *  game.Main play routine. Loops until end of play.
      */
-    public void play() 
-    {            
-        printWelcome();
+    public void play() {
+        System.out.println('\n' + getWelcomeMessage() + '\n');
 
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
-                
+
         boolean finished = false;
         while (!finished) {
+            System.out.println(getLocationInfo());
             Command command = parser.getCommand();
             finished = processCommand(command);
         }
+
         System.out.println("Thank you for playing.  Good bye.");
     }
 
     /**
-     * Print out the opening message for the player.
+     * @return returns welcome message for the opening message for the player.
      */
-    private void printWelcome()
-    {
-        System.out.println();
-        System.out.println("Welcome to the World of Zuul!");
-        System.out.println("World of Zuul is a new, incredibly boring adventure game.");
-        System.out.println("Type 'help' if you need help.");
-        System.out.println();
+    private String getWelcomeMessage() {
+        StringBuilder welcomeMsg = new StringBuilder();
+        welcomeMsg.append("Welcome to the World of Zuul!");
+        welcomeMsg.append("World of Zuul is a new, incredibly boring adventure game.");
+        welcomeMsg.append("Type 'help' if you need help.");
 
-        System.out.println(getLocationInfo());
+        return welcomeMsg.toString();
     }
 
     /**
@@ -90,22 +113,10 @@ public class Game {
      * */
     private String getLocationInfo() {
         StringBuilder info = new StringBuilder();
-
         info.append("You are ").append(currentRoom.getDescription());
         info.append('\n');
         info.append("Exits: ");
-        if(currentRoom.northExit != null) {
-            info.append("north ");
-        }
-        if(currentRoom.eastExit != null) {
-            info.append("east ");
-        }
-        if(currentRoom.southExit != null) {
-            info.append("south ");
-        }
-        if(currentRoom.westExit != null) {
-            info.append("west ");
-        }
+        info.append(currentRoom.getAllExits());
 
         return info.toString();
     }
@@ -120,7 +131,7 @@ public class Game {
     {
         boolean wantToQuit = false;
 
-        CommandWord commandWord = command.getCommandWord();
+        CommandAction commandWord = command.getCommandAction();
         switch (commandWord) {
             case UNKNOWN:
                 System.out.println("I don't know what you mean...");
@@ -130,15 +141,18 @@ public class Game {
                 goRoom(command);
                 break;
 
+            case LOOK:
+                getLocationInfo();
+                break;
+
             case HELP:
-                printHelp();
+                System.out.println(getHelpMessage());
                 break;
 
             case QUIT:
                 wantToQuit = quit(command);
                 break;
         }
-
         return wantToQuit;
     }
 
@@ -149,50 +163,40 @@ public class Game {
      * Here we print some stupid, cryptic message and a list of the 
      * command words.
      */
-    private void printHelp() 
-    {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
-        System.out.println();
-        System.out.println("Your command words are:");
-        System.out.println("   go quit help");
+    private String getHelpMessage() {
+        StringBuilder helpMsg = new StringBuilder();
+
+        helpMsg.append("You are lost. You are alone. You wander");
+        helpMsg.append("around at the university.");
+        helpMsg.append('\n');
+
+        // Prints all possible commands automatically from CommandAction.
+
+        helpMsg.append("Your command words are:");
+        helpMsg.append(CommandAction.getCommandActions());
+
+        return helpMsg.toString();
     }
 
     /** 
      * Try to go in one direction. If there is an exit, enter
      * the new room, otherwise print an error message.
      */
-    private void goRoom(Command command) 
-    {
+    private void goRoom(Command command) {
         if(!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
             System.out.println("Go where?");
             return;
         }
 
-        String direction = command.getSecondWord();
-
-        // Try to leave current room.
-        Room nextRoom = null;
-        if(direction.equals("north")) {
-            nextRoom = currentRoom.northExit;
-        }
-        if(direction.equals("east")) {
-            nextRoom = currentRoom.eastExit;
-        }
-        if(direction.equals("south")) {
-            nextRoom = currentRoom.southExit;
-        }
-        if(direction.equals("west")) {
-            nextRoom = currentRoom.westExit;
-        }
+        /* Uses hash map to retrieve next room */
+        Room nextRoom = currentRoom.getExit(command.getCommandDirection());
 
         if (nextRoom == null) {
             System.out.println("There is no door!");
         }
         else {
             currentRoom = nextRoom;
-           System.out.println(getLocationInfo());
         }
     }
 
