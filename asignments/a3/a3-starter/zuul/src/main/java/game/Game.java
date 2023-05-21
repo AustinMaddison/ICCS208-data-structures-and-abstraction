@@ -69,16 +69,6 @@ public class Game {
         stairwayFl2.setExit(SOUTH, hallwayFl2);
         stairwayFl2.setExit(EAST, theater);
 
-//        outside.setExits(hallwayFl1, null, null, null);
-//        hallwayFl1.setExits(stairwayFl1, lab, outside, bathroom);
-//        stairwayFl1.setExits(null, null, hallwayFl1, null, hallwayFl2, null);
-//        stairwayFl2.setExits(null, null, hallwayFl2, null, null, stairwayFl1);
-//        hallwayFl1.setExits(stairwayFl1, theater, null, null);
-//        lab.setExits(null, null, office, hallwayFl1);
-//        office.setExits(lab, null, null, null);
-//        theater.setExits(null, null, null, outside);
-//        bathroom.setExits(null, hallwayFl1, null, null);
-
         currentRoom = outside;  // start game outside
     }
 
