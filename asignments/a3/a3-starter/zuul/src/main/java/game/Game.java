@@ -5,7 +5,7 @@ import game.room.Room;
 import game.command.*;
 
 /* use NORTH EAST SOUTH WEST without CommandDirection prefix */
-import static game.command.CommandDirection.*;
+import static game.command.CommandActionParam.*;
 
 /* use ANSI escape codes without StringColor prefix */
 import static game.color.TerminalColor.*;
@@ -134,9 +134,7 @@ public class Game {
         CommandAction commandWord = command.getCommandAction();
         switch (commandWord) {
             case UNKNOWN:
-                System.out.print(ANSI_RED);
-                System.out.println("I don't know what you mean...");
-                System.out.print(terminalColor.reset());
+                System.out.println(ANSI_RED + "I don't know what you mean..." + terminalColor.reset());
                 break;
 
             case GO:
@@ -172,8 +170,8 @@ public class Game {
         helpMsg.append("around at the university.");
         helpMsg.append('\n');
         // Prints all possible commands automatically from CommandAction.
-        helpMsg.append(ANSI_YELLOW + "Your command words are:\n" + terminalColor.reset());
-        helpMsg.append(ANSI_YELLOW + CommandAction.getCommandActions() + terminalColor.reset());
+        helpMsg.append(ANSI_BLUE + "Your command words are:\n" + terminalColor.reset());
+        helpMsg.append(ANSI_BLUE + CommandAction.getCommandActions() + terminalColor.reset());
 
         return helpMsg.toString();
     }
@@ -184,7 +182,7 @@ public class Game {
      */
     private void goRoom(Command command) {
 
-        if(command.isDirectionUnknown()) {
+        if(command.isActionParamUnknown()) {
             // if there is no second word, we don't know where to go...
             System.out.println(ANSI_RED + "Go where?" + terminalColor.reset());
             return;
@@ -207,10 +205,8 @@ public class Game {
      * @return true, if this command quits the game, false otherwise.
      */
     private boolean quit(Command command) {
-        if(command.hasSecondWord()) {
-            System.out.println(ANSI_RED);
-            System.out.println("Quit what?");
-            System.out.println(terminalColor.reset());
+        if(!command.isActionParamEmpty()) {
+            System.out.println(ANSI_RED + "Quit what?" + terminalColor.reset());
             return false;
         }
         else {

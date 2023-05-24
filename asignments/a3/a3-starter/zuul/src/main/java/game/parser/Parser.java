@@ -1,7 +1,7 @@
 package game.parser;
 
 import game.command.Command;
-import game.command.CommandWords;
+import game.command.CommandValidator;
 
 import java.util.Scanner;
 
@@ -22,14 +22,14 @@ import java.util.Scanner;
  * @version 2016.02.29
  */
 public class Parser {
-    private CommandWords commands;  // holds all valid command words
+    private CommandValidator commands;  // holds all valid command words
     private Scanner reader;         // source of command input
 
     /**
      * Create a parser to read from the terminal window.
      */
     public Parser() {
-        commands = new CommandWords();
+        commands = new CommandValidator();
         reader = new Scanner(System.in);
     }
 

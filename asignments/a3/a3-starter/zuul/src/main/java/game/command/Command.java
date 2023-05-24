@@ -21,18 +21,18 @@ package game.command;
 
 public class Command {
     private CommandAction commandAction;
-    private CommandDirection commandDirection;
+    private CommandActionParam commandActionParam;
 
     /**
      * Create a command object. First and second word must be supplied, but
      * either one (or both) can be null.
      * @param commandAction The first word of the command. Null if the command
      *                  was not recognised.
-     * @param commandDirection The second word of the command.
+     * @param commandActionParam The second word of the command.
      */
-    public Command(CommandAction commandAction, CommandDirection commandDirection) {
+    public Command(CommandAction commandAction, CommandActionParam commandActionParam) {
         this.commandAction = commandAction;
-        this.commandDirection = commandDirection;
+        this.commandActionParam = commandActionParam;
     }
 
     /**
@@ -48,8 +48,8 @@ public class Command {
      * @return The second word of this command. Returns null if there was no
      * second word.
      */
-    public CommandDirection getCommandDirection() {
-        return commandDirection;
+    public CommandActionParam getCommandDirection() {
+        return commandActionParam;
     }
 
     /**
@@ -59,15 +59,19 @@ public class Command {
         return (commandAction == CommandAction.UNKNOWN);
     }
 
-    public boolean isDirectionUnknown() {
-        return (commandDirection == CommandDirection.UNKNOWN);
+    public boolean isActionParamUnknown() {
+        return (commandActionParam == CommandActionParam.UNKNOWN);
+    }
+
+    public boolean isActionParamEmpty() {
+        return (commandActionParam == CommandActionParam.EMPTY);
     }
 
     /**
      * @return true if the command has a second word.
      */
     public boolean hasSecondWord() {
-        return (commandDirection != null);
+        return (commandActionParam != null);
     }
 }
 

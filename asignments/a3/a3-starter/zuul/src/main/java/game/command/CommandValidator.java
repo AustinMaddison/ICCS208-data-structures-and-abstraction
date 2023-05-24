@@ -13,23 +13,23 @@ import java.util.HashMap;
  * @version 2016.02.29
  */
 
-public class CommandWords {
+public class CommandValidator {
     // a constant array that holds all valid command words
     private HashMap<String, CommandAction> validActions;
-    private HashMap<String, CommandDirection> validDirections;
+    private HashMap<String, CommandActionParam> validDirections;
 
     /**
      * Constructor - initialise the command words.
      */
-    public CommandWords() {
+    public CommandValidator() {
         validActions = new HashMap<String, CommandAction>();
-        validDirections = new HashMap<String, CommandDirection>();
+        validDirections = new HashMap<String, CommandActionParam>();
 
         for(CommandAction command: CommandAction.values()) {
             validActions.put(command.toString().toLowerCase(), command);
         }
 
-        for(CommandDirection command: CommandDirection.values()) {
+        for(CommandActionParam command: CommandActionParam.values()) {
             validDirections.put(command.toString().toLowerCase(), command);
         }
     }
@@ -48,13 +48,18 @@ public class CommandWords {
         return CommandAction.UNKNOWN;
     }
 
-    public CommandDirection getCommandDirection(String commandDirection) {
-        CommandDirection command = validDirections.get(commandDirection);
+    public CommandActionParam getCommandDirection(String commandParameter) {
+       if(commandParameter == null) {
+           return CommandActionParam.EMPTY;
+       }
+
+        CommandActionParam command = validDirections.get(commandParameter);
         if(command != null) {
             return command;
         }
+
         // if we get here, the string was not found in the commands
-        return CommandDirection.UNKNOWN;
+        return CommandActionParam.UNKNOWN;
     }
 
 }

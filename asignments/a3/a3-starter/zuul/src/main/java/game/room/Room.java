@@ -1,6 +1,6 @@
 package game.room;
 
-import game.command.CommandDirection;
+import game.command.CommandActionParam;
 
 import java.util.HashMap;
 
@@ -21,7 +21,7 @@ import java.util.HashMap;
 public class Room {
 
     private String description;
-    private HashMap<CommandDirection, Exit> exits;
+    private HashMap<CommandActionParam, Exit> exits;
 
     /**
      * Create a room described "description". Initially, it has
@@ -30,7 +30,7 @@ public class Room {
      * @param description The room's description.
      */
     public Room(String description) {
-        exits = new HashMap<CommandDirection, Exit>();
+        exits = new HashMap<CommandActionParam, Exit>();
         this.description = description;
     }
 
@@ -40,7 +40,7 @@ public class Room {
      * @param direction  direction of the exit room.
      * @param adjacentRoom  the adjacent exiting room at given direction.
      */
-    public void setExit(CommandDirection direction, Room adjacentRoom) {
+    public void setExit(CommandActionParam direction, Room adjacentRoom) {
 
         // Automatically sets corresponding room exits to each other.
         exits.put(direction, new Exit(direction, adjacentRoom));
@@ -55,7 +55,7 @@ public class Room {
      * @param direction direction of the exit room.
      * @return returns the adjacent room according to direction.
      */
-    public Room getExit(CommandDirection direction) {
+    public Room getExit(CommandActionParam direction) {
         if(exits.get(direction) == null){
             return null;
         }
@@ -70,7 +70,7 @@ public class Room {
 
         /* It iterates through all available directions from enum Directions */
         /* If a certain direction exists in the current room then it appends the direction */
-        for(CommandDirection direction : exits.keySet()) {
+        for(CommandActionParam direction : exits.keySet()) {
                 allExits.append(direction.toString().toLowerCase()).append(" ");
         }
 
@@ -88,28 +88,28 @@ public class Room {
      * @param direction
      * @return returns opposite direction.
      */
-    private CommandDirection getOppositeDirection(CommandDirection direction) {
+    private CommandActionParam getOppositeDirection(CommandActionParam direction) {
         switch(direction) {
             case NORTH:
-                return CommandDirection.SOUTH;
+                return CommandActionParam.SOUTH;
 
             case SOUTH:
-                return CommandDirection.NORTH;
+                return CommandActionParam.NORTH;
 
             case EAST:
-                return  CommandDirection.WEST;
+                return  CommandActionParam.WEST;
 
             case WEST:
-                return CommandDirection.EAST;
+                return CommandActionParam.EAST;
 
             case UP:
-                return CommandDirection.DOWN;
+                return CommandActionParam.DOWN;
 
             case DOWN:
-                return CommandDirection.UP;
+                return CommandActionParam.UP;
 
             default:
-                return CommandDirection.UNKNOWN;
+                return CommandActionParam.UNKNOWN;
         }
 
     }
@@ -117,10 +117,10 @@ public class Room {
 }
 
 class Exit {
-    private CommandDirection direction;
+    private CommandActionParam direction;
     private Room adjacentRoom;
 
-    public Exit(CommandDirection direction, Room adjacentRoom) {
+    public Exit(CommandActionParam direction, Room adjacentRoom) {
         this.adjacentRoom = adjacentRoom;
         this.direction = direction;
     }
@@ -129,7 +129,7 @@ class Exit {
         return adjacentRoom;
     }
 
-    public CommandDirection getDirection() {
+    public CommandActionParam getDirection() {
         return direction;
     }
 }
