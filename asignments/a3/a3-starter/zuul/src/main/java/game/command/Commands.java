@@ -13,15 +13,15 @@ import java.util.HashMap;
  * @version 2016.02.29
  */
 
-public class CommandValidator {
+public class Commands {
     // a constant array that holds all valid command words
-    private HashMap<String, CommandAction> validActions;
-    private HashMap<String, CommandActionParam> validDirections;
+    private static HashMap<String, CommandAction> validActions;
+    private static HashMap<String, CommandActionParam> validDirections;
 
     /**
-     * Constructor - initialise the command words.
+     * Constructor - initialise the command validator hashmaps.
      */
-    public CommandValidator() {
+    public Commands() {
         validActions = new HashMap<String, CommandAction>();
         validDirections = new HashMap<String, CommandActionParam>();
 
@@ -39,8 +39,8 @@ public class CommandValidator {
      * @return true if a given string is a valid command,
      * false if it isn't.
      */
-    public CommandAction getCommandAction(String commandAction) {
-        CommandAction command = validActions.get(commandAction);
+    public  CommandAction getCommandAction(String commandAction) {
+        CommandAction command = validActions.get(commandAction.toLowerCase());
         if(command != null) {
             return command;
         }
@@ -48,12 +48,12 @@ public class CommandValidator {
         return CommandAction.UNKNOWN;
     }
 
-    public CommandActionParam getCommandDirection(String commandParameter) {
+    public  CommandActionParam getCommandParameter(String commandParameter) {
        if(commandParameter == null) {
            return CommandActionParam.EMPTY;
        }
 
-        CommandActionParam command = validDirections.get(commandParameter);
+        CommandActionParam command = validDirections.get(commandParameter.toLowerCase());
         if(command != null) {
             return command;
         }

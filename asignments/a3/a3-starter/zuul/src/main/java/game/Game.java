@@ -1,10 +1,15 @@
 package game;
 import game.color.TerminalColor;
+import game.map.Map;
 import game.parser.Parser;
-import game.room.Room;
+import game.map.Room;
 import game.command.*;
 
 /* use NORTH EAST SOUTH WEST without CommandDirection prefix */
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import static game.command.CommandActionParam.*;
 
 /* use ANSI escape codes without StringColor prefix */
@@ -28,49 +33,28 @@ import static game.color.TerminalColor.*;
  */
 
 public class Game {
+
+    /* Resources */
+    private File mapFile = Paths.get("src", "main", "java", "game", "Map.csv").toFile();
+
+    /* Private */
+    private TerminalColor terminalColor;
     private Parser parser;
     private Room currentRoom;
-    private TerminalColor terminalColor;
+    private Map map;
+
         
     /**
      * Create the game and initialise its internal map.
      */
     public Game() {
-        createRooms();
+        map = new Map(mapFile);
+        currentRoom = map.getRoom("outside");
+
         parser = new Parser();
         terminalColor = new TerminalColor(ANSI_RESET, ANSI_BLACK_BACKGROUND);
     }
 
-    /**
-     * Create all the rooms and link their exits together.
-     */
-    private void createRooms() {
-        Room outside, theater, bathroom, lab, office, hallwayFl1, hallwayFl2, stairwayFl1, stairwayFl2;
-      
-        // create the rooms
-        outside = new Room("outside the main entrance of the university.");
-        theater = new Room("in a lecture theater.");
-        bathroom = new Room("in the bathroom.");
-        lab = new Room("in a computing lab.");
-        office = new Room("in the computing admin office.");
-        hallwayFl1 = new Room("in the 1st Floor hallway.");
-        hallwayFl2 = new Room("in the 2nd Floor hallway.");
-        stairwayFl1 = new Room("in the 1st Floor stairway.");
-        stairwayFl2 = new Room("in the 1st Floor stairway.");
-
-        // initialise room exits
-
-        outside.setExit(NORTH, hallwayFl1);
-        hallwayFl1.setExit(NORTH, stairwayFl1);
-        hallwayFl1.setExit(EAST, lab);
-        lab.setExit(SOUTH, office);
-        hallwayFl1.setExit(WEST, bathroom);
-        stairwayFl1.setExit(UP, stairwayFl2);
-        stairwayFl2.setExit(SOUTH, hallwayFl2);
-        stairwayFl2.setExit(EAST, theater);
-
-        currentRoom = outside;  // start game outside
-    }
 
     /**
      *  game.Main play routine. Loops until end of play.
@@ -171,7 +155,7 @@ public class Game {
         helpMsg.append('\n');
         // Prints all possible commands automatically from CommandAction.
         helpMsg.append(ANSI_BLUE + "Your command words are:\n" + terminalColor.reset());
-        helpMsg.append(ANSI_BLUE + CommandAction.getCommandActions() + terminalColor.reset());
+        helpMsg.append(ANSI_BLUE + CommandAction.getAllCommandActions() + terminalColor.reset());
 
         return helpMsg.toString();
     }

@@ -3,7 +3,7 @@ package game.command;
 public enum CommandAction {
 
     // Gameplay Actions
-    GO, LOOK, HELP,
+    GO, LOOK, HELP, BACK,
 
     // User Actions
     QUIT,
@@ -14,7 +14,7 @@ public enum CommandAction {
     /**
      * @return Returns all available player action commands.
      */
-    public static String getCommandActions() {
+    public static String getAllCommandActions() {
         StringBuilder allCmd = new StringBuilder();
 
         // loop appends all commands in this enum class into a string.

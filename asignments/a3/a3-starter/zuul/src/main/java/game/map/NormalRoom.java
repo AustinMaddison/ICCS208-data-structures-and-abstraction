@@ -1,4 +1,4 @@
-package game.room;
+package game.map;
 
 import game.command.CommandActionParam;
 
@@ -20,7 +20,7 @@ import java.util.HashMap;
  */
 public class Room {
 
-    private String description;
+    private String name, description;
     private HashMap<CommandActionParam, Exit> exits;
 
     /**
@@ -29,8 +29,9 @@ public class Room {
      * "an open court yard".
      * @param description The room's description.
      */
-    public Room(String description) {
+    public Room(String name, String description) {
         exits = new HashMap<CommandActionParam, Exit>();
+        this.name = name;
         this.description = description;
     }
 
