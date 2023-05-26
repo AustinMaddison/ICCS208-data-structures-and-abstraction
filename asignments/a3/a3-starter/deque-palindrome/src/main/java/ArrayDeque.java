@@ -6,7 +6,6 @@ public class ArrayDeque <T> implements Deque<T>{
 
     T[] items;
 
-
     ArrayDeque() {
         initialize();
     }
@@ -40,7 +39,7 @@ public class ArrayDeque <T> implements Deque<T>{
 
 
     // Adds an item of type T to the front of the deque.
-//    @Override
+    @Override
     public void addFirst(T data) {
         if(isEmpty()) {
             reset_index();
@@ -57,7 +56,7 @@ public class ArrayDeque <T> implements Deque<T>{
     }
 
     // Adds an item of type T to the back of the deque.
-//    @Override
+    @Override
     public void addLast(T data) {
         if(isEmpty()) {
             reset_index();
@@ -74,13 +73,13 @@ public class ArrayDeque <T> implements Deque<T>{
     }
 
     // Returns true if deque is empty, false otherwise.
-//    @Override
+    @Override
     public boolean isEmpty() {
         return size == 0;
     }
 
     // Returns the number of items in the deque.
-//    @Override
+    @Override
     public int size() {
         return size;
     }
@@ -89,7 +88,7 @@ public class ArrayDeque <T> implements Deque<T>{
 
     // Returns a string showing the items in the deque from first to last,
     // separated by a space.
-//    @Override
+    @Override
     public String toString() {
         String s = "";
         for (int i = front; i - front < size; i++) {

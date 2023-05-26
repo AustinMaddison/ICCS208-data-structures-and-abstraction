@@ -4,6 +4,8 @@ import game.command.CommandActionParam;
 
 import java.util.HashMap;
 
+import static game.command.CommandActionParam.getOppositeDirection;
+
 /**
  * Class game.room.Room - a room in an adventure game.
  *
@@ -27,6 +29,7 @@ public class Room {
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
      * "an open court yard".
+     *
      * @param description The room's description.
      */
     public Room(String name, String description) {
@@ -38,26 +41,25 @@ public class Room {
     /**
      * Define the exits of this room.  Every direction either leads
      * to another room or is null (no exit there).
-     * @param direction  direction of the exit room.
-     * @param adjacentRoom  the adjacent exiting room at given direction.
+     *
+     * @param direction    direction of the exit room.
+     * @param adjacentRoom the adjacent exiting room at given direction.
      */
     public void setExit(CommandActionParam direction, Room adjacentRoom) {
 
         // Automatically sets corresponding room exits to each other.
         exits.put(direction, new Exit(direction, adjacentRoom));
-        if(adjacentRoom != null) {
+        if (adjacentRoom != null) {
             adjacentRoom.exits.put(getOppositeDirection(direction), new Exit(getOppositeDirection(direction), this));
         }
     }
-
-
 
     /**
      * @param direction direction of the exit room.
      * @return returns the adjacent room according to direction.
      */
     public Room getExit(CommandActionParam direction) {
-        if(exits.get(direction) == null){
+        if (exits.get(direction) == null) {
             return null;
         }
         return exits.get(direction).getAdjacentRoom();
@@ -71,8 +73,8 @@ public class Room {
 
         /* It iterates through all available directions from enum Directions */
         /* If a certain direction exists in the current room then it appends the direction */
-        for(CommandActionParam direction : exits.keySet()) {
-                allExits.append(direction.toString().toLowerCase()).append(" ");
+        for (CommandActionParam direction : exits.keySet()) {
+            allExits.append(direction.toString().toLowerCase()).append(" ");
         }
 
         return allExits.toString();
@@ -85,36 +87,13 @@ public class Room {
         return description;
     }
 
+
     /**
-     * @param direction
-     * @return returns opposite direction.
+     * @return The description of the room.
      */
-    private CommandActionParam getOppositeDirection(CommandActionParam direction) {
-        switch(direction) {
-            case NORTH:
-                return CommandActionParam.SOUTH;
-
-            case SOUTH:
-                return CommandActionParam.NORTH;
-
-            case EAST:
-                return  CommandActionParam.WEST;
-
-            case WEST:
-                return CommandActionParam.EAST;
-
-            case UP:
-                return CommandActionParam.DOWN;
-
-            case DOWN:
-                return CommandActionParam.UP;
-
-            default:
-                return CommandActionParam.UNKNOWN;
-        }
-
+    public String getName() {
+        return name;
     }
-
 }
 
 class Exit {
@@ -134,3 +113,4 @@ class Exit {
         return direction;
     }
 }
+

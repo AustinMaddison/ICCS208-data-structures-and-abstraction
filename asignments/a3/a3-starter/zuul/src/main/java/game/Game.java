@@ -1,16 +1,16 @@
 package game;
 import game.color.TerminalColor;
+import game.history.History;
 import game.map.Map;
+import game.message.MessageProvider;
 import game.parser.Parser;
 import game.map.Room;
 import game.command.*;
 
 /* use NORTH EAST SOUTH WEST without CommandDirection prefix */
 import java.io.File;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-
-import static game.command.CommandActionParam.*;
+import java.util.ArrayDeque;
 
 /* use ANSI escape codes without StringColor prefix */
 import static game.color.TerminalColor.*;
@@ -39,7 +39,10 @@ public class Game {
 
     /* Private */
     private TerminalColor terminalColor;
+    private MessageProvider messageProvider;
     private Parser parser;
+//    private Room currentRoom;
+    private History<Room> roomHistory;
     private Room currentRoom;
     private Map map;
 
@@ -48,11 +51,18 @@ public class Game {
      * Create the game and initialise its internal map.
      */
     public Game() {
+        // Initialize Game Map
         map = new Map(mapFile);
-        currentRoom = map.getRoom("outside");
+        roomHistory = new History<>();
+        roomHistory.update(map.getRoom("outside"));
+        currentRoom = roomHistory.getCurrentState();
 
+        // Initialize user input parse
         parser = new Parser();
+
+        // Initialize game messages and output terminal colors.
         terminalColor = new TerminalColor(ANSI_RESET, ANSI_BLACK_BACKGROUND);
+        messageProvider = new MessageProvider(terminalColor);
     }
 
 
@@ -60,52 +70,23 @@ public class Game {
      *  game.Main play routine. Loops until end of play.
      */
     public void play() {
-        System.out.println(getWelcomeMessage());
+        System.out.println(messageProvider.getWelcomeMessage());
 
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
 
         boolean finished = false;
         while (!finished) {
+            currentRoom = roomHistory.getCurrentState();
+
             System.out.print('\n');
-            System.out.println(getLocationInfo());
+            System.out.println(messageProvider.getLocationInfo(currentRoom));
             Command command = parser.getCommand();
             finished = processCommand(command);
         }
 
-        System.out.println("Thank you for playing.  Good bye.");
+        System.out.println(messageProvider.quitGameMessage());
     }
-
-    /**
-     * @return returns welcome message for the opening message for the player.
-     */
-    private String getWelcomeMessage() {
-        StringBuilder welcomeMsg = new StringBuilder();
-
-        welcomeMsg.append("Welcome to the World of Zuul!\n");
-        welcomeMsg.append("World of Zuul is a new, incredibly boring adventure game.\n");
-        welcomeMsg.append(ANSI_GREEN + "Type 'help' if you need help." + terminalColor.reset());
-
-        return welcomeMsg.toString();
-    }
-
-//    private String ge
-
-    /**
-     * Return details of the current location and exits.
-     * @return Details of the current location and exits.
-     * */
-    private String getLocationInfo() {
-        StringBuilder info = new StringBuilder();
-
-        info.append("You are ").append(currentRoom.getDescription());
-        info.append('\n');
-        info.append(ANSI_YELLOW + "Exits: " + terminalColor.reset());
-        info.append(ANSI_YELLOW + currentRoom.getAllExits() + terminalColor.reset());
-
-        return info.toString();
-    }
-
 
     /**
      * Given a command, process (that is: execute) the command.
@@ -125,12 +106,17 @@ public class Game {
                 goRoom(command);
                 break;
 
+            case BACK:
+                goBack();
+                break;
+
+
             case LOOK:
-                getLocationInfo();
+                messageProvider.getLocationInfo(currentRoom);
                 break;
 
             case HELP:
-                System.out.println(getHelpMessage());
+                System.out.println(messageProvider.getHelpMessage(currentRoom));
                 break;
 
             case QUIT:
@@ -143,24 +129,6 @@ public class Game {
     /* implementations of user commands */
 
     /**
-     * Print out some help information.
-     * Here we print some stupid, cryptic message and a list of the 
-     * command words.
-     */
-    private String getHelpMessage() {
-        StringBuilder helpMsg = new StringBuilder();
-
-        helpMsg.append("You are lost. You are alone. You wander");
-        helpMsg.append("around at the university.");
-        helpMsg.append('\n');
-        // Prints all possible commands automatically from CommandAction.
-        helpMsg.append(ANSI_BLUE + "Your command words are:\n" + terminalColor.reset());
-        helpMsg.append(ANSI_BLUE + CommandAction.getAllCommandActions() + terminalColor.reset());
-
-        return helpMsg.toString();
-    }
-
-    /** 
      * Try to go in one direction. If there is an exit, enter
      * the new room, otherwise print an error message.
      */
@@ -178,8 +146,21 @@ public class Game {
         if (nextRoom == null) {
             System.out.println(ANSI_RED + "There is no door!" +terminalColor.reset());
         }
+        if (nextRoom.getName() == "warp") {
+            System.out.println(messageProvider.warpMessage());
+            roomHistory.update( map.getRandomRoom());
+        }
         else {
-            currentRoom = nextRoom;
+            roomHistory.update(nextRoom);
+        }
+    }
+
+    private void goBack() {
+        if(roomHistory.getSize() == 1) {
+            System.out.println(ANSI_RED + "You haven't been anywhere yet!" +terminalColor.reset());
+        }
+        else {
+            roomHistory.undo();
         }
     }
 
@@ -198,3 +179,5 @@ public class Game {
         }
     }
 }
+
+

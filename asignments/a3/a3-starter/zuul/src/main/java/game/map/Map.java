@@ -11,6 +11,7 @@ import java.util.*;
 
 public class Map {
     private HashMap<String,Room> rooms;
+    private Room warpRoom = new Room("warp", "");
 
     /**
      * Instanciates a map containing rooms loaded from a map file.
@@ -32,6 +33,8 @@ public class Map {
      */
     public Map(File mapFile) {
         rooms = new HashMap<String, Room>();
+        rooms.put(warpRoom.getName(), warpRoom);
+
         initRooms(mapFile);
     }
 
@@ -47,7 +50,7 @@ public class Map {
      * @return Returns a random room in the map.
      */
     public Room getRandomRoom() {
-        Room[] roomArr = (Room[]) rooms.values().toArray();
+        Room[] roomArr = rooms.values().toArray(new Room[rooms.size()]);
 
         // Generates random index to select room.
         Random rand = new Random();

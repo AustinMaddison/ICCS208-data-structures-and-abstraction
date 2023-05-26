@@ -3,7 +3,7 @@ theater,in a lecture theater.,,,,,,
 bathroom,in the bathroom.,,,,,,
 lab,in a computing lab.,SOUTH,office,,,,
 office,in the computing admin office.,,,,,,
-hallwayFl1,in the 1st Floor hallway.,NORTH,stairwayFl1,EAST,lab,WEST,bathroom
+hallwayFl1,in the 1st Floor hallway.,NORTH,stairwayFl1,EAST,lab,WEST,warp
 hallwayFl2,in the 2nd Floor hallway.,EAST,theater,,,,
 stairwayFl1,in the 1st Floor stairway.,UP,stairwayFl2,,,,
 stairwayFl2,in the 1st Floor stairway.,SOUTH,hallwayFl2,,,,
