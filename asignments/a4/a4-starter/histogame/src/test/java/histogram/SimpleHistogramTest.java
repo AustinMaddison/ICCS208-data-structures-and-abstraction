@@ -32,11 +32,13 @@ public class SimpleHistogramTest {
         assertEquals(h_copy.getCount('b'), h.getCount('b'));
         assertEquals(h_copy.getCount('c'), h.getCount('c'));
         assertEquals(h_copy.getTotalCount(), h.getTotalCount());
+        System.out.println(h.equals(h_copy));
 
         h_copy.setCount('a', h.getCount('a') + 10);
         assertNotEquals(h_copy.getCount('a'), h.getCount('a'));
 
-
+        System.out.println(h);
+        System.out.println(h.equals(h_copy));
 
     }
 }

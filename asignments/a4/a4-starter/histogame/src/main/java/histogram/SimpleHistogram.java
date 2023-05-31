@@ -2,6 +2,8 @@ package histogram;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
 public class SimpleHistogram<DT> implements Histogram<DT>, Iterable<DT> {
 
@@ -106,7 +108,18 @@ public class SimpleHistogram<DT> implements Histogram<DT>, Iterable<DT> {
 
     @Override
     public String toString() {
+        Set<DT> keys = domainCountHashMap.keySet();
+        int totalCount = keys.size();
+        int currentCount = 0;
 
+        StringBuilder string = new StringBuilder();
+        for(DT key: keys) {
+            string.append(key).append(": ").append(domainCountHashMap.get(key));
+            if (currentCount < totalCount - 1)
+                string.append(", ");
+            currentCount++;
+        }
+        return string.toString();
     }
 
 }
