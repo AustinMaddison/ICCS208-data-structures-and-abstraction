@@ -78,6 +78,23 @@ public class SimpleHistogram<DT> implements Histogram<DT>, Iterable<DT> {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if(o == null) return false;
+        if( o.getClass() != this.getClass() ) return false;
+        if(o == this) return true;
+
+        SimpleHistogram<DT> other = (SimpleHistogram<DT>) o;
+        if(totalCount != other.totalCount) return false;
+
+        for(DT key : domainCountHashMap.keySet()) {
+
+            if(this.getCount(key) != other.getCount(key)) return false;
+        }
+        return true;
+    }
+
+
+    @Override
     public void setCount(DT item, int count) {
         domainCountHashMap.put(item, count);
     }
@@ -85,6 +102,11 @@ public class SimpleHistogram<DT> implements Histogram<DT>, Iterable<DT> {
     @Override
     public Iterator<DT> iterator() {
         return domainCountHashMap.keySet().iterator();
+    }
+
+    @Override
+    public String toString() {
+
     }
 
 }

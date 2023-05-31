@@ -18,7 +18,6 @@ public class Change {
             case 28:
                 return List.of(7 , 7, 7, 7);
 
-
             default:
                 List<Integer> nminus5 = new ArrayList<Integer>(change(n-5));
                 nminus5.add(5);

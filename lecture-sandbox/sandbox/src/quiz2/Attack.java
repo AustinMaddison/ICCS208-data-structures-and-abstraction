@@ -1,2 +1,5 @@
-package quiz2;public class Attack {
+package quiz2;
+
+public interface Attack {
+    void attack();
 }

@@ -1,10 +1,28 @@
-package Lecture4;
+package Lecture10;
 
+import java.util.Iterator;
 
 /**
  * This acts as a wrapper for IntNode
  */
-public class SLList {
+public class SLList implements Iterable<Integer> {
+    private class SLListIterator implements Iterator<Integer> {
+        IntNode currentNode = sen.next;
+        @Override
+        public boolean hasNext() {
+            if(size <= 0) return false;
+            if(currentNode == null) return false;
+            return true;
+        }
+
+        @Override
+        public Integer next() {
+            int returnVal = currentNode.head;
+            currentNode = currentNode.next;
+            return returnVal;
+        }
+    }
+
     private static class IntNode {
         // instance variables
         int head;
@@ -72,14 +90,6 @@ public class SLList {
         return this.size;
     }
 
-    public String toString() {
-        String s = "";
-        for(IntNode current = sen.next; current != null; current = current.next) {
-            s = s + Integer.toString(current.head) + ", " ;
-        }
-        return s;
-    }
-
     public void removeFirst() {
         size--;
         this.sen.next = this.sen.next.next;
@@ -94,6 +104,11 @@ public class SLList {
         IntNode newNode = new IntNode(newValue, null);
         newNode.next = current.next;
         current.next = newNode;
+    }
+
+    @Override
+    public Iterator<Integer> iterator() {
+        return new SLListIterator();
     }
 
 }
