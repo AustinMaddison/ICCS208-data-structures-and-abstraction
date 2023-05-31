@@ -39,7 +39,7 @@ public class MyPriorityQueue<T> implements IPriorityQueue<T> {
         queueItems.remove(idxMin);
     }
 
-    private T getMinimumOfList() {
+    private T getMinimumOfList(List<T> list) {
 
     }
 

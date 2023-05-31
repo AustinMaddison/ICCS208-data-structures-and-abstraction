@@ -10,10 +10,11 @@ public class BoundedSkipper implements Iterable<Integer> {
 
     private class boundedSkipperIterator implements Iterator<Integer> {
         int currentN = 1;
+        int idx = 1;
 
         @Override
         public boolean hasNext() {
-            return currentN <= n;
+            return idx <= n;
         }
 
         @Override
@@ -21,6 +22,7 @@ public class BoundedSkipper implements Iterable<Integer> {
             while( isContainK() | isFactorOfK() ) {
                 currentN++;
             }
+            idx++;
             return currentN++;
         }
 
@@ -28,7 +30,7 @@ public class BoundedSkipper implements Iterable<Integer> {
             int digit;
             int temp = currentN;
             while(temp > 0) {
-                digit = temp - (temp % 10);
+                digit = temp % 10;
                 if(digit == k) {
                     return true;
                 }
