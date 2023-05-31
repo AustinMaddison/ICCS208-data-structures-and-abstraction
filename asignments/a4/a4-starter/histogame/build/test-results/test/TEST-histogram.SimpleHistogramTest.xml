@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="histogram.SimpleHistogramTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-31T07:28:00" hostname="DESKTOP-3QQQM1L" time="0.03">
+<testsuite name="histogram.SimpleHistogramTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-31T15:28:19" hostname="DESKTOP-3QQQM1L" time="0.033">
   <properties/>
-  <testcase name="testHistogram()" classname="histogram.SimpleHistogramTest" time="0.03"/>
+  <testcase name="testHistogram()" classname="histogram.SimpleHistogramTest" time="0.033"/>
   <system-out><![CDATA[true
 a: 2, b: 1, c: 1
 false
