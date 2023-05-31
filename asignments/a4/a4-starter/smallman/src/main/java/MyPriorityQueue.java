@@ -16,6 +16,7 @@ public class MyPriorityQueue<T> implements IPriorityQueue<T>, Iterable<T> {
     public MyPriorityQueue(CompareWith<T> comparator) {
         queue = new ArrayList<T>();
         this.comparator = comparator;
+
         sortComparator = new Comparator<T>() {
             @Override
             public int compare(T o1, T o2) {
@@ -40,8 +41,9 @@ public class MyPriorityQueue<T> implements IPriorityQueue<T>, Iterable<T> {
         else {
             int idx;
             for (idx = 0; idx < size(); idx++) {
-                if (comparator.lessThan(item, queue.get(idx)))
+                if (comparator.lessThan(item, queue.get(idx))) {
                     break;
+                }
             }
             queue.add(idx, item);
         }
@@ -59,6 +61,7 @@ public class MyPriorityQueue<T> implements IPriorityQueue<T>, Iterable<T> {
         if(items.size() == 0) {
             return;
         }
+
         // Items has single element.
         else if(items.size() == 1) {
             add(items.get(0));
@@ -126,9 +129,11 @@ public class MyPriorityQueue<T> implements IPriorityQueue<T>, Iterable<T> {
             this.isReverse = isReverse;
             currentIdx = isReverse ? size() - 1 : 0;
         }
+
         MyPriorityQueueIterator() {
             this(false);
         }
+
         @Override
         public boolean hasNext() {
             return isReverse ? currentIdx >= 0 : currentIdx < size();
