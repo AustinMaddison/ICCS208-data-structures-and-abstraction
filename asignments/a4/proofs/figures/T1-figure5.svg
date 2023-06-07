@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="37.041668mm"
+   height="37.041668mm"
+   viewBox="0 0 37.041669 37.041668"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="T1-figure5.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="4.548022"
+     inkscape:cx="62.554667"
+     inkscape:cy="78.385725"
+     inkscape:window-width="1882"
+     inkscape:window-height="1011"
+     inkscape:window-x="20"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid614"
+       originx="31.750002"
+       originy="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(31.749999)">
+    <path
+       id="path14761"
+       style="font-variation-settings:normal;vector-effect:none;fill:#dadada;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:normal;stop-color:#000000"
+       d="m -26.458332,18.520835 h 6.614585 v -6.614582 h 6.614583 V 5.2916667 h -6.614583 -6.614585 v 6.6145863 z" />
+    <path
+       id="path14763"
+       style="font-variation-settings:normal;vector-effect:none;fill:#dadada;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:normal;stop-color:#000000"
+       d="m -13.229164,18.520832 h -6.614585 v 6.614582 h -6.614583 V 31.75 h 6.614583 6.614585 v -6.614586 z" />
+    <rect
+       style="font-variation-settings:normal;vector-effect:none;fill:#dadada;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:normal;stop-color:#000000"
+       id="rect51894"
+       width="6.614583"
+       height="6.614583"
+       x="-26.45833"
+       y="18.520834" />
+    <path
+       id="path14765"
+       style="font-variation-settings:normal;vector-effect:none;fill:#dadada;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:normal;stop-color:#000000"
+       d="M 4.6533333e-6,18.520835 H -6.6145804 v 6.614582 h -6.6145836 v 6.614586 H -6.6145804 4.6533333e-6 v -6.614586 z" />
+    <path
+       id="path14759"
+       style="font-variation-settings:normal;vector-effect:none;fill:#dadada;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:normal;stop-color:#000000"
+       d="M -13.229163,5.2916657 V 11.90625 h 6.6145827 v 6.614583 H 5.9666668e-6 V 11.90625 5.2916657 H -6.6145803 Z" />
+    <rect
+       style="font-variation-settings:normal;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:normal;stop-color:#000000"
+       id="rect51512"
+       width="26.333326"
+       height="26.333326"
+       x="-26.458332"
+       y="5.2916665" />
+    <path
+       id="rect52250"
+       style="font-variation-settings:normal;vector-effect:none;fill:#dadada;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:normal;stop-color:#000000"
+       d="m -19.843749,11.90625 v 6.614584 h 6.614583 v 6.614583 h 6.6145863 V 18.520834 11.90625 h -6.6145863 z" />
+  </g>
+</svg>
