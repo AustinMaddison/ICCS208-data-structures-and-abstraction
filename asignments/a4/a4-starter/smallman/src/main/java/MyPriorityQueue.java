@@ -27,13 +27,14 @@ public class MyPriorityQueue<T> implements IPriorityQueue<T>, Iterable<T> {
 
     /**
      * Add item to queue.
+     * 
      * @param item Item to be added to queue.
      */
     @Override
     public void add(T item) {
 
         // current queue is empty
-        if(isEmpty()) {
+        if (isEmpty()) {
             queue.add(item);
         }
 
@@ -52,30 +53,32 @@ public class MyPriorityQueue<T> implements IPriorityQueue<T>, Iterable<T> {
     /**
      * Adds the list of items to the queue and replaces minimum
      * if there is a smaller minimum.
+     * 
      * @param items List to be added to queue.
      */
     @Override
     public void addAll(List<T> items) {
 
         // Items is empty.
-        if(items.size() == 0) {
+        if (items.size() == 0) {
             return;
         }
 
         // Items has single element.
-        else if(items.size() == 1) {
+        else if (items.size() == 1) {
             add(items.get(0));
         }
 
         // Queue is empty -> copy items into queue -> sort queue.
-        else if(isEmpty()) {
+        else if (isEmpty()) {
             queue.addAll(items);
             sortQueue();
         }
 
         // Insert elements of items directly into queue.
         else {
-            for(T item : items) add(item);
+            for (T item : items)
+                add(item);
         }
     }
 
@@ -143,7 +146,7 @@ public class MyPriorityQueue<T> implements IPriorityQueue<T>, Iterable<T> {
         public T next() {
             // Returns current item from queue of currentIdx then increments or
             // de-increments currentIdx whether isReverse is true or false.
-            return queue.get( isReverse ? currentIdx-- : currentIdx++);
+            return queue.get(isReverse ? currentIdx-- : currentIdx++);
         }
     }
 }
