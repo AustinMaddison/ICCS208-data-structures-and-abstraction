@@ -32,8 +32,8 @@
      inkscape:cy="91.147613"
      inkscape:window-width="1882"
      inkscape:window-height="1011"
-     inkscape:window-x="92"
-     inkscape:window-y="65"
+     inkscape:window-x="-260"
+     inkscape:window-y="343"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1">
     <inkscape:grid
@@ -113,13 +113,13 @@
     <text
        xml:space="preserve"
        style="font-size:1.19198px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';font-variation-settings:normal;text-align:end;text-anchor:end;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0999999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:normal;stop-color:#000000;stop-opacity:1"
-       x="-29.837967"
-       y="25.43574"
+       x="-30.658236"
+       y="25.409658"
        id="text3667"><tspan
          sodipodi:role="line"
          id="tspan3665"
          style="text-align:end;text-anchor:end;stroke-width:0.0999999"
-         x="-29.837967"
-         y="25.43574">$P(k)$</tspan></text>
+         x="-30.658236"
+         y="25.409658">$P(k)$</tspan></text>
   </g>
 </svg>
