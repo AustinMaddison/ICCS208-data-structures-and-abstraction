@@ -135,4 +135,15 @@ public class BasicBoard implements Grid {
 
     return true;
   }
+
+  public String toString() {
+    StringBuilder str = new StringBuilder();
+    for(int i = 0; i < cells.length; i++) {
+      for(int j = 0; j < cells.length; j++) {
+        str.append(cells[i][j]);
+      }
+      str.append("\n");
+    }
+    return str.toString();
+  }
 }

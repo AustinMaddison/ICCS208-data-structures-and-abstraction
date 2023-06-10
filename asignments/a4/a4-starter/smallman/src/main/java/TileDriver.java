@@ -3,9 +3,10 @@ public class TileDriver {
 	// at (paintedX, paintedY)
 	public static boolean testTiling(int size, int paintedX, int paintedY) {
 
-		//
 		Grid board = new BasicBoard(size, paintedX, paintedY);
+		System.out.println(board);
 		MissingTile.tileGrid(board);
+		System.out.println(board);
 		return board.isFullyTiled();
 	}
 
