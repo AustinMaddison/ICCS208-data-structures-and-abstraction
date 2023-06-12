@@ -1,8 +1,7 @@
 package game;
 
+import game.word.WordDatabase;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class WordDatabaseTest {
 

@@ -1,22 +1,18 @@
-package game;
-
-import histogram.Histogram;
+package game.word;
 
 import java.io.*;
 import java.util.*;
 
-// HINT(s):
-//   To read from src/resources/<filename>
-//   InputStream is = getClass().getClassLoader().getResourceAsStream(filename);
 
 public class WordDatabase implements IDatabase {
     private Set<Word> words;
 
-    WordDatabase(String filename) {
+    public WordDatabase(String filename) {
         words = new HashSet<>();
         InputStream is = getClass().getClassLoader().getResourceAsStream(filename);
         try (BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
             String word;
+
             // read words line by line and add to database
             while ((word = br.readLine()) != null) {
                 Word newWord = new Word(word);
@@ -26,9 +22,7 @@ public class WordDatabase implements IDatabase {
         catch (IOException e) {
             System.out.println("Couldn't read file:" + filename);
         }
-
     }
-
 
     @Override
     public void add(Word w) {

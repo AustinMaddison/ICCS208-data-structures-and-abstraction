@@ -1,5 +1,6 @@
 package game;
 
+import game.word.Word;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

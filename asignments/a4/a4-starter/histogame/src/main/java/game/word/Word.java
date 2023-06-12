@@ -1,4 +1,4 @@
-package game;
+package game.word;
 
 import histogram.Histogram;
 import histogram.SimpleHistogram;
@@ -55,11 +55,12 @@ public class Word implements Formable<Word>, Comparable<Word> {
         return false;
     }
 
-    // Return -1 if this word is shorter than the word represented by o OR
+    /** Return -1 if this word is shorter than the word represented by o OR
     // when this word and the word represented by o have the same length but
     // this word comes before the word represented by o alphabetically.
     // Return zero if this word and o word are identical.
     // Return +1 otherwise.
+     */
     @Override
     public int compareTo(Word o) {
         if (word.length() < o.word.length() | (word.length() == o.word.length() & isAlphabeticallyBefore(word, o.word))) {

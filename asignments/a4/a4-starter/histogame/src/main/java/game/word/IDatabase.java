@@ -1,4 +1,4 @@
-package game;
+package game.word;
 
 import java.util.List;
 
