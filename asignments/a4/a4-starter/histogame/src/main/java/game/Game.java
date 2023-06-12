@@ -28,7 +28,7 @@ public class Game {
     private WordBoard wordBoard; // words to guess correctly.
     private int points;
     private int maxPoints;
-    private String lastWord;
+    private String lastWord = "";
     private TerminalColor terminalColor;
     private MessageProvider messageProvider;
     private Parser parser;
@@ -43,7 +43,10 @@ public class Game {
         terminalColor = new TerminalColor(ANSI_RESET, ANSI_BLACK_BACKGROUND);
         messageProvider = new MessageProvider(terminalColor);
         wordBoard = new WordBoard(wordDatabaseFileName);
+        maxPoints = wordBoard.getAllWords().size();
         points = 0;
+
+        messageProvider.update(points, maxPoints, lastWord, wordBoard);
     }
 
 
@@ -61,12 +64,13 @@ public class Game {
             messageProvider.update(points, maxPoints, lastWord, wordBoard );
 
             if(isWinner()) {
+                System.out.println(messageProvider.winnerUI());
                 restartGame(true);
                 continue;
             }
 
             System.out.print('\n');
-            System.out.println(wordBoard.getJumbledWord());
+            System.out.println(messageProvider.mainGameUI());
             Command command = parser.getCommand();
             finished = processCommand(command);
         }
@@ -113,12 +117,14 @@ public class Game {
         System.out.println(messageProvider.restartUI(won));
         wordBoard.initialize();
         points = 0;
+        lastWord = "";
         maxPoints = wordBoard.size();
         messageProvider.update(points, maxPoints, lastWord, wordBoard );
+        messageProvider.resetTime();
     }
 
     private void changeScore(int points){
-        points += points;
+        this.points += points;
     }
 
     /* implementations of user commands */
@@ -128,12 +134,17 @@ public class Game {
      * the new room, otherwise print an error message.
      */
     private void proccessGuess(String guess) {
-        int containsIdx = wordBoard.contains(new Word(guess));
+        int containsIdx;
+        if(guess != null) {
+            lastWord = guess;
+            containsIdx = wordBoard.contains(new Word(guess));
+        }
+        else containsIdx = -1;
 
         if (containsIdx != -1) {
             System.out.println(messageProvider.correctUI());
-            wordBoard.isCorrectAtIdx(containsIdx);
-            points ++;
+            wordBoard.makeCorrectAtIdx(containsIdx);
+            changeScore(1);
         }
         else {
             System.out.println(messageProvider.incorrectUI());

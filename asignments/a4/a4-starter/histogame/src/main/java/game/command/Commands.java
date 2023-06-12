@@ -24,11 +24,15 @@ public class Commands {
     public  CommandAction getCommandAction(String commandAction) {
 
         // Check if it is a command: q - quit, ? - help, ! - give-up
-        CommandAction command = validActions.get(commandAction.toLowerCase());
+        if(commandAction != null) {
+            CommandAction command = validActions.get(commandAction.toLowerCase());
 
-        if(command != null) {
-            return command;
+            if(command != null) {
+                return command;
+            }
         }
+
+
 
         // if we get here, it is not a command and has to be a guess for a word.
         return CommandAction.GUESS;

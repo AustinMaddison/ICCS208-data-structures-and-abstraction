@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.6.7)  8 JUN 2023 14:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.6.7)  12 JUN 2023 23:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -594,19 +594,6 @@ File: l3backend-pdftex.def 2023-03-30 L3 backend support: PDF output (pdfTeX)
 
 LaTeX Warning: Label `T1-figure4' multiply defined.
 
-) (task-2.aux
-
-LaTeX Warning: Label `fig:base-cases' multiply defined.
-
-
-LaTeX Warning: Label `fig:T1-figure2' multiply defined.
-
-
-LaTeX Warning: Label `T1-figure4' multiply defined.
-
-
-LaTeX Warning: Label `T1-figure4' multiply defined.
-
 ))
 \openout1 = `a4.aux'.
 
@@ -776,7 +763,7 @@ LaTeX Font Warning: Font shape `OT1/xcmss/b/n' in size <12> not available
 (Font)              Font shape `OT1/xcmss/bx/n' tried instead on input line 12.
 
 (figures/T1-figure1.pdf_tex
-<figures/base-cases.pdf, id=86, page=1, 444.15938pt x 75.28123pt>
+<figures/base-cases.pdf, id=56, page=1, 444.15938pt x 75.28123pt>
 File: figures/base-cases.pdf Graphic file (type pdf)
 <use figures/base-cases.pdf, page 1>
 Package pdftex.def Info: figures/base-cases.pdf , page1 used on input line 56.
@@ -792,13 +779,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--30
  []
 
 (figures/T1-figure2.pdf_tex
-<figures/T1-figure2.pdf, id=87, page=1, 109.1578pt x 105.39375pt>
+<figures/T1-figure2.pdf, id=57, page=1, 109.1578pt x 105.39375pt>
 File: figures/T1-figure2.pdf Graphic file (type pdf)
 <use figures/T1-figure2.pdf, page 1>
 Package pdftex.def Info: figures/T1-figure2.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 85.35826pt x 82.41423pt.
 ) (figures/T1-figure3.pdf_tex
-<figures/T1-figure3.pdf, id=88, page=1, 105.39375pt x 105.39375pt>
+<figures/T1-figure3.pdf, id=58, page=1, 105.39375pt x 105.39375pt>
 File: figures/T1-figure3.pdf Graphic file (type pdf)
 <use figures/T1-figure3.pdf, page 1>
 Package pdftex.def Info: figures/T1-figure3.pdf , page1 used on input line 56.
@@ -819,13 +806,13 @@ pdfTeX warning: pdflatex (file ./figures/T1-figure2.pdf): PDF inclusion: multipl
 
 pdfTeX warning: pdflatex (file ./figures/T1-figure3.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >] (figures/T1-figure4.pdf_tex
-<figures/T1-figure4.pdf, id=105, page=1, 105.39375pt x 105.39375pt>
+<figures/T1-figure4.pdf, id=74, page=1, 105.39375pt x 105.39375pt>
 File: figures/T1-figure4.pdf Graphic file (type pdf)
 <use figures/T1-figure4.pdf, page 1>
 Package pdftex.def Info: figures/T1-figure4.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 85.35826pt x 85.36041pt.
 ) (figures/T1-figure5.pdf_tex
-<figures/T1-figure5.pdf, id=106, page=1, 105.39374pt x 105.39375pt>
+<figures/T1-figure5.pdf, id=75, page=1, 105.39374pt x 105.39375pt>
 File: figures/T1-figure5.pdf Graphic file (type pdf)
 <use figures/T1-figure5.pdf, page 1>
 Package pdftex.def Info: figures/T1-figure5.pdf , page1 used on input line 56.
@@ -833,70 +820,25 @@ Package pdftex.def Info: figures/T1-figure5.pdf , page1 used on input line 56.
 )) [2 <./figures/T1-figure4.pdf> <./figures/T1-figure5.pdf
 
 pdfTeX warning: pdflatex (file ./figures/T1-figure5.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-\openout2 = `task-2.aux'.
-
- (task-2.tex
-Chapter 2.
-(figures/T1-figure1.pdf_tex
-File: figures/base-cases.pdf Graphic file (type pdf)
-<use figures/base-cases.pdf, page 1>
-Package pdftex.def Info: figures/base-cases.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 284.52756pt x 48.22461pt.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 27--30
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--30
-
- []
-
-(figures/T1-figure2.pdf_tex
-File: figures/T1-figure2.pdf Graphic file (type pdf)
-<use figures/T1-figure2.pdf, page 1>
-Package pdftex.def Info: figures/T1-figure2.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 85.35826pt x 82.41423pt.
-) (figures/T1-figure3.pdf_tex
-File: figures/T1-figure3.pdf Graphic file (type pdf)
-<use figures/T1-figure3.pdf, page 1>
-Package pdftex.def Info: figures/T1-figure3.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 85.35826pt x 85.36041pt.
-) [3
-
-
-
-
-] (figures/T1-figure4.pdf_tex
-File: figures/T1-figure4.pdf Graphic file (type pdf)
-<use figures/T1-figure4.pdf, page 1>
-Package pdftex.def Info: figures/T1-figure4.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 85.35826pt x 85.36041pt.
-) (figures/T1-figure5.pdf_tex
-File: figures/T1-figure5.pdf Graphic file (type pdf)
-<use figures/T1-figure5.pdf, page 1>
-Package pdftex.def Info: figures/T1-figure5.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 85.35826pt x 85.36041pt.
-)) [4] (a4.aux (title.aux) (task-1.aux) (task-2.aux))
+>] (a4.aux (title.aux) (task-1.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `a4.out' has not changed.
-(rerunfilecheck)             Checksum: 1D5989DE8299DDB5F942525106FFF18D;1622.
+(rerunfilecheck)             Checksum: E6A3B89E6A460346402B0D62BA1E3883;856.
  ) 
 Here is how much of TeX's memory you used:
- 18071 strings out of 476331
- 315193 string characters out of 5787766
+ 18014 strings out of 476331
+ 313279 string characters out of 5787766
  1857660 words of memory out of 5000000
- 38074 multiletter control sequences out of 15000+600000
+ 38047 multiletter control sequences out of 15000+600000
  520851 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,95p,1089b,503s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssbx12.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssbx17.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssmi10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssmi7.pfb>
-Output written on a4.pdf (6 pages, 140895 bytes).
+Output written on a4.pdf (4 pages, 129048 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 500000)
- 20110 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 132 PDF objects out of 1000 (max. 8388607)
+ 16 named destinations out of 1000 (max. 500000)
+ 20062 words of extra memory for PDF output out of 20736 (max. 10000000)
 

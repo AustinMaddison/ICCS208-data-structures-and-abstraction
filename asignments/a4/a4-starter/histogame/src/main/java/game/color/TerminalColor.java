@@ -26,7 +26,7 @@ public class TerminalColor {
 
     // Text Color
     public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_BLACK = "\u001B[90m";
+    public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN = "\u001B[92m";
     public static final String ANSI_YELLOW = "\u001B[93m";
@@ -43,7 +43,7 @@ public class TerminalColor {
     public static final String ANSI_BLUE_BACKGROUND = "\u001B[44m";
     public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
-    public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
+    public static final String ANSI_WHITE_BACKGROUND = "\u001B[107m";
         
 
 }

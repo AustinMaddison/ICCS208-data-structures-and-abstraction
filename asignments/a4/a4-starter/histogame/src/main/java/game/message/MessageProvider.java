@@ -1,14 +1,17 @@
 package game.message;
 
 import game.color.TerminalColor;
+import game.word.Word;
 import game.word.WordBoard;
+
+import java.util.List;
 
 import static game.color.TerminalColor.*;
 
 public class MessageProvider {
     TerminalColor terminalColor;
     private long startTime = System.currentTimeMillis();
-    private boolean firstRun = false;
+    private boolean firstRun = true;
     private int points;
     private int maxPoints;
     private String lastWord;
@@ -17,7 +20,6 @@ public class MessageProvider {
 
     public MessageProvider(TerminalColor terminalColor) {
         this.terminalColor = terminalColor;
-
     }
 
     public void update(int points, int maxPoints, String lastWord, WordBoard board) {
@@ -26,6 +28,43 @@ public class MessageProvider {
         this.lastWord = lastWord;
         this.board = board;
     }
+
+    public void resetTime() {
+        firstRun = true;
+        startTime = System.currentTimeMillis();
+    }
+
+
+    public String winnerUI() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(ANSI_GREEN +
+                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░\n" +
+                        "▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
+                        "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                        "██████████████████████████████████████████████████████████████████████████████████");
+
+
+        sb.append("\n" +
+                "\n" +
+                "            ██    ██  ██████  ██    ██     ██     ██ ██ ███    ██     ██ \n" +
+                "             ██  ██  ██    ██ ██    ██     ██     ██ ██ ████   ██     ██ \n" +
+                "              ████   ██    ██ ██    ██     ██  █  ██ ██ ██ ██  ██     ██ \n" +
+                "               ██    ██    ██ ██    ██     ██ ███ ██ ██ ██  ██ ██        \n" +
+                "               ██     ██████   ██████       ███ ███  ██ ██   ████     ██ \n" +
+                "\n");
+
+        sb.append("\n" +
+
+                "██████████████████████████████████████████████████████████████████████████████████\n" +
+                "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓\n" +
+                "▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒\n" +
+                "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" + terminalColor.reset());
+
+        return sb.toString();
+
+    }
+
 
     /**
      * @return returns welcome message for the opening message for the player.
@@ -48,8 +87,7 @@ public class MessageProvider {
                 "      ██    ███████ ██   ██    ██           ██     ███ ███  ██ ███████    ██    \n" +
                 "\n");
 
-        welcomeMsg.append(
-                "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ HOW TO PLAY? ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\n\n");
+        welcomeMsg.append(headingText("HOW TO PLAY?") + "\n\n");
 
         welcomeMsg.append(centerText(82, "Guess words that can be formed using the available letters.") + '\n');
         welcomeMsg.append(ANSI_GREEN + centerText(82, "Type '?' to display info on the number of unformed and formed words.") + '\n' + terminalColor.reset());
@@ -66,31 +104,58 @@ public class MessageProvider {
 
     public String mainGameUI() {
 
-        if(firstRun) {
-            String time = 0 + " seconds";
+        // time
+        String time;
+        if (firstRun) {
+            time = 0 + " seconds";
             firstRun = false;
         }
-        String time = getTimeString() + " seconds";
+        else {
+            time = getTimeString() + " seconds";
+        }
+
+        // Score
         String score = String.format("%d/%d", points, maxPoints);
 
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("█   ELAPSED TIME : %-19s█    LAST GUESS: %-26s█", time, lastWord)).append("\n");
-        sb.append(String.format("█   SCORE        : %-19s█    %s   █", score, getScoreBarUI())).append("\n");
+        sb.append(String.format("█   SCORE        : %-19s█    %s  █", score, getScoreBarUI())).append("\n");
+
         sb.append(borderText(drawCharLineH(" ", widthDefault)));
 
+        for (String line : jumbledLettersUI().split("\n")) {
+            sb.append(borderText(centerText(line)));
+
+        }
+
+        sb.append(borderText(drawCharLineH(" ", widthDefault)));
 
         sb.append("█                    COMMANDS: [?]Info [!]Give Up [q]Quit                        █");
+        sb.append("\n\n");
 
+
+        sb.append(commandGuessInputUI());
 
         return sb.toString();
+    }
+
+    public String commandGuessInputUI() {
+        return "YOUR COMMAND/GUESS >";
     }
 
     private String getScoreBarUI() {
         StringBuilder sb = new StringBuilder();
 
+        if (points <= 0) {
+            return drawCharLineH("░", 36);
+        }
+
         float percent = (float) points / maxPoints * 35;
-        int filled = (int) percent;
-        sb.append(drawCharLineH("▒",filled -1)).append("▓").append(drawCharLineH("░", 35 - filled));
+        int filled = Math.round(percent);
+
+        sb.append(drawCharLineH("▒", filled - 1)).append("▓");
+        sb.append(drawCharLineH("░", 36 - filled));
+
         return sb.toString();
     }
 
@@ -101,14 +166,96 @@ public class MessageProvider {
 
     }
 
+
+    private String jumbledLettersUI() {
+        String[] letters = board.getJumbledWord().split("");
+        StringBuilder sb = new StringBuilder();
+
+
+        if (4 * letters.length + letters.length - 1 > widthDefault - 4) {
+
+        }
+
+        StringBuilder top = new StringBuilder();
+        StringBuilder mid = new StringBuilder();
+        StringBuilder bot = new StringBuilder();
+
+        for (int i = 0; i < letters.length; i++) {
+
+            // Box elements
+            top.append(".---.");
+            mid.append(String.format("| %s |", letters[i]));
+            bot.append("'---'");
+
+            if (i != letters.length - 1) {
+                top.append(" ");
+                mid.append(" ");
+                bot.append(" ");
+            }
+
+        }
+        sb.append(top).append("\n").append(mid).append("\n").append(bot);
+
+
+        return sb.toString();
+    }
+
     /**
      * Return details of the current location and exits.
      *
      * @return Details of the current location and exits.
      */
     public String gameBoardInfoUI(boolean reveal) {
-        StringBuilder helpMsg = new StringBuilder();
-        return "";
+        StringBuilder sb = new StringBuilder();
+        sb.append(headingText("WORD BOARD INFO") + "\n");
+        sb.append(borderText(drawCharLineH(" ", widthDefault)));
+
+        for (String line : gameBoardWordsUI(reveal).split("\n")) {
+            sb.append(borderText(centerText(line)));
+
+        }
+
+        sb.append(borderText(drawCharLineH(" ", widthDefault)));
+        sb.append(drawCharLineH("▀", widthDefault));
+
+        return sb.toString();
+//        return gameBoardWordsUI(true);
+    }
+
+
+    private String gameBoardWordsUI(boolean reveal) {
+        StringBuilder sb = new StringBuilder();
+
+        List<Word> words = board.getAllWords();
+
+        StringBuilder line = new StringBuilder();
+        for (int i = 0; i < words.size(); i++) {
+            String currWord = words.get(i).getWord();
+
+            if (reveal) {
+                line.append(currWord);
+            } else {
+                if (board.isCorrectAtIdx(i)) {
+                    line.append(currWord);
+                } else {
+                    line.append(drawCharLineH("?", currWord.length()));
+                }
+            }
+
+            if (i != words.size() - 1) {
+                if (line.length() + words.get(i + 1).getWord().length() > widthDefault - 10) {
+                    sb.append(line).append("\n");
+                    line = new StringBuilder();
+                    continue;
+                }
+                line.append(" | ");
+
+            }
+
+        }
+
+        sb.append(line);
+        return sb.toString();
     }
 
 
@@ -131,7 +278,7 @@ public class MessageProvider {
 
     public String restartUI(boolean won) {
         if (won) {
-            return ANSI_GREEN + captionUI("[◕‿◕] YOU WON, RESTARTING GAME...") + terminalColor.reset();
+            return ANSI_GREEN + captionUI("[^.^] YOU WON, RESTARTING GAME...") + terminalColor.reset();
         } else {
             return ANSI_YELLOW + captionUI("[!] YOU GAVE UP, RESTARTING GAME...") + terminalColor.reset();
         }
@@ -249,9 +396,16 @@ public class MessageProvider {
         TerminalColor terminalColor = new TerminalColor(ANSI_RESET, ANSI_RESET);
         MessageProvider messageProvider = new MessageProvider(terminalColor);
         messageProvider.update(10, 30, "hello", wordBoard);
-        System.out.println(messageProvider.mainGameUI());
-    }
 
-//▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ WORD BOARD INFO ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-//█                             WORD BOARgfdgfdgfdD INFO                             █
+        System.out.println(messageProvider.welcomeUI());
+        System.out.println(messageProvider.gameBoardInfoUI(false));
+        System.out.println(messageProvider.mainGameUI());
+        System.out.println(messageProvider.restartUI(true));
+        System.out.println(messageProvider.restartUI(false));
+        System.out.println(messageProvider.incorrectUI());
+        System.out.println(messageProvider.correctUI());
+        System.out.println(messageProvider.winnerUI());
+
+
+    }
 }

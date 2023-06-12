@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1686209532 "y:/Documents/University/Y2T1/ICCS208-data-structures-and-abstraction/asignments/a4/proofs/a4.tex" "a4.pdf" "a4" 1686209535 0
+["pdflatex"] 1686588935 "y:/Documents/University/Y2T1/ICCS208-data-structures-and-abstraction/asignments/a4/proofs/a4.tex" "a4.pdf" "a4" 1686588939 0
   "C:/Users/Austi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1686114081 183172 2c98c70ba4e5001649ff023415f1d63e ""
   "C:/Users/Austi/AppData/Local/MiKTeX/fonts/tfm/jknappen/sauter/cmssbx12.tfm" 1686101816 1208 352255972caa6bdda046e6c72b68820f ""
   "C:/Users/Austi/AppData/Local/MiKTeX/fonts/tfm/jknappen/sauter/cmssbx17.tfm" 1686101818 1208 90620db3f89da34c879d1b97b4e33e57 ""
@@ -140,10 +140,10 @@
   "C:/Users/Austi/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253169183 1380 971a51b00a14503ddf754cab24c3f209 ""
   "C:/Users/Austi/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Austi/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "a4.aux" 1686209534 878 d63e8e88d4bf2280587c9ab5221199b8 "pdflatex"
-  "a4.out" 1686209534 1622 1d5989de8299ddb5f942525106fff18d "pdflatex"
-  "a4.tex" 1686209522 238 c5a74f74fc04468f61e27c528886b5f9 ""
-  "a4.toc" 1686209534 1034 0d181a706a2620e549bf8851c7a845f1 "pdflatex"
+  "a4.aux" 1686588938 858 4c9c34e7fd37e3ae181c425d2ca17679 "pdflatex"
+  "a4.out" 1686588938 856 e6a3b89e6a460346402b0d62ba1e3883 "pdflatex"
+  "a4.tex" 1686588927 240 8d1e49f50bb0c5ba0610ecef2eba135d ""
+  "a4.toc" 1686588938 558 1de7f316a66edd8f8c4089608bc2383f "pdflatex"
   "figures/T1-figure1.pdf_tex" 1686112230 2076 7ce6d70fd6e6d1ca8fd6dc6d1d6eef54 ""
   "figures/T1-figure2.pdf" 1686117932 1197 e30a1b7a331fa0f7bf2850ae4a08c13c ""
   "figures/T1-figure2.pdf_tex" 1686117932 2212 5ba2314887503ee07fb76732013a49c4 ""
@@ -155,13 +155,11 @@
   "figures/T1-figure5.pdf_tex" 1686117782 2075 c99bdd99306c6e038cf3654479bf7c4f ""
   "figures/base-cases.pdf" 1686112230 1429 1b7ec5cbafda48e6eaf68924ca6ad9bf ""
   "preamble.tex" 1686114070 1487 f487fb9c2116f333f240b402e7bf3c21 ""
-  "task-1.aux" 1686209534 3175 9ceee692090625aa9a31e847ffcd8543 "pdflatex"
+  "task-1.aux" 1686588938 3175 9ceee692090625aa9a31e847ffcd8543 "pdflatex"
   "task-1.tex" 1686191994 2814 7d1b6eab30b6f47998ec4fdde4ad58e2 ""
-  "task-2.aux" 1686209534 3110 02555d5819bf9920a34dc32cca6e3e99 "pdflatex"
-  "task-2.tex" 1686209522 2812 f2c03255f5b4061c4f4e6448c468a69b ""
-  "title.aux" 1686209534 1246 cd982bb6260a58bb5579c89a1ca92ac7 "pdflatex"
+  "title.aux" 1686588938 1246 cd982bb6260a58bb5579c89a1ca92ac7 "pdflatex"
   "title.tex" 1686191771 398 89b112b664e7b659581a57189dced174 ""
-  "y:/Documents/University/Y2T1/ICCS208-data-structures-and-abstraction/asignments/a4/proofs/a4.tex" 1686209522 238 c5a74f74fc04468f61e27c528886b5f9 ""
+  "y:/Documents/University/Y2T1/ICCS208-data-structures-and-abstraction/asignments/a4/proofs/a4.tex" 1686588927 240 8d1e49f50bb0c5ba0610ecef2eba135d ""
   (generated)
   "a4.aux"
   "a4.log"
@@ -169,6 +167,5 @@
   "a4.pdf"
   "a4.toc"
   "task-1.aux"
-  "task-2.aux"
   "title.aux"
   (rewritten before read)
