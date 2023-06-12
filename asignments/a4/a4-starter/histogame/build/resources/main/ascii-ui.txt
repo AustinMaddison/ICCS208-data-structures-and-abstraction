@@ -89,6 +89,7 @@ String[] getBoardWords()
 COMMAND/GUESS >                                                                  
 
 
+
 ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 █                             [X] INCORRECT GUESS                                █
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -109,7 +110,8 @@ COMMAND/GUESS >
 █                    [q] THANKS YOU FOR PLAYING, QUITTING GAME                   █
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-
+█   ELAPSED TIME : 0.00 seconds       █    LAST GUESS: hello                     █
+█   SCORE        : 10/30              █    ▒▒▒▒▒▒▒▒▒▒▓░░░░░░░░░░░░░░░░░░░   █
 
 
 █ ELAPSED TIME : 0.00 second █ LAST GUESS: word                                    █    

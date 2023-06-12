@@ -7,6 +7,8 @@ import static game.color.TerminalColor.*;
 
 public class MessageProvider {
     TerminalColor terminalColor;
+    private long startTime = System.currentTimeMillis();
+    private boolean firstRun = false;
     private int points;
     private int maxPoints;
     private String lastWord;
@@ -63,7 +65,40 @@ public class MessageProvider {
     }
 
     public String mainGameUI() {
-        return "";
+
+        if(firstRun) {
+            String time = 0 + " seconds";
+            firstRun = false;
+        }
+        String time = getTimeString() + " seconds";
+        String score = String.format("%d/%d", points, maxPoints);
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("█   ELAPSED TIME : %-19s█    LAST GUESS: %-26s█", time, lastWord)).append("\n");
+        sb.append(String.format("█   SCORE        : %-19s█    %s   █", score, getScoreBarUI())).append("\n");
+        sb.append(borderText(drawCharLineH(" ", widthDefault)));
+
+
+        sb.append("█                    COMMANDS: [?]Info [!]Give Up [q]Quit                        █");
+
+
+        return sb.toString();
+    }
+
+    private String getScoreBarUI() {
+        StringBuilder sb = new StringBuilder();
+
+        float percent = (float) points / maxPoints * 35;
+        int filled = (int) percent;
+        sb.append(drawCharLineH("▒",filled -1)).append("▓").append(drawCharLineH("░", 35 - filled));
+        return sb.toString();
+    }
+
+
+    private String getTimeString() {
+        float sec = (System.currentTimeMillis() - startTime) / 1000F;
+        return String.format("%.2f", sec);
+
     }
 
     /**
@@ -91,14 +126,14 @@ public class MessageProvider {
 
     /* Caption UI elements */
     public String quitGameUI() {
-        return ANSI_GREEN + captionUI( "[q] THANKS YOU FOR PLAYING, QUITTING GAME...") + terminalColor.reset();
+        return ANSI_GREEN + captionUI("[q] THANKS YOU FOR PLAYING, QUITTING GAME...") + terminalColor.reset();
     }
 
-    public static String restartUI(boolean won) {
+    public String restartUI(boolean won) {
         if (won) {
             return ANSI_GREEN + captionUI("[◕‿◕] YOU WON, RESTARTING GAME...") + terminalColor.reset();
         } else {
-            return ANSI_YELLOW + captionUI("[!] YOU GAVE UP, RESTARTING GAME...") +  terminalColor.reset();
+            return ANSI_YELLOW + captionUI("[!] YOU GAVE UP, RESTARTING GAME...") + terminalColor.reset();
         }
     }
 
@@ -112,15 +147,14 @@ public class MessageProvider {
 
     public static String captionUI(String msg) {
         StringBuilder sb = new StringBuilder();
-        sb.append(drawCharLineH("▀",widthDefault));
+        sb.append(drawCharLineH("▀", widthDefault));
         sb.append("\n");
         sb.append(borderText(centerText(msg)));
-        sb.append(drawCharLineH("▄",widthDefault));
+        sb.append(drawCharLineH("▄", widthDefault));
         return sb.toString();
     }
 
-
-    /* UI Helpers*/
+    /* UI Utilities*/
 
     private static String drawCharLineH(String pattern, int width) {
         return String.valueOf(pattern).repeat(Math.max(0, width));
@@ -139,11 +173,12 @@ public class MessageProvider {
 
     private static String borderText(String text, boolean borderOutside) {
         StringBuilder sb = new StringBuilder(text);
-        if(!borderOutside) {
-            sb.deleteCharAt(sb.length()-1).deleteCharAt(0);
+        if (!borderOutside) {
+            sb.deleteCharAt(sb.length() - 1).deleteCharAt(0);
         }
         return drawCharBorderV("█", sb.toString());
     }
+
     private static String borderText(String text) {
         return borderText(text, false);
     }
@@ -153,7 +188,7 @@ public class MessageProvider {
             return text;
         }
 
-        int offset = (width - text.length()) % 2 ;
+        int offset = (width - text.length()) % 2;
         int patternLen = (width - text.length() - padding * 2) / 2;
 
         StringBuilder sb = new StringBuilder();
@@ -170,11 +205,6 @@ public class MessageProvider {
         return sb.toString();
     }
 
-    /**
-     * @param width
-     * @param text
-     * @return
-     */
     private static String centerText(int width, String text) {
         return embedText(width, 0, " ", text);
     }
@@ -203,18 +233,23 @@ public class MessageProvider {
     }
 
     public static void main(String[] args) {
-        System.out.println(headingText(widthDefault+9, ANSI_GREEN + "W" + ANSI_RESET));
-        System.out.println(headingText("W"));
-        System.out.println(headingText("WWW"));
-        System.out.println(headingText("WWWW"));
-        System.out.print(borderText(centerText("W" )));
-        System.out.print(borderText(centerText("W")));
-        System.out.print(borderText(centerText("WW")));
-        System.out.print(borderText(centerText("WWW")));
-        System.out.print(borderText(centerText("WWWW")));
-        System.out.println(ANSI_RED);
-        System.out.print(captionUI(( "[X] INCORRECT GUESS")));
-        System.out.println(ANSI_RESET);
+//        System.out.println(headingText(widthDefault + 9, ANSI_GREEN + "W" + ANSI_RESET));
+//        System.out.println(headingText("W"));
+//        System.out.println(headingText("WWW"));
+//        System.out.println(headingText("WWWW"));
+//        System.out.print(borderText(centerText("W")));
+//        System.out.print(borderText(centerText("W")));
+//        System.out.print(borderText(centerText("WW")));
+//        System.out.print(borderText(centerText("WWW")));
+//        System.out.print(borderText(centerText("WWWW")));
+//        System.out.println(ANSI_RED);
+//        System.out.print(captionUI(("[X] INCORRECT GUESS")));
+//        System.out.println(ANSI_RESET);
+        WordBoard wordBoard = new WordBoard("linuxwords.txt");
+        TerminalColor terminalColor = new TerminalColor(ANSI_RESET, ANSI_RESET);
+        MessageProvider messageProvider = new MessageProvider(terminalColor);
+        messageProvider.update(10, 30, "hello", wordBoard);
+        System.out.println(messageProvider.mainGameUI());
     }
 
 //▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄ WORD BOARD INFO ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
