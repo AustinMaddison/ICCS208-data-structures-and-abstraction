@@ -1,0 +1,4 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Contents}{i}{chapter*.1}%
+\contentsline {chapter}{\numberline {1}Asymptotics}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Formal:}{1}{section.1.1}%
