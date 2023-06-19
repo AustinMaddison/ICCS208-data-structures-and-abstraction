@@ -1,0 +1,91 @@
+ \chapter{Task 5: More Running Time Analysis}
+
+\subsection*{P1}
+\begin{lstlisting}[language=Java]
+static void method1(int[] array) {
+    int n = array.length;
+    for (int index=0;index<n-1;index++) {
+        int marker = helperMethod1(array, index, n - 1);
+        swap(array, marker, index);
+    }
+}
+
+static void swap(int[] array, int i, int j) {
+    int temp=array[i];
+    array[i]=array[j];
+    array[j]=temp;
+}
+
+static int helperMethod1(int[] array, int first, int last) {
+    int max = array[first];
+    int indexOfMax = first;
+    for (int i=last;i>first;i--) {
+        if (array[i] > max) {
+            max = array[i];
+            indexOfMax = i;
+        }
+    }
+    return indexOfMax;
+}
+\end{lstlisting}
+
+\textbf{Time complexity:} 
+The best and worst case time complexity of \ttt{method1()} is $\Theta(n^2)$. This is because the outer loop runs $n-1$ times and the inner loop runs $n-1$ times. The swap function runs constant time as the amount of operations performed don't change as n changes, so we can ignore it in the calculation of the time complexity. Hence, we can calculate the tight upper-bound and lower-bound of the time complexity as the following:
+
+\begin{align*}
+  &= \Theta((n-1)\cdot(n-1))\\  
+  &= \Theta((n)\cdot(n))\\  
+  &= \Theta(n^2)  
+\end{align*}
+
+
+
+
+\pagebreak
+
+\subsection*{P2}
+
+\begin{lstlisting}[language=Java]
+static boolean method2(int[] array, int key) {
+    int n = array.length;
+    for (int index=0;index<n;index++) {
+        if (array[index] == key) return true;
+    }
+    return false;
+}
+\end{lstlisting}
+\vspace*{4pt}
+
+\textbf{Time complexity:} 
+The time complexity of \ttt{method2()} is $\Theta(n)$. The upper-bound/worst case time complexity is $O(n)$ and the lower-bound/best case time complexity is $\Omega(1)$. Combining the lower-bound and upper-bound time complexity we get $\Theta(n)$. 
+
+\vspace*{16pt}
+\hrule
+
+\subsection*{P3}
+
+\begin{lstlisting}[language=Java]
+static double method3(int[] array) {
+    int n = array.length;
+    double sum = 0;
+    for (int pass=100; pass >= 4; pass--) {
+        for (int index=0;index < 2*n;index++) {
+            for (int count=4*n;count>0;count/=2)
+                sum += 1.0*array[index/2]/count;
+        }
+    }
+    return sum;
+}
+\end{lstlisting}
+\vspace*{4pt}
+
+\textbf{Time complexity:} 
+The best and worst case time complexity of \ttt{method3()} is $(n\cdot \log_2n)$. This is because the most outer loop runs constant time, so it can be ignored. The inner loop runs $(n)$ times because its rate to termination is linear. Lastly, the most inner loop rate to termination shortens exponentially (specifically at a rate of $n/2$ every iteration) thus we can deduce that it runs a time complexity of $\log_2n$. 
+\\\\
+Combining the separate time complexities:
+\begin{align*}
+    &=(n) \cdot (log_2n)\\
+    &= (n \cdot log_2n)
+\end{align*}
+
+Since this is the time complexities of the best case and the worst case we can conclude the time complexity for \ttt{method3()} is $\Theta(n \cdot log_2n)$

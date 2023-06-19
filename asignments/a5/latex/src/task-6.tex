@@ -1,0 +1,116 @@
+\chapter{Task 6: Recursive Code}
+
+\subsection*{P1}
+\begin{lstlisting}[language=Java]
+// assume xs.length is a power of 2
+int halvingSum(int[] xs) {
+    if (xs.length == 1) return xs[0];
+    else {
+        int[] ys = new int[xs.length/2];
+        for (int i=0;i<ys.length;i++)
+            ys[i] = xs[2*i]+xs[2*i+1];
+        return halvingSum(ys);
+    }
+}
+\end{lstlisting}
+\vspace*{4pt}
+
+\textbf{1. Method of Measuring Problem Size:}\\ 
+The problem size is measured using the length of the input array \ttt{xs[]}.
+\\
+    
+\textbf{2. Recurrence Relation:}\\ 
+Let n = length of the array \ttt{xs[]}. The recurrence relation can be written as:
+\begin{align*}
+ T(n) &=  \underbrace{T({n\over2})}_{\text{recurrence}} +
+\underbrace{({n\over2})\cdot c_1}_{\text{allocating new array}} +
+\underbrace{({n\over2})\cdot c_2}_{\text{for loop}}
+; T(1) = O(1)\\
+T(n) &=  T({n\over2}) +O(n)
+ ; T(1) = O(1)\\
+\end{align*}
+
+\textbf{3. Running Time Complexity}\\ 
+According to a table of common recurrences assuming T(0) and T(1) are constant the reccurence relation solves to the following:
+
+\begin{align*}
+    T(n) &= T({n\over2}) +O(n) \rightarrow O(n) 
+\end{align*}
+
+\pagebreak
+
+\subsection*{P2}
+\begin{lstlisting}[language=Java]
+int anotherSum(int[] xs) {
+    if (xs.length == 1) return xs[0];
+    else {
+        int[] ys = Arrays.copyOfRange(xs, 1, xs.length);
+        return xs[0]+anotherSum(ys);
+    }
+}
+\end{lstlisting}
+
+\textbf{1. Method of Measuring Problem Size:}\\ 
+The problem size is measured using the length of the input array \ttt{xs[]}.
+\\
+    
+\textbf{2. Recurrence Relation:}\\ 
+Let n = length of the array \ttt{xs[]}. The recurrence relation can be written as:
+\begin{align*}
+ T(n) &=  \underbrace{T({n-1})}_{\text{recurrence}} +
+\underbrace{({n - 1})\cdot c_1}_{\text{copying array}}
+; T(1) = O(1)\\
+T(n) &=  T({n-1}) +O(n)
+ ; T(1) = O(1)\\
+\end{align*}
+
+\textbf{3. Running Time Complexity}\\ 
+According to a table of common recurrences assuming T(0) and T(1) are constant the reccurence relation solves to the following:
+
+\begin{align*}
+    T(n) &=  T({n-1}) +O(n) \rightarrow O(n) 
+\end{align*}
+
+
+\hrule
+
+\subsection*{P3}
+\begin{lstlisting}[language=Java]
+int[] prefixSum(int[] xs) {
+    if (xs.length == 1) return xs;
+    else {
+        int n = xs.length;
+        int[] left = Arrays.copyOfRange(xs, 0, n/2);
+        left = prefixSum(left);
+        int[] right = Arrays.copyOfRange(xs, n/2, n);
+        right = prefixSum(right);
+        int[] ps = new int[xs.length];
+        int halfSum = left[left.length-1];
+        for (int i=0;i<n/2;i++) { ps[i] = left[i]; }
+        for (int i=n/2;i<n;i++) { ps[i] = right[i - n/2] + halfSum; }
+        return ps;
+    }
+}
+\end{lstlisting}
+
+\textbf{1. Method of Measuring Problem Size:}\\ 
+The problem size is measured using the length of the input array \ttt{xs[]}.
+\\
+    
+\textbf{2. Recurrence Relation:}\\ 
+Let n = length of the array \ttt{xs[]}. The recurrence relation can be written as assuming that:
+\begin{align*}
+ T(n) &=  \underbrace{T({n\over2})+T({n\over2})}_{\text{recurrence left + right}} +
+\underbrace{({n\over2})\cdot c_1+({n\over2})\cdot c_1}_{\text{copying array left + right}}
+; T(1) = O(1)\\
+T(n) &=  2T({n\over2})+O(n)
+ ; T(1) = O(1)\\
+\end{align*}
+
+\textbf{3. Running Time Complexity}\\ 
+According to a table of common recurrences assuming T(0) and T(1) are constant the reccurence relation solves to the following:
+\begin{align*}
+   T(n) &=  2T({n\over2})+O(n) \rightarrow O(n \cdot log_2n)
+   \end{align*}
+
+

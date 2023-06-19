@@ -1,0 +1,96 @@
+\chapter{Task 3: How Long Does This Take}
+\begin{lstlisting}[language=Java] 
+void programA(int n) {
+        long prod = 1;
+        for (int c=n; c>0; c=c/2)
+            prod = prod * c;
+}
+\end{lstlisting}
+
+
+
+\subsection*{programA()}
+The time complexity of the programA() is $\Theta(\log_2n)$. This can be proven by translating the for loop into a recurrence relation making sure it has the same iterating and terminating behavior to ensure it shares the same time complexity. We can ignore the variable \texttt{prod} as it doesn't have significance in analyzing the time complexity of the function.
+
+$$
+T(n) = T( {n \over 2} )
+$$
+
+Now we can plug and chug to inspect the behavior of the function, specifically the behavior being how fast the function takes terminate relation to how big n is.
+
+\begin{align*}
+T(16) &= T( {16 \over 2} ) \\
+&= T( {8 \over 2} ) \\
+&= T( {4 \over 2} ) \\
+&= T( {2 \over 2} ) \\
+&= \ldots  \\
+\end{align*}
+
+We can see that for every recurrence of the function T(n) input n starts off reducing rapidly then slows down as it gets closer to zero. We can deduce that the time complexity must be some $\log$ function.
+
+\pagebreak
+
+Furthermore, we might stare the numerators long enough such that we realize they are numbers of base two where their exponent is being reduced by 1 every recurrence.
+
+\begin{align*}
+    T(2^4) &= T( {2^4 \over 2} ) \\
+    &= T( {2^3 \over 2} ) \\
+    &= T( {2^2 \over 2} ) \\
+    &= T( {2 \over 2} ) \\
+    &= \ldots  \\
+    \end{align*}
+
+Thus we can further deduce with confidence that the time complexity must be of $\log_2n$.\\ 
+Since we were able to deduce the exact behavior of the function using the recurrence relation it is safe to say that there exist constants that can create a tight upper-bound and lower-bound of programA(). Hence, we can conclude that the time complexity of programA() is $\Theta(\log_2n)$.
+
+\vspace*{8pt}
+\hrule
+\vspace*{8pt}
+
+
+\subsection*{programB()}
+
+\begin{lstlisting}[language=Java] 
+    void programB(int n) {
+        long prod = 1;
+        for (int c=1; c<n; c=c*3)
+            prod = prod * c;
+    }
+    
+\end{lstlisting}
+
+Similarly, the time complexity of the programB() is $\Theta(\log_3n)$. This can be proven by again translating the for loop into a recurrence relation making sure it has the same iterating and terminating behavior to ensure it shares the same time complexity.
+$$
+T(n) = T( {n \over 3    } )
+$$
+
+Now we can plug and chug to inspect the behavior of the function, specifically the behavior being how fast the function takes terminate relation to how big n is.
+
+\begin{align*}
+T(81) &= T( {81 \over 3} ) \\
+&= T( {27 \over 3} ) \\
+&= T( {9 \over 3} ) \\
+&= T( {3 \over 3} ) \\
+&= \ldots  \\
+\end{align*}
+
+We can see that for every recurrence of the function T(n) input n starts off reducing rapidly then slows down as it gets closer to zero. We can deduce that the time complexity must be some $\log$ function.
+
+\pagebreak
+
+Again, we might stare the numerators long enough such that we realize they are numbers of base 3 where their exponent is being reduced by 1 every recurrence.
+
+\begin{align*}
+    T(3^4) &= T( {3^4 \over 3} ) \\
+    &= T( {3^3 \over 3} ) \\
+    &= T( {3^2 \over 3} ) \\
+    &= T( {3 \over 3} ) \\
+    &= \ldots  \\
+    \end{align*}
+
+Thus we can further deduce with confidence that the time complexity must be of $\log_3n$.\\ 
+Since we were able to deduce the exact behavior of the function using the recurrence relation it is safe to say that there exist constants that have a tight upper-bound and lower-bound. Hence, we can conclude that the time complexity of programB() is $\Theta(\log_3n)$.
+    
+    
+
+

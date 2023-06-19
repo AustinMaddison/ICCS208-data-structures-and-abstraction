@@ -1,0 +1,49 @@
+ \chapter{Task 2: Hello, Definition}
+
+To prove that $f(n) \leq c \cdot g(n)$, such that $c$ and $n$ exist in $\mathbf{I}^+$, and $n \geq n_0$, where $f(n) = n$ and $g(n) = n \log n$.
+We need to find values for $c$ and $n_0$ such that the inequality holds true.\\
+
+Let's choose $c = 1$ and $n_0 = 1$.\\
+
+For $n \geq 1$, we have: 
+\begin{align*}
+f(n) &= n \\
+g(n) &= n \log n
+\end{align*}
+
+Substituting these values into the inequality, we get:
+\begin{align*}
+n &\leq n \log n
+\end{align*}
+
+Taking the logarithm of both sides, we have:
+\begin{align*}
+\log n &\leq \log(n \log n)
+\end{align*}
+
+Using the logarithmic property $\log(a \cdot b) = \log a + \log b$, we can rewrite the right side as:
+\begin{align*}
+\log(n \log n) &= \log n + \log(\log n)
+\end{align*}
+
+Now, the inequality becomes:
+\begin{align*}
+\log n &\leq \log n + \log(\log n)
+\end{align*}
+
+Since $\log n$ is a positive value, we can subtract $\log n$ from both sides, resulting in:
+\begin{align*}
+0 &\leq \log(\log n)
+\end{align*}
+
+For $n \geq 1$, the logarithm of the logarithm of $n$ is always a positive value or zero. Therefore, the inequality $0 \leq \log(\log n)$ holds true.\\
+
+We have shown that for $c = 1$ and $n_0 = 1$, $f(n) = n$ is less than or equal to $c \cdot g(n)$ for all $n \geq n_0$.\\
+
+Therefore, we can conclude that $f(n) = n$ is $O(n \log n)$.
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+\chapter{Task 4: Halving, Sum}
+
+\begin{lstlisting}[language=Python]
+def hsum(X): # assume len(X) is a power of two
+    while len(X) > 1:
+        (1) allocate Y as an array of length len(X)/2
+        (2) fill in Y so that Y[i] = X[2i] + X[2i+1] for i = 0, 1, ..., len(X)/2 - 1
+        (3) X = Y
+    return X[0]
+\end{lstlisting}
+
+\vspace*{8pt}
+\hrule
+
+\subsection*{P1}
+The amount of work being done in steps 1-3 of fsum() in terms of $k_1$ and $k_2$ where $k_1,k_2, \in \mathbf{R_+}$ under the assumptions provided is:
+
+\[
+  \underbrace{({1 \over 2}\cdot k_1)z}_{\text{Step 1}} + \underbrace{({z \over 2} \cdot k_2)}_{\text{Step 2}} +\underbrace{(k_2)}_{\text{Step 3}}
+\]
+
+\textbf{Step 1:}
+We have to allocate \texttt{Y[]} which is half the size of array \texttt{X}. We know that $k_1 \cdot z$ is the cost of allocating array of size \texttt{X}. Hence allocating array of size \texttt{Y} is the same as allocating size array of size \texttt{X} divided by 2.
+\[
+ ({1 \over 2}\cdot k_1)z
+\]
+
+\textbf{Step 2:}
+We have to read, summate, then store \texttt{X[i]} and \texttt{X[i+1]}in \texttt{Y[i]} for $i = 0, 1, 2, \ldots, {z\over 2} - 1$. In the assumption its states that this set of operation done for each value that ends up in array \texttt{Y} is equal to the cost of $k_2$. Since we are summating every subsequent element pair \texttt{X[]},\texttt{ Y[]} will be half the size of \texttt{X[]}. Hence, we will have to use the $k_2\cdot{z\over2}$ times. 
+
+\[
+ ({z \over 2} \cdot k_2)
+\]
+
+\textbf{Step 3:}
+Finally we will have to use 1 more operation $k_2$ to pass the array made in \texttt{Y[]} to \texttt{X[]}.
+
+
+\[
+ k_2
+\]
+
+\pagebreak
+\subsection*{P2}
+To analyze the time complexity of this function I will construct a recurrence relation that has the same behavior as the function \texttt{hsum()}. This will help us observe how the length of \texttt{X[]} changes as the function iterates. To do this we can create a recurrence relation that halves the input for every iteration of the recurrence. 
+
+\begin{align*}
+    T(n) &= T({n \over 2})    
+\end{align*}
+
+Let's plug and chug.
+
+\begin{align*}
+    T(32) &= T({32 \over 2})\\    
+          &= T({16 \over 2})\\    
+          &= T({8 \over 2})\\    
+          &= T({4 \over 2})\\    
+          &= T({2 \over 2})\\    
+          &= \ldots     
+\end{align*}
+
+From inspection, we can see that the size of \texttt{X[]} n,  reduces at a rate of $\log_2$. Thus, we can come to the conclusion that the function \texttt{hsum()} has the time complexity of $\Theta(n)$,
+
+
+
