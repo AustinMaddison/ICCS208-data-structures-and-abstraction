@@ -1101,6 +1101,8 @@ INPUT .\task-7.tex
 INPUT task-7.tex
 INPUT .\task-7.tex
 INPUT task-7.tex
+INPUT C:\Users\Austi\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmssi9.tfm
+INPUT C:\Users\Austi\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcsi0900.tfm
 INPUT y:\Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\master.aux
 INPUT y:\Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\title.aux
 INPUT y:\Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\title.aux
@@ -1128,6 +1130,8 @@ INPUT y:\Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asign
 INPUT y:\Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\task-7.aux
 INPUT y:\Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\master.out
 INPUT y:\Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\master.out
+INPUT C:\Users\Austi\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcsi0900.pk
+INPUT C:\Users\Austi\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcsi0900.pk
 INPUT C:\Users\Austi\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcss0900.pk
 INPUT C:\Users\Austi\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcss0900.pk
 INPUT C:\Users\Austi\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm0900.pk

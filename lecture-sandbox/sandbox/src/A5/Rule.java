@@ -24,3 +24,15 @@ public class Rule {
         printRuler(4);
     }
 }
+
+
+void printRuler(int n) {
+    if (n > 0) {
+        printRuler(n-1);
+        // print n dashes
+        for (int i=0;i<n;i++) System.out.print('-');
+        System.out.println();
+        // --------------
+        printRuler(n-1);
+    }
+}

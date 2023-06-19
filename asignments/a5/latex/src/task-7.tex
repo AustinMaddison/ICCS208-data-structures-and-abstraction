@@ -1,49 +1,92 @@
  \chapter{Task 7: Counting Dashes}
 
-To prove that $f(n) \leq c \cdot g(n)$, such that $c$ and $n$ exist in $\mathbf{I}^+$, and $n \geq n_0$, where $f(n) = n$ and $g(n) = n \log n$:\\
+\begin{lstlisting}[language=Java]
+void printRuler(int n) {
+    if (n > 0) {
+        printRuler(n-1);
+        // print n dashes
+        for (int i=0;i<n;i++) System.out.print('-');
+        System.out.println();
+        // --------------
+        printRuler(n-1);
+    }
+}
+\end{lstlisting}
 
-We need to find values for $c$ and $n_0$ such that the inequality holds true.\\
 
-Let's choose $c = 1$ and $n_0 = 1$.\\
-
-For $n \geq 1$, we have: 
+The recurrence relation of the function \ttt{printRuler()} is given as the following:
+\[
+ g(n) = 2g(n-1) + n;  g(0) = 0
+\]
+The output of the recurrence gives the total amount of dashes needed to draw a rule of size n. The following shows how the recurrence can be solved with a closed form function.
 \begin{align*}
-f(n) &= n \\
-g(n) &= n \log n
+    f(n) &= 2^n - 1\\
+    g(n) &= a \cdot f(n) + b\cdot n + c  
+\end{align*}
+Let me first list out the outputs of the recurrence relation for when n=0, 1, 2 and 3. This sample will give us an idea on how the output grows relation to n. Additionally, while developing the close form of the recurrence it gives us the opportunity to compare the outputs, so we can strategically tweak variables to get the desired outputs.
+\begin{align*}
+&g(0) = 0\\
+&g(1) = 1\\
+&g(2) = 4\\
+&g(3) = 11
 \end{align*}
 
-Substituting these values into the inequality, we get:
+\textbf{(i):} 
+Lets first find c. Let us do what is advised and plug in 0 into g(n).
+\begin{alignat*}{3}
+    g(0) &= a\cdot f(0) &&+ &&b\cdot 0 + c \\
+         &= a\cdot 0 &&+  &&b\cdot 0 + c = 0
+\end{alignat*}
+
+\textbf{(ii):} 
+Notice that the first 2 terms of the equation $a\cdot 0 + b\cdot 0$ must equal zero. Hence, $c=0$ because $g(0) = 0$ shown in the list of outputs.
+Now we need to find the values of a and b. Lets plugin in 3 into g(n).
+\begin{alignat*}{3}
+    g(3) &= a\cdot f(3) &&+ &&b\cdot 3 + c \\
+         &= a\cdot 7 &&+  &&b\cdot 3 + 0 = 11 
+\end{alignat*}
+
+\textbf{(iii):} 
+We can substitute in f(n) to form the closed for g(n).
+\begin{alignat*}{3}
+    g(n) &= 2f(n)-n \\
+         &= 2(2^n - 1)-n \\  
+\end{alignat*}
+
+\pagebreak
+
+\textbf{(iv):} 
+Let's prove that the close form is true for all values of n using induction. Let's prove that $g(n) = 2g(n - 1) + n = 2(2^n - 1)-n $
+\\\\
+\textbf{Predicate:}\\
+Assuming that the recurrence relation is $g(n) = 2g(n - 1) + n  = 2f(n) - n$.
+\[
+  P(n) = \underbrace{2f(n)- n}_{\text{recurrence}}  = \underbrace{2(2^n - 1)-n}_{\text{close form}}
+\]
+\textbf{Base Case:} 
+\[
+  P(0) = 0
+\]
+This base case is true because\dots
 \begin{align*}
-n &\leq n \log n
+    P(0) &= \underbrace{2f(0)- 0}_{\text{recurrence}} &&= \underbrace{2(2^0 - 1)-0}_{\text{close form}}\\
+         &= 0 &&= 0 &&\rightarrow \text{true}
 \end{align*}
 
-Taking the logarithm of both sides, we have:
+\textbf{Inductive Step:}\\ 
+Let us assume that $P(k)$ is true for all positive integer values of k. We want to show when $P(k)$ is true then $P(k+1)$ is true also.
 \begin{align*}
-\log n &\leq \log(n \log n)
+ g(k+1) &= g(k+1)\\
+ 2f(k+1) - (k+1) &= 2(2^{k+1}-1) - (k + 1)
+\end{align*}
+LHS:
+\begin{align*}
+    &= 2f(k+1) - (k+1)\\
+\end{align*}
+Let's substitute the given close form of f(n) thus we get\dots
+\begin{align*}
+    &= 2(2^{k+1}-1) - (k+1)\\
+    &=\text{RHS}
 \end{align*}
 
-Using the logarithmic property $\log(a \cdot b) = \log a + \log b$, we can rewrite the right side as:
-\begin{align*}
-\log(n \log n) &= \log n + \log(\log n)
-\end{align*}
-
-Now, the inequality becomes:
-\begin{align*}
-\log n &\leq \log n + \log(\log n)
-\end{align*}
-
-Since $\log n$ is a positive value, we can subtract $\log n$ from both sides, resulting in:
-\begin{align*}
-0 &\leq \log(\log n)
-\end{align*}
-
-For $n \geq 1$, the logarithm of the logarithm of $n$ is always a positive value or zero. Therefore, the inequality $0 \leq \log(\log n)$ holds true.\\
-
-We have shown that for $c = 1$ and $n_0 = 1$, $f(n) = n$ is less than or equal to $c \cdot g(n)$ for all $n \geq n_0$.\\
-Therefore, we can conclude that $f(n) = n$ is $O(n \log n)$.
-
-
-
-
-
-
+Since the RHS and LHS we can assume under the inductive hypothesis that P(k+1) is also true when P(k) is true. 

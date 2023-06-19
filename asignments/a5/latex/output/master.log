@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.6.7)  19 JUN 2023 14:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.6.7)  19 JUN 2023 18:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1010,32 +1010,70 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--99
 
  (task-7.tex
 Chapter 7.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 6.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 8.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 10.
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <9> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 10.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 10.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 10.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 10.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 10.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 10.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 10.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 10.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 10.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 10.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 10.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 10.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 10.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 10.
+LaTeX Info: Symbol \textminus not provided by
+            font family xcmss in TS1 encoding.
+            Default family used instead on input line 11.
+[14
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 58--63
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 5--6
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
-
- []
-
-) [14
-
-
-
-
-] (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\master.aux (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\title.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\task-1.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\task-2.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\task-3.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\task-4.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\task-5.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\task-6.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\task-7.aux))
+) [15] (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\master.aux (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\title.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\task-1.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\task-2.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\task-3.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\task-4.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\task-5.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\task-6.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\task-7.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1043,17 +1081,17 @@ Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: 7734C97E5195CE0279769227FDF384A2;1363.
  ) 
 Here is how much of TeX's memory you used:
- 20308 strings out of 476331
- 348943 string characters out of 5787766
+ 20339 strings out of 476331
+ 349342 string characters out of 5787766
  1889660 words of memory out of 5000000
- 40111 multiletter control sequences out of 15000+600000
- 525838 words of font info for 116 fonts, out of 8000000 for 9000
+ 40121 multiletter control sequences out of 15000+600000
+ 526837 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,15n,95p,1096b,1456s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Austi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss0900.pk> <C:\Users\Austi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0900.pk> <C:\Users\Austi\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cmbright/dpi540\cmtl10.pk> <C:\Users\Austi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0900.pk><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmsmfIPiXibx9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssbx12.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssbx17.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssbx9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssex9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssmi6.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssmi9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmsssy6.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmsssy9.pfb>
-Output written on y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\master.pdf (16 pages, 258314 bytes).
+ <C:\Users\Austi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcsi0900.pk> <C:\Users\Austi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss0900.pk> <C:\Users\Austi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0900.pk> <C:\Users\Austi\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cmbright/dpi540\cmtl10.pk> <C:\Users\Austi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0900.pk><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmsmfIPiXibx9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssbx12.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssbx17.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssbx9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssex9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssmi6.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssmi9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmsssy6.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmsssy9.pfb>
+Output written on y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\master.pdf (17 pages, 265947 bytes).
 PDF statistics:
- 371 PDF objects out of 1000 (max. 8388607)
- 131 named destinations out of 1000 (max. 500000)
- 35405 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 396 PDF objects out of 1000 (max. 8388607)
+ 143 named destinations out of 1000 (max. 500000)
+ 36429 words of extra memory for PDF output out of 42996 (max. 10000000)
 
