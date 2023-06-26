@@ -1,49 +1,17 @@
- \chapter{Task 2: Hello, Definition}
+ \chapter{Task 2: Poisoned Wine}
 
-To prove that $f(n) \leq c \cdot g(n)$, such that $c$ and $n$ exist in $\mathbf{I}^+$, and $n \geq n_0$, where $f(n) = n$ and $g(n) = n \log n$.
-We need to find values for $c$ and $n_0$ such that the inequality holds true.\\
+We can create a scheme to detect what wine bottle has poison by  encoding each bottle using the testers. Since we can only have $log_2n$ testers, this enough bits to represent $1, 2, \dots,n$ wine bottles. The idea is better illustrated. For example lets have a scenario where there is n=4 (4 wine bottles) which means he get t=log_2(2)= 2 (2 testers).
+\\
 
-Let's choose $c = 1$ and $n_0 = 1$.\\
+This scenerio looks like the following:
 
-For $n \geq 1$, we have: 
-\begin{align*}
-f(n) &= n \\
-g(n) &= n \log n
-\end{align*}
+\begin{alignat*}{3}
+    &\text{Wine Bottle \hspace*{10}}    &&T_1 \hspace*{10}           &&&T_2 \\
+    & W_1                  &&0             &&& 0  \\ 
+    & W_2                  &&0             &&& 1  \\ 
+    & W_3                  &&1             &&& 0  \\ 
+    & W_4                  &&1             &&& 1  \\ 
+\end{alignat*}
 
-Substituting these values into the inequality, we get:
-\begin{align*}
-n &\leq n \log n
-\end{align*}
-
-Taking the logarithm of both sides, we have:
-\begin{align*}
-\log n &\leq \log(n \log n)
-\end{align*}
-
-Using the logarithmic property $\log(a \cdot b) = \log a + \log b$, we can rewrite the right side as:
-\begin{align*}
-\log(n \log n) &= \log n + \log(\log n)
-\end{align*}
-
-Now, the inequality becomes:
-\begin{align*}
-\log n &\leq \log n + \log(\log n)
-\end{align*}
-
-Since $\log n$ is a positive value, we can subtract $\log n$ from both sides, resulting in:
-\begin{align*}
-0 &\leq \log(\log n)
-\end{align*}
-
-For $n \geq 1$, the logarithm of the logarithm of $n$ is always a positive value or zero. Therefore, the inequality $0 \leq \log(\log n)$ holds true.\\
-
-We have shown that for $c = 1$ and $n_0 = 1$, $f(n) = n$ is less than or equal to $c \cdot g(n)$ for all $n \geq n_0$.\\
-
-Therefore, we can conclude that $f(n) = n$ is $O(n \log n)$.
-
-
-
-
-
-
+So we have all the testers taste all the wine on the 1st day. By day 31st the wine bottle that has the poison will be encoded by whether the testers laughed or not. 
+Using this scheme, we can detect what bottle has poison and has number of testers that fit the $log_2n$ requirement.

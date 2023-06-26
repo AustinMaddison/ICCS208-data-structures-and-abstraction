@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c37e41e0-433b-4b95-8ea9-fffe2a07a15d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../lecture-sandbox/sandbox/src/A5/DJ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lecture-sandbox/sandbox/src/L17/PQ.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lecture-sandbox/sorting/MergeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../a5/latex/output/master.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/../../a5/latex/output/master.fdb_latexmk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../a5/latex/output/master.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../a5/latex/output/master.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../a5/latex/output/master.out" beforeDir="false" afterPath="$PROJECT_DIR$/../../a5/latex/output/master.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../a5/latex/output/master.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../a5/latex/output/master.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../a5/latex/output/master.synctex.gz" beforeDir="false" afterPath="$PROJECT_DIR$/../../a5/latex/output/master.synctex.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../a5/latex/output/master.toc" beforeDir="false" afterPath="$PROJECT_DIR$/../../a5/latex/output/master.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../a5/latex/output/task-2.aux" beforeDir="false" afterPath="$PROJECT_DIR$/../../a5/latex/output/task-2.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../a5/latex/src/task-2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../a5/latex/src/task-2.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../a5/latex/src/task-7.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../a5/latex/src/task-7.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lecture-sandbox/sandbox/src/A5/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lecture-sandbox/sandbox/src/A5/Rule.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2RjZHFkpC7oXwKvhiAihHzLRP9K" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c37e41e0-433b-4b95-8ea9-fffe2a07a15d" name="Changes" comment="" />
+      <created>1687765364473</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687765364473</updated>
+      <workItem from="1687765367890" duration="31000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

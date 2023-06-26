@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.6.7)  19 JUN 2023 18:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.6.7)  20 JUN 2023 12:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -847,25 +847,246 @@ Package amsmath Warning: Foreign command \over;
 
  (task-2.tex
 Chapter 2.
+task-2.tex:3: Missing $ inserted.
+<inserted text> 
+                $
+l.3 ... (4 wine bottles) which means he get t=log_
+                                                  2(2)= 2 (2 testers).
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+task-2.tex:5: Missing $ inserted.
+<inserted text> 
+                $
+l.5 
+    
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
 
+task-2.tex:14: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.14 \end{alignat*}
+                   
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
-Underfull \hbox (badness 10000) in paragraph at lines 6--7
+task-2.tex:14: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.14 \end{alignat*}
+                   
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
- []
+task-2.tex:14: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.14 \end{alignat*}
+                   
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+task-2.tex:14: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.14 \end{alignat*}
+                   
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+task-2.tex:14: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.14 \end{alignat*}
+                   
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
+task-2.tex:14: Package amsmath Error: Extra & on this line.
 
- []
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \end{alignat*}
+                   
+\An extra & here is so disastrous that you should probably exit
+ and fix things up. 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--42
+task-2.tex:14: Package amsmath Error: Extra & on this line.
 
- []
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \end{alignat*}
+                   
+\An extra & here is so disastrous that you should probably exit
+ and fix things up. 
+
+
+task-2.tex:14: Package amsmath Error: Extra & on this line.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \end{alignat*}
+                   
+\An extra & here is so disastrous that you should probably exit
+ and fix things up. 
+
+
+task-2.tex:14: Package amsmath Error: Extra & on this line.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \end{alignat*}
+                   
+\An extra & here is so disastrous that you should probably exit
+ and fix things up. 
+
+
+task-2.tex:14: Package amsmath Error: Extra & on this line.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \end{alignat*}
+                   
+\An extra & here is so disastrous that you should probably exit
+ and fix things up. 
+
+task-2.tex:14: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.14 \end{alignat*}
+                   
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+task-2.tex:14: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.14 \end{alignat*}
+                   
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+task-2.tex:14: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.14 \end{alignat*}
+                   
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+task-2.tex:14: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.14 \end{alignat*}
+                   
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+task-2.tex:14: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.14 \end{alignat*}
+                   
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+task-2.tex:14: Misplaced \omit.
+\math@cr@@@ ...@ \@ne \add@amps \maxfields@ \omit 
+                                                  \kern -\alignsep@ \iftag@ ...
+l.14 \end{alignat*}
+                   
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+task-2.tex:14: Misplaced \omit.
+\math@cr@@@ ...@ \@ne \add@amps \maxfields@ \omit 
+                                                  \kern -\alignsep@ \iftag@ ...
+l.14 \end{alignat*}
+                   
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+task-2.tex:14: Misplaced \omit.
+\math@cr@@@ ...@ \@ne \add@amps \maxfields@ \omit 
+                                                  \kern -\alignsep@ \iftag@ ...
+l.14 \end{alignat*}
+                   
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+task-2.tex:14: Misplaced \omit.
+\math@cr@@@ ...@ \@ne \add@amps \maxfields@ \omit 
+                                                  \kern -\alignsep@ \iftag@ ...
+l.14 \end{alignat*}
+                   
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+task-2.tex:14: Misplaced \omit.
+\math@cr@@@ ...@ \@ne \add@amps \maxfields@ \omit 
+                                                  \kern -\alignsep@ \iftag@ ...
+l.14 \end{alignat*}
+                   
+I expect to see \omit only after tab marks or the \cr of
+an alignment. Proceed, and I'll ignore this case.
 
 ) [3
 
@@ -1078,7 +1299,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--63
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 7734C97E5195CE0279769227FDF384A2;1363.
+(rerunfilecheck)             Checksum: D575A4A444985C399B4B0A59F4EF5DD3;1343.
  ) 
 Here is how much of TeX's memory you used:
  20339 strings out of 476331
@@ -1089,7 +1310,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  99i,15n,95p,1096b,1456s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Austi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcsi0900.pk> <C:\Users\Austi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss0900.pk> <C:\Users\Austi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0900.pk> <C:\Users\Austi\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cmbright/dpi540\cmtl10.pk> <C:\Users\Austi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm0900.pk><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmsmfIPiXibx9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssbx12.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssbx17.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssbx9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssex9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssmi6.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssmi9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmsssy6.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmsssy9.pfb>
-Output written on y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\master.pdf (17 pages, 265947 bytes).
+Output written on y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a5\latex\output\master.pdf (17 pages, 267256 bytes).
 PDF statistics:
  396 PDF objects out of 1000 (max. 8388607)
  143 named destinations out of 1000 (max. 500000)
