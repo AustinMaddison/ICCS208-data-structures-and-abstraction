@@ -1,61 +1,42 @@
 public class Last {
 
-
-    class Node {
-        int key;
-        Node left, right;
-
-        public Node(int item, Node left, Node right) {
-            this.key = item;
-            this.left = left;
-            this.right = right;
-        }
-
-        public Node(int item) {
-            this(item, null, null);
-        }
-
-    }
-
-
-    class BinaryTree {
-        Node root;
-
-        BinaryTree(int key) {
-            this.root = new Node(key);
-        }
-        BinaryTree() {
-            this.root = null;
-        }
-
-        public void add(int item) {
-            addHelper(root, new Node(item));
-        }
-
-        private void addHelper(Node p, Node node) {
-            if(p == null) {
-                p = node;
-                return;
-            }
-
-            if(node.key < p.key) {
-                addHelper(p.left, node);
-            }
-            else {
-                addHelper(p.right, node);
-            }
-        }
-    }
-
-
-    class BinarySearchTree {
-        BinaryTree binaryTree = new BinaryTree();
-
-        Bin
-    }
-
     public static Integer binarySearchLast(int[] a, int k) {
+        Integer idx = binarySearch(a, k);
 
+        if(idx == null) return null;
+
+        // Iterates to last index.
+        while(idx < a.length-1 && a[idx + 1] == k)
+            idx++;
+
+        return idx;
     }
+
+    private static Integer binarySearch(int[] a, int k) {
+        int low = 0;
+        int high = a.length-1;
+
+        while(low <= high) {
+
+            // Recalculate middle position.
+            int mid = (high - low) / 2 + low;
+
+            if(k < mid) {
+                high = mid - 1;
+            }
+            if(k > mid) {
+                low = mid  + 1;
+            }
+
+            // Found.
+            if(k == a[mid]) {
+                return  mid;
+            }
+        }
+
+        // Not found.
+        return null;
+    }
+
 
 }
