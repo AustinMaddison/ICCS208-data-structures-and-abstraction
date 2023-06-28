@@ -1,0 +1,17 @@
+ \chapter{Task 2: Poisoned Wine}
+
+We can create a scheme to detect what wine bottle has poison by  encoding each bottle using the testers. Since we can only have $log_2n$ testers, this enough bits to represent $1, 2, \dots,n$ wine bottles. The idea is better illustrated. For example lets have a scenario where there is n=4 (4 wine bottles) which means he get t=log_2(2)= 2 (2 testers).
+\\
+
+This scenerio looks like the following:
+
+\begin{alignat*}{3}
+    &\text{Wine Bottle \hspace*{10}}    &&T_1 \hspace*{10}           &&&T_2 \\
+    & W_1                  &&0             &&& 0  \\ 
+    & W_2                  &&0             &&& 1  \\ 
+    & W_3                  &&1             &&& 0  \\ 
+    & W_4                  &&1             &&& 1  \\ 
+\end{alignat*}
+
+So we have all the testers taste all the wine on the 1st day. By day 31st the wine bottle that has the poison will be encoded by whether the testers laughed or not. 
+Using this scheme, we can detect what bottle has poison and has number of testers that fit the $log_2n$ requirement.

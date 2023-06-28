@@ -21,7 +21,6 @@ public class Zombie {
             }
         }
 
-
         while (i < s1.length)
             s[k++] = s1[i++];
 

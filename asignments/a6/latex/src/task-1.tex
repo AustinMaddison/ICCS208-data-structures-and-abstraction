@@ -1,0 +1,101 @@
+\chapter{Task 1: Hello, Definition}
+
+\small \subsection*{P1}
+To prove that $f(n) \leq c \cdot g(n)$, such that $c$ and $n$ exist in $\mathbf{I}^+$, and $n \geq n_0$, where $f(n) = n$ and $g(n) = n \log n$.
+We need to find values for $c$ and $n_0$ such that the inequality holds true.\\
+
+Let's choose $c = 1$ and $n_0 = 1$.\\
+
+For $n \geq 1$, we have: 
+\begin{align*}
+f(n) &= n \\
+g(n) &= n \log n
+\end{align*}
+
+Substituting these values into the inequality, we get:
+\begin{align*}
+n &\leq n \log n
+\end{align*}
+
+Taking the logarithm of both sides, we have:
+\begin{align*}
+\log n &\leq \log(n \log n)
+\end{align*}
+
+Using the logarithmic property $\log(a \cdot b) = \log a + \log b$, we can rewrite the right side as:
+\begin{align*}
+\log(n \log n) &= \log n + \log(\log n)
+\end{align*}
+
+Now, the inequality becomes:
+\begin{align*}
+\log n &\leq \log n + \log(\log n)
+\end{align*}
+
+Since $\log n$ is a positive value, we can subtract $\log n$ from both sides, resulting in:
+\begin{align*}
+0 &\leq \log(\log n)
+\end{align*}
+
+For $n \geq 1$, the logarithm of the logarithm of $n$ is always a positive value or zero. Therefore, the inequality $0 \leq \log(\log n)$ holds true.\\
+
+We have shown that for $c = 1$ and $n_0 = 1$, $f(n) = n$ is less than or equal to $c \cdot g(n)$ for all $n \geq n_0$.\\
+
+Therefore, we can conclude that $f(n) = n$ is $O(n \log n)$.
+
+\pagebreak
+
+\small \subsection*{P2}
+
+Consider the proposition $d(n)$ is $O(f(n))$ and $e(n)$ is $O(g(n))$ such that $d(n) \cdot e(n)$ is $O(f(n) \cdot g(n))$\\
+
+To prove that $d(n) \cdot e(n)$ is $O(f(n) \cdot g(n))$ we got to make sure that $f(n) \cdot g(n)$ still valid under the definition of O(). Which means the equality:
+$$d(n) \cdot e(n) \leq f(n) \cdot g(n) \text{ needs to be satisfied for $O(f(n)\cdot g(n))$ to be valid.}$$ 
+
+The equality can be proven because we know the $$d(n) \text{ is } O(f(n)) \text{ and } e(n) \text{ is } O(g(n))$$.
+
+\indent
+Which implies: $$ d(n) \leq f(n) \text{ and } e(n) \leq g(n)$$
+
+Hence the product satisfies the equality $$ d(n) \cdot e(n) \leq f(n) \cdot g(n)$$ thus concludes the O(n) of $d(n) \cdot e(n)$ is $O(f(n)\cdot g(n))$.
+
+\vspace*{16pt}
+\hrule
+
+
+\small \subsection*{P3}
+
+\begin{lstlisting}[language=Java] 
+    void fnA(int S[]) {
+        int n = S.length;
+        for (int i=0;i<n;i++) {
+            fnE(i, S[i]);
+        }
+    }
+\end{lstlisting}
+
+The following codes snippet's complexity is $O(n^2)$. The for loop inside fnA() has the time complexity of O(n) as it takes n operations to iterate through the list. The time complexity of the fnE() is also O(n) as n increases the amount of operations fnE has to do is linear. Notice that since the call for fnE() is inside fnA()'s for loop multiplies the time complexity making the amount of work needed to by done quadratic. 
+
+$$ \underbrace{O(n)}_{\text{fnA()}}  \cdot \underbrace{O(n)}_{\text{fnE()}} \text{ is } O(n^2 ) $$
+
+\vspace*{16pt}
+\hrule
+
+\small \subsection*{P4}
+The reason why $h(n) = 16n^2 + 11n^4 + 0.1n^5$ is not $n^4$ is because $O(n^4)$ does not satisfy the definition of $O()$.\\ Let $f(n) = n^4$.
+
+$$h(n) \text{ is not }\leq f(n) \text{ for all values } $$.
+
+We can prove this by evaluating the limits using L'Hopital:
+
+\begin{align*}
+    &= \lim_{n \to \infty} {{h(n) \over f(n)}}\\
+    &= \lim_{n \to \infty} {{16n^2 + 11n^4 + 0.1n^5 \over n^4}}\\
+    &= \lim_{n \to \infty} {{32n + 44n^3 + 0.5n^4 \over 4n^3}}\\
+    &= \lim_{n \to \infty} {{n + n^3 + n^4 \over n^3}}
+\end{align*}
+
+This shows that $h(n)$ contains a polynomail of n with higher order than $f(n)$. This concludes that $h(n)$ is greater than $f(n)$ when n is a big number thus $f(n)$ cannot be an upper-bound to $h(n)$.
+
+
+
