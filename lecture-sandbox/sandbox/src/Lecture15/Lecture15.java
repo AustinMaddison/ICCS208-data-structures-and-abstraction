@@ -73,11 +73,11 @@ public class Lecture15 {
 
 
     static <T> void mergeSort(T[] array, Comparator<T> cc) {
-        if(array.length <= 1) return;
+        if (array.length <= 1) return;
 
-        int midpoint = array.length/2;
-        T[] left = Arrays.copyOfRange(array, 0 , midpoint);
-        T[] right = Arrays.copyOfRange(array, midpoint , array.length);
+        int midpoint = array.length / 2;
+        T[] left = Arrays.copyOfRange(array, 0, midpoint);
+        T[] right = Arrays.copyOfRange(array, midpoint, array.length);
 
         mergeSort(left, cc);
         mergeSort(right, cc);
@@ -87,11 +87,11 @@ public class Lecture15 {
 
     static <T> void merge(T[] array, T[] left, T[] right, Comparator<T> cc) {
         int i = 0, j = 0;
-        while(i+j < array.length) {
-            if(j == right.length || (i < left.length && cc.compare(left[i], right[j]) < 0))
-                array[i+j] = left[i++];
+        while (i + j < array.length) {
+            if (j == right.length || (i < left.length && cc.compare(left[i], right[j]) < 0))
+                array[i + j] = left[i++];
             else
-                array[i+j] = right[j++];
+                array[i + j] = right[j++];
         }
     }
 
