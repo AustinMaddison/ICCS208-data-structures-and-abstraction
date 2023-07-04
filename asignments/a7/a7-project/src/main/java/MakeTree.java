@@ -1,6 +1,10 @@
 import com.sun.source.tree.BinaryTree;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
+import java.util.stream.Stream;
 
 public class MakeTree {
 
@@ -72,28 +76,46 @@ public class MakeTree {
             }
         }
     }
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
+//
+////        BinaryTreeNode bst = buildBST(keys);
+//
+//
+//        BinaryTreeNode bst;
+//        // Concrete Test
+//        if(false) {
+//            bst = new BinaryTreeNode(5);
+//            bst.right = new BinaryTreeNode(6);
+//            bst.left = new BinaryTreeNode(4);
+//        }
+//
+//        // Keys to BST Test
+//        if(true) {
+//
+//            int n = 200;
+//            Set<Integer> orderedKeys = new HashSet<>();
+//            int[] unorderedKeys = new int[n];
+//
+//            for(int i = 0; i < n; i++ )
+//                orderedKeys.add(i);
+//
+////            for(int i = 0; i < n; i++ ) {
+////                Integer[] temp = orderedKeys.toArray();
+////            }
+////                orderedKeys.add(i);
+//
+//
+//
+////            for(Integer num: orderedKeys)
+////                orderedKeys.add(i);
+//
+//
+////            bst = buildBST();
+//        }
 
-//        BinaryTreeNode bst = buildBST(keys);
 
-
-        BinaryTreeNode bst;
-        // Concrete Test
-        if(false) {
-            bst = new BinaryTreeNode(5);
-            bst.right = new BinaryTreeNode(6);
-            bst.left = new BinaryTreeNode(4);
-        }
-
-        // Keys to BST Test
-        if(true) {
-            int[] keys = {3, 4, 5, 1, 2, 6, 7, 8};
-            bst = buildBST(keys);
-        }
-
-
-
-        System.out.println("DEBUG:");
-        System.out.println(display(bst));
-    }
+//
+//        System.out.println("DEBUG:");
+//        System.out.println(display(bst));
+//    }
 }
