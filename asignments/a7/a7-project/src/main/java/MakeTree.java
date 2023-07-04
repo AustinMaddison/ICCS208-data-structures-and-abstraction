@@ -10,18 +10,28 @@ public class MakeTree {
 
         // Recursive split and add nodes to tree
         BinaryTreeNode root = new BinaryTreeNode(keys[keys.length / 2]); // root
+
+        buildBstHelper(keys, root);
         return root;
     }
 
+    private static void buildBstHelper(int[] keys, BinaryTreeNode parent) {
+        if(keys.length == 0)
+            return;
 
+        // Split keys.
+        int[] left = Arrays.copyOfRange(keys, 0, keys.length/2);
+        int[] right = Arrays.copyOfRange(keys, keys.length/2 + 1, keys.length);
 
-    private static BinaryTreeNode buildBstHlper(int[] keys) {
-        // merge sort nlog(N)
-        Sort.mergeSort(keys);
+        // Add children.
+        if(left.length>0)
+            parent.left = new BinaryTreeNode(left[left.length/2]);
+        if(right.length>0)
+            parent.right = new BinaryTreeNode(right[right.length/2]);
 
-        // Recursive split and add nodes to tree
-        BinaryTreeNode root = new BinaryTreeNode(keys[keys.length / 2]); // root
-        return root;
+        // Recursively do this until there is no keys
+        buildBstHelper(left, parent.left );
+        buildBstHelper(right, parent.right);
     }
 
     public static String display(BinaryTreeNode root) {
@@ -35,7 +45,6 @@ public class MakeTree {
 
         return sb.toString();
     }
-
 
     private static class Sort {
         private static void mergeSort(int[] array) {
@@ -66,11 +75,24 @@ public class MakeTree {
     }
     public static void main(String[] args) {
 
-//        int[] keys = {3, 4, 5, 1, 2, 6, 7, 8};
 //        BinaryTreeNode bst = buildBST(keys);
-        BinaryTreeNode bst = new BinaryTreeNode(5);
-        bst.right = new BinaryTreeNode(6);
-        bst.left = new BinaryTreeNode(4);
+
+
+        BinaryTreeNode bst;
+        // Concrete Test
+        if(false) {
+            bst = new BinaryTreeNode(5);
+            bst.right = new BinaryTreeNode(6);
+            bst.left = new BinaryTreeNode(4);
+        }
+
+        // Keys to BST Test
+        if(true) {
+            int[] keys = {3, 4, 5, 1, 2, 6, 7, 8};
+            bst = buildBST(keys);
+        }
+
+
 
         System.out.println("DEBUG:");
         System.out.println(display(bst));
