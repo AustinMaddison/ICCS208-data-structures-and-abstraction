@@ -4,9 +4,24 @@ import java.util.Map;
 import java.util.Set;
 
 public class Uproot {
-//    public static HashMap<Integer, Integer> treeToParentMap(BinaryTreeNode T) {
-//
-//    }
+    public static Map<Integer, Integer> treeToParentMap(BinaryTreeNode T) {
+        Map<Integer, Integer> map = new HashMap<>();
+        helper(map, T);
+        return  map;
+    }
+
+    private static void helper(Map<Integer, Integer> map, BinaryTreeNode parent) {
+        if(parent == null) return;
+
+
+        helper(map, parent.left);
+        helper(map, parent.right);
+
+        if(parent.left != null)
+            map.put(parent.left.key, parent.key);
+        if(parent.right != null)
+            map.put(parent.right.key, parent.key);
+    }
 
     public static BinaryTreeNode parentMapToTree(Map<Integer, Integer> map) {
 
@@ -40,6 +55,8 @@ public class Uproot {
 
     public static void main(String[] args) {
 
+        System.out.println("DEBUG: ");
+
         // Test map to tree.
         Map<Integer, Integer> p = new HashMap<>();
         p.put(20, 1);
@@ -50,6 +67,13 @@ public class Uproot {
         BinaryTreeNode a = parentMapToTree(p);
 
         System.out.println(MakeTree.display(a));
+
+
+        // Test tree to map.
+        p = treeToParentMap(a);
+        for(Integer key: p.keySet())
+            System.out.println(String.format("(%d, %d)", key, p.get(key)));
+
 
 
     }
