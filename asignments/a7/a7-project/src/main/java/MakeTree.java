@@ -30,6 +30,7 @@ public class MakeTree {
         // Add children.
         if(left.length>0)
             parent.left = new BinaryTreeNode(left[left.length/2]);
+
         if(right.length>0)
             parent.right = new BinaryTreeNode(right[right.length/2]);
 
