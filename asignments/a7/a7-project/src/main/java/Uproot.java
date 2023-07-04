@@ -55,26 +55,31 @@ public class Uproot {
 
     public static void main(String[] args) {
 
-        System.out.println("DEBUG: ");
+        System.out.println("DEBUG ");
+        System.out.println("======================= ");
 
         // Test map to tree.
+        System.out.println("Map to tree:");
         Map<Integer, Integer> p = new HashMap<>();
         p.put(20, 1);
         p.put(9, 1);
         p.put(14, 20);
         p.put(2, 9);
         p.put(18, 9);
+
+        for(Integer key: p.keySet())
+            System.out.println(String.format("(%d, %d)", key, p.get(key)));
         BinaryTreeNode a = parentMapToTree(p);
 
         System.out.println(MakeTree.display(a));
-
+        System.out.println();
 
         // Test tree to map.
+        System.out.println("Tree to map:");
+        System.out.println(MakeTree.display(a));
         p = treeToParentMap(a);
         for(Integer key: p.keySet())
             System.out.println(String.format("(%d, %d)", key, p.get(key)));
-
-
 
     }
 
