@@ -39,8 +39,7 @@ public class MakeTree {
 
         StringBuilder sb = new StringBuilder();
 
-        sb.append(root.key).append(" ");
-        sb.append(display(root.left));
+        sb.append(display(root.left)).append(root.key).append(" ");
         sb.append(display(root.right));
 
         return sb.toString();
