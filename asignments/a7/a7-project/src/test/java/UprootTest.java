@@ -22,7 +22,7 @@ class UprootTest {
             System.out.println(String.format("(%d, %d)", key, p.get(key)));
         BinaryTreeNode a = Uproot.parentMapToTree(p);
 
-        System.out.println(Decor.Debug.display(a, Decor.Debug.TreeOrder.POSTORDER));
+        System.out.println(Helpers.Debug.display(a, Helpers.Debug.TreeOrder.POSTORDER));
         System.out.println();
 
 
@@ -42,7 +42,7 @@ class UprootTest {
 
         // Test tree to map.
         System.out.println("Tree to map:");
-        System.out.println(Decor.Debug.display(a, Decor.Debug.TreeOrder.POSTORDER));
+        System.out.println(Helpers.Debug.display(a, Helpers.Debug.TreeOrder.POSTORDER));
         p = Uproot.treeToParentMap(a);
         for(Integer key: p.keySet())
             System.out.println(String.format("(%d, %d)", key, p.get(key)));

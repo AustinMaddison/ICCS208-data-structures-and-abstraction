@@ -17,17 +17,17 @@ class DecorTest {
         String treeString;
 
         System.out.print("Pre-order: ");
-        treeString = Decor.Debug.display(bst, Decor.Debug.TreeOrder.PREORDER);
+        treeString = Helpers.Debug.display(bst, Helpers.Debug.TreeOrder.PREORDER);
         System.out.println(treeString);
 
 
         System.out.print("Post-order: ");
-        treeString = Decor.Debug.display(bst, Decor.Debug.TreeOrder.POSTORDER);
+        treeString = Helpers.Debug.display(bst, Helpers.Debug.TreeOrder.POSTORDER);
         System.out.println(treeString);
 
 
         System.out.print("In-order: ");
-        treeString = Decor.Debug.display(bst, Decor.Debug.TreeOrder.INORDER);
+        treeString = Helpers.Debug.display(bst, Helpers.Debug.TreeOrder.INORDER);
         System.out.println(treeString);
     }
 }

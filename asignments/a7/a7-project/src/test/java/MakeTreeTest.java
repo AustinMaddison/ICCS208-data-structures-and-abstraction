@@ -13,7 +13,7 @@ class MakeTreeTest {
         int[] keys = {1, 2, 3, 4, 5, 6, 7, 8};
         BinaryTreeNode bst = MakeTree.buildBST(keys);
         System.out.println("DEBUG:");
-        System.out.println(Decor.Debug.display(bst, Decor.Debug.TreeOrder.POSTORDER));
+        System.out.println(Helpers.Debug.display(bst, Helpers.Debug.TreeOrder.POSTORDER));
     }
 
 }
