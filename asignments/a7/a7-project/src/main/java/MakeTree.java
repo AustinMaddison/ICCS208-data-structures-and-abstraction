@@ -39,17 +39,6 @@ public class MakeTree {
         buildBstHelper(right, parent.right);
     }
 
-    public static String display(BinaryTreeNode root) {
-        if(root == null) return "";
-
-        StringBuilder sb = new StringBuilder();
-
-        sb.append(display(root.left)).append(root.key).append(" ");
-        sb.append(display(root.right));
-
-        return sb.toString();
-    }
-
     private static class Sort {
         private static void mergeSort(int[] array) {
             if (array.length < 2)
@@ -77,46 +66,5 @@ public class MakeTree {
             }
         }
     }
-//    public static void main(String[] args) {
-//
-////        BinaryTreeNode bst = buildBST(keys);
-//
-//
-//        BinaryTreeNode bst;
-//        // Concrete Test
-//        if(false) {
-//            bst = new BinaryTreeNode(5);
-//            bst.right = new BinaryTreeNode(6);
-//            bst.left = new BinaryTreeNode(4);
-//        }
-//
-//        // Keys to BST Test
-//        if(true) {
-//
-//            int n = 200;
-//            Set<Integer> orderedKeys = new HashSet<>();
-//            int[] unorderedKeys = new int[n];
-//
-//            for(int i = 0; i < n; i++ )
-//                orderedKeys.add(i);
-//
-////            for(int i = 0; i < n; i++ ) {
-////                Integer[] temp = orderedKeys.toArray();
-////            }
-////                orderedKeys.add(i);
-//
-//
-//
-////            for(Integer num: orderedKeys)
-////                orderedKeys.add(i);
-//
-//
-////            bst = buildBST();
-//        }
 
-
-//
-//        System.out.println("DEBUG:");
-//        System.out.println(display(bst));
-//    }
 }

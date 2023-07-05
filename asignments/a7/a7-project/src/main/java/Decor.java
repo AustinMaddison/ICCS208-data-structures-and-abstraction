@@ -11,7 +11,14 @@ public class Decor {
 
         // Create tree: create root then use helper to do it recursively for subtrees
         BinaryTreeNode root = new BinaryTreeNode(null, rootKey, null);
-        mkTreeHelper(root, rootPos, (Integer[]) inOrder.toArray());
+
+        // Convert list to array.
+        Integer[] keys = new Integer[inOrder.size()];
+        for(int i = 0; i < inOrder.size(); i++ )
+            keys[i] = inOrder.get(i);
+
+
+        mkTreeHelper(root, rootPos, keys);
 
         return root;
     }
@@ -38,8 +45,8 @@ public class Decor {
 
     static class Debug {
 
-        private enum TreeOrder {
-            PREORDER, INORDER
+        enum TreeOrder {
+            PREORDER, INORDER, POSTORDER
         }
 
         /* Displaying Tree */
@@ -49,6 +56,8 @@ public class Decor {
                     return displayInorder(T);
                 case PREORDER:
                     return displayPreorder(T);
+                case POSTORDER:
+                    return displayPostorder(T);
                 default:
                     return "";
             }
@@ -56,19 +65,25 @@ public class Decor {
 
         private static String displayInorder(BinaryTreeNode T) {
             if (T == null) return "";
-            StringBuilder sb = new StringBuilder();
-            sb.append(displayPreorder(T.left)).append(T.key).append(" ");
-            sb.append(displayPreorder(T.right));
-            return sb.toString();
+            return displayInorder(T.left) +
+                        T.key + " " +
+                        displayInorder(T.right);
         }
 
         private static String displayPreorder(BinaryTreeNode T) {
             if (T == null) return "";
-            StringBuilder sb = new StringBuilder();
-            sb.append(displayPreorder(T.left)).append(T.key).append(" ");
-            sb.append(displayPreorder(T.right));
-            return sb.toString();
+            return  T.key + " " +
+                    displayPreorder(T.left) +
+                    displayPreorder(T.right);
         }
+
+        private static String displayPostorder(BinaryTreeNode T) {
+            if (T == null) return "";
+            return displayPostorder(T.left) +
+                    displayPostorder(T.right) +
+                    T.key + " ";
+        }
+
     }
 
 

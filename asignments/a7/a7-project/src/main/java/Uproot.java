@@ -7,16 +7,16 @@ import java.util.Set;
 public class Uproot {
     public static Map<Integer, Integer> treeToParentMap(BinaryTreeNode T) {
         Map<Integer, Integer> map = new HashMap<>();
-        helper(map, T);
+        treeToParentMapHelper(map, T);
         return  map;
     }
 
-    private static void helper(Map<Integer, Integer> map, BinaryTreeNode parent) {
+    private static void treeToParentMapHelper(Map<Integer, Integer> map, BinaryTreeNode parent) {
         if(parent == null)
             return;
 
-        helper(map, parent.left);
-        helper(map, parent.right);
+        treeToParentMapHelper(map, parent.left);
+        treeToParentMapHelper(map, parent.right);
 
         if(parent.left != null)
             map.put(parent.left.key, parent.key);
@@ -53,68 +53,5 @@ public class Uproot {
         return nodeMap.get(computeRoot.toArray()[0]);
     }
 
-
-    public static void main(String[] args) {
-
-        System.out.println("DEBUG ");
-        System.out.println("======================= ");
-
-        // Test map to tree.
-        System.out.println("Map to tree:");
-        Map<Integer, Integer> p = new HashMap<>();
-        p.put(20, 1);
-        p.put(9, 1);
-        p.put(14, 20);
-        p.put(2, 9);
-        p.put(18, 9);
-
-        for(Integer key: p.keySet())
-            System.out.println(String.format("(%d, %d)", key, p.get(key)));
-        BinaryTreeNode a = parentMapToTree(p);
-
-        System.out.println(MakeTree.display(a));
-        System.out.println();
-
-        // Test tree to map.
-        System.out.println("Tree to map:");
-        System.out.println(MakeTree.display(a));
-        p = treeToParentMap(a);
-        for(Integer key: p.keySet())
-            System.out.println(String.format("(%d, %d)", key, p.get(key)));
-
-
-
-//        System.out.println("DEBUG ");
-//        System.out.println("======================= ");
-//        long startTime = System.currentTimeMillis();
-//
-//        int n = 2000;
-//        // Test map to tree.
-//        System.out.println("Map to tree:");
-//        Map<Integer, Integer> p = new HashMap<>();
-//        for(int i = 0; i < n-1; i++) {
-//            p.put(i, i+1);
-//        }
-//
-//        for(Integer key: p.keySet())
-//            System.out.println(String.format("(%d, %d)", key, p.get(key)));
-//        BinaryTreeNode a = parentMapToTree(p);
-//
-//        System.out.println(MakeTree.display(a));
-//        System.out.println();
-//
-//        // Test tree to map.
-//        System.out.println("Tree to map:");
-//        System.out.println(MakeTree.display(a));
-//        p = treeToParentMap(a);
-//        for(Integer key: p.keySet())
-//            System.out.println(String.format("(%d, %d)", key, p.get(key)));
-//
-//        long endTime = System.currentTimeMillis();
-//        float duration = (endTime - startTime) / 1000F;  //divide by 1000000 to get milliseconds.
-//        System.out.println("Execution time: " + duration + " seconds.");
-
-
-    }
 
 }
