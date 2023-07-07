@@ -1,0 +1,100 @@
+\chapter{Task 3: Quick Sort Recurrence}
+
+\subsection*{(ii)}
+$$g(n) ={f(n)\over n+1 }$$
+$$f(n) =2+{(n+1) \cdot f(n-1)\over n } $$
+\begin{align*}
+    g(n) & ={f(n)\over n+1 } \\[5pt]
+         & ={2+{(n+1) \cdot f(n-1)\over n } \over n+1 }\\[5pt]
+         & ={2 \over n+1} + {f(n-1) \over n} \\[5pt]
+         & ={2 \over n+1} + {g(n-1)} \\[5pt]
+\end{align*}
+$$ g(n)={2 \over n+1} + {g(n-1)}\\[5pt]$$
+
+\hrule
+
+\subsection*{(iii)}
+
+\begin{align*}
+    g(n) & ={2 \over n+1} + {g(n-1)}
+\end{align*}
+
+The recurrence expands to:
+
+\begin{align*}
+    g(n) & = 
+       {2 \over n+1} +\
+       {2 \over n} +
+       {2 \over n-1} +
+       {2 \over n-2} +
+       {2 \over n-3} +
+       \dots +
+       {2 \over 2}
+\end{align*}
+
+\begin{align*}
+    g(n) & = 2 (
+       {1 \over n+1} +\
+       \underbrace{
+       {1 \over n} +
+       {1 \over n-1} +
+       {1 \over n-2} +
+       {1 \over n-3} +
+       \dots +
+       {1 \over 2}
+       }_{h(n) - 1}
+    )
+\end{align*}
+We can substitute the series with the function $h(n)-1$ harmonic numbers.
+
+\begin{align*}
+    g(n) & = 2 
+    (
+       {1 \over n+1} +
+       h(n) -1
+    )
+\end{align*}
+
+This completes the form of g(n) as there is no longer a recurrence relation.
+
+\subsection*{(iv)}
+
+Lets first write f(n) in terms of n:
+
+\begin{align*}
+   f(n) & = g(n) \cdot (n+1)\\[5pt]
+   f(n) & = 2({1 \over n+1} + \underbrace{h(n)}_{ln(n)+ 1 \text{ from fact given.}} - 1) \cdot (n+1)\\[5pt]
+   f(n) & = 2({1 \over n+1} + (ln(n)+1) - 1) \cdot (n+1)\\[5pt]
+   f(n) & = 2({1 \over n+1} + ln(n)) \cdot (n+1)\\[5pt]
+\end{align*}
+
+We \textbf{want to show} that $f(n)$ is $O(nln(n))$. This can be solved by the following limit:
+
+\begin{align*}
+    & = \lim_{n\to\infty} {f(n) \over nln(n)}\\[5pt]
+    & = \lim_{n\to\infty} {2 ({1 \over n+1} + ln(n) \cdot (n+1))   \over nln(n)}\\[5pt]
+    & = \lim_{n\to\infty} { 2 + 2ln(n) \cdot (n+1)
+                        \over 
+                        nln(n)}\\[5pt]
+    & = \lim_{n\to\infty} { 2 
+                        \over 
+                        nln(n)} +
+        \lim_{n\to\infty} {2ln(n) \cdot (n+1)
+                        \over 
+                        nln(n)}\\[5pt]
+    & = \lim_{n\to\infty} { 2 
+                        \over 
+                        nln(n)} +
+        \lim_{n\to\infty} {2n + 2
+                        \over 
+                        n}\\[5pt]
+    & = \lim_{n\to\infty} { 2 
+                        \over 
+                        nln(n)} +
+        \lim_{n\to\infty} 2 + { 2
+                        \over 
+                        n}\\[5pt]
+    & = 2
+\end{align*}
+
+Notice when n approaches positive infinity the constant 2 is the only term remaining because other terms converge to 0. This shows that the function nln(n) times some constant can over-bound the function f(n) thus proving that f(n) is O(nln(n)).

@@ -1,0 +1,93 @@
+% ---
+% Document settings
+% ---
+
+\usepackage[a4paper, 
+			inner=1.5cm, 
+			outer=3cm, 
+			top=3cm, 
+			bottom=3cm, 
+			bindingoffset=0.5cm]{geometry}
+
+\title{A4 Proofs}
+\author{Austin J. Maddison}
+\date{May, 6, 2023}
+
+\usepackage{titlesec}
+\titleformat{\chapter}
+	{\Large\bfseries} % format
+	{}                % labels
+	{0pt}             % sep
+	{\huge}           % before-code
+
+
+% ---
+% Packages
+% ---
+
+% font
+\usepackage[OT1]{fontenc}
+
+
+% text 
+\usepackage[english]{babel}
+\usepackage{microtype}
+\usepackage{blindtext}
+\usepackage{cmbright}
+\setlength{\parindent}{0pt}
+
+
+
+% bib
+\usepackage{natbib}
+
+% table of contents
+\usepackage{tocbibind}
+\usepackage[]{hyperref}
+
+% math
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\newtheorem{thm}{Theorem}[chapter] 
+\newtheorem{lem}[thm]{Lemma} 
+\theoremstyle{definition} 
+\newtheorem{dfn}[thm]{Definition}
+
+\usepackage{sansmathfonts}
+\usepackage{cmbright}
+
+% inkscape workflow
+\usepackage{import}
+\usepackage{svg}
+\newcommand{\incsvg}[3]{%
+	\def\svgwidth{#3}
+	\graphicspath{{#1}}
+	\input{#2.pdf_tex}
+}
+
+% figures
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{float}
+\captionsetup{belowskip=0pt}
+
+
+% code snippet
+\usepackage{listings}
+
+% ---
+% Custom Commands
+% ---
+\newcommand{\randomtext}[1]{\blindtext[#1]}
+\newcommand{\ttt}[1]{\texttt{#1}}
+\newcommand{\scale}[2]{\scalebox{#1}{#2}}
+\newcommand{\mychapter}[2]{
+	\setcounter{chapter}{#1}
+    \setcounter{section}{0}
+    \chapter*{#2}
+    \addcontentsline{toc}{chapter}{#2}
+	\refstepcounter{chapter}
+}
+
+

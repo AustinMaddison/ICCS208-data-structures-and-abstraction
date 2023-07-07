@@ -1,0 +1,37 @@
+\chapter{Task 1: Mathematical Truth}
+
+\small \subsection*{Proof by strong induction.}
+
+\textbf{Proposition}
+
+Every binary tree on n nodes where each has either zero or two children had precisely ${n+1\over2}$ leaves.\\
+
+\textbf{Basis Step:}\
+
+\begin{align*}
+    P(1) = {{1+1}\over 2} = 1
+\end{align*}
+
+This base case is true because a single node can be considered to have no children thus it the single node is a leaf.\\
+
+
+\textbf{Inductive Step:}\
+(I.H) When P(j) for $1 \leq j \leq k$  then P(k+2) is also true. The constant 2 comes from the proposition that any node can only have 2 or no children thus if we were to want to add more nodes to the tree it must be by 2 nodes at a time.\\
+
+To prove that P(j) is true for $1 \leq j \leq k$ we must consider the invariance caused by the const raint. The binary tree nodes can only have 2 or no children. Suppose binary tree as a state machine starting with a single node n=1. The operation for growing a tree is constrained such that to have more nodes we have to add exactly 2 nodes to a leaf. This in turn also increases the amount of leaves by 1.
+
+
+\includesvg[width= 1.0in]{Graph}
+
+% \begin{figure}[h]
+% 	\centering
+% 	%\incsvg{path/}{path/file}
+% 	\incsvg{figures}{figures/Graph}{100mm}
+% 	\includesvg[inkscapeformat=svg]{Graph}
+	
+% 	% \caption{All possible triminoe placement if a single cell was painted out}
+% 	\label{fig:base-cases}
+% \end{figure}
+
+
+

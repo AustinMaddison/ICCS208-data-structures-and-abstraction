@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -47,6 +49,36 @@ class UprootTest {
         for(Integer key: p.keySet())
             System.out.println(String.format("(%d, %d)", key, p.get(key)));
     }
+
+
+    @Test
+    public  void testTreeToMapLingLing() {
+        LinkedList<Integer> poo = new LinkedList<>();
+        poo.addAll(List.of(2, 4, 5, 12, 10, 7));
+
+        LinkedList<Integer> inor = new LinkedList<>(List.of(2, 4, 5, 7, 10, 12));
+
+        BinaryTreeNode preoNinor = Decor.mkTree(poo,inor);
+
+        System.out.print("Preorder for pronuarr: ");
+        System.out.println(Helpers.Debug.display(preoNinor, Helpers.Debug.TreeOrder.PREORDER));
+
+        System.out.print("Expected Preorder: 7, 5, 4, 2, 10, 12\n");
+        System.out.print("Inorder: ");
+        System.out.println(Helpers.Debug.display(preoNinor, Helpers.Debug.TreeOrder.INORDER));
+        System.out.print("Expected Inorder:2, 4, 5, 7, 10, 12\n");
+        System.out.print("Postorder: ");
+        System.out.println(Helpers.Debug.display(preoNinor, Helpers.Debug.TreeOrder.POSTORDER));
+        System.out.print("Expected Post: 2, 4, 5, 12, 10, 7\n");
+    }
+
+
+
+
+
+
+
+
 
 
     @Test

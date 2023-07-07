@@ -17,7 +17,6 @@ public class Decor {
         for(int i = 0; i < inOrder.size(); i++ )
             keys[i] = inOrder.get(i);
 
-
         mkTreeHelper(root, rootPos, keys);
 
         return root;

@@ -1,0 +1,1 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThus, we can come to the conclusion that the function hsum() has the time complexity of \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q,\\E$"}
