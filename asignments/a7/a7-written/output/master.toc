@@ -1,4 +1,0 @@
-\babel@toc {english}{}\relax 
-\contentsline {chapter}{Contents}{i}{chapter*.1}%
-\contentsline {chapter}{\numberline {1}Task 1: Mathematical Truth}{1}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Task 3: Quick Sort Recurrence}{2}{chapter.2}%

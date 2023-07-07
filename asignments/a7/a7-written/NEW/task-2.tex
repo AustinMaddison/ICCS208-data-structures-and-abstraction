@@ -1,0 +1,91 @@
+\chapter{Task 4: Sum Square}
+\begin{thm}[]
+	Any $2^n$ by $2^n$
+	grid with one painted cell can be tiled using L-shaped triominoes
+	such that the entire grid is covered by triominoes but no triominoes overlap with each other
+	nor the painted cell. 
+	\par
+\end{thm}	
+
+
+
+\section{Proof by induction.}
+\subsection{Predicate}
+$P(n)$ is true when a triminoe can fit into a $2^n$ by $2^n$ grid where once cell is painted out.
+
+\subsection{Basis Step}
+$P(1)$ is true because for all the possible $2^1$ by $2^1$ grids with a painted out cell, triminoes can tile as shown in Figure \ref{fig:base-cases}. 
+
+\begin{figure}[h]
+	\centering
+	%\incsvg{path/}{path/file}
+	\incsvg{figures}{figures/T1-figure1}{100mm}
+	\caption{All possible triminoe placement if a single cell was painted out}
+	\label{fig:base-cases}
+\end{figure}
+
+\subsection{Inductive Step}
+Lets assume that $P(k)$ is true for all positive interger values of k.\\\\
+\textbf{Want to show} when $P(k)$ is true, then $P(k+1)$ is true also.
+Consider a $P(k+1)$ grid that is subdivided into equal quadrants vertically and horizontally. Notice that each quadrant of $P(k+1)$ is $P(k)$.Then we paint out 1 cell.\\
+
+\begin{figure}[ht]
+	\vspace{-10pt}
+	\centering
+	%\incsvg{path/}{path/file}
+	\incsvg{figures}{figures/T1-figure2}{30mm}
+	\incsvg{figures}{figures/T1-figure3}{30mm}
+	\vspace{-10pt}
+	\caption{$P(k+1)$}
+	\label{fig:T1-figure2}
+\end{figure}
+
+\noindent
+ At this stage its not apparent if the triminoes can fill the rest of the grid. We need to somehow introduce cases made in basis step into the quadrants.
+
+\pagebreak
+\noindent
+Let's paint in the middle cells, only the quadrants that havn't been painted in yet. This achieves two things, firstly this achieves placing a triminoe and secondly each quadrant now has 1 cell painted out. 
+
+
+% make cooler illustration if time permits
+\begin{figure}[H]
+	\centering
+	%\incsvg{path/}{path/file}
+	\incsvg{figures}{figures/T1-figure4}{30mm}
+	\caption{Painting out the middle cells.}
+	% \vspace{-10pt}
+	\label{T1-figure4}
+\end{figure}
+
+\noindent
+Since all quadrants now satisfy the conditions of $P(k)$ which is having 1 cell painted out and we know from the basis step that every quadrant is tileable we can conclude through inuctive hypothesis that $P(k+1)$ is true too. This completes the inductive step.
+
+\begin{figure}[H]
+	\centering
+	\vspace{-5pt}
+	%\incsvg{path/}{path/file}
+	\incsvg{figures}{figures/T1-figure5}{30mm}\\
+	\caption{Tiling the quadrants using the basis step cases.}
+	\label{T1-figure4}
+\end{figure}
+
+\subsection{Conclusion}
+Since we can show that when $P(k)$ is true then $P(k+1)$ is true we can conclude by mathmatical induction that $P(n))$ is true for all positive integer values of n. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
