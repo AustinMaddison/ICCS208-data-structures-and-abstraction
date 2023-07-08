@@ -50,7 +50,7 @@ public class Decor {
             int leftChildKey = leftPostOrder.get(leftChildPostOrderIdx);
             int leftChildInOrderIdx = leftInOrder.indexOf(leftChildKey);
 
-            parent.left = new BinaryTreeNode(leftChildKey);   
+            parent.left = new BinaryTreeNode(leftChildKey);
             mkTreeHelper(parent.left, leftChildPostOrderIdx, leftChildInOrderIdx, leftPostOrder, leftInOrder);
         }
         if (rightPostOrder.size() > 0) {

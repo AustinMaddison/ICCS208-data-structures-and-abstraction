@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.6.7)  7 JUL 2023 15:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.6.7)  7 JUL 2023 18:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**y:/Documents/University/Y2T1/ICCS208-data-structures-and-abstraction/asignments/a7/a7-written/src/master.tex
-(y:/Documents/University/Y2T1/ICCS208-data-structures-and-abstraction/asignments/a7/a7-written/src/master.tex
+**y:/Documents/University/Y2T1/ICCS208-data-structures-and-abstraction/asignments/a7/a7-written/OLD/src/master.tex
+(y:/Documents/University/Y2T1/ICCS208-data-structures-and-abstraction/asignments/a7/a7-written/OLD/src/master.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-03-30> (C:\Users\Austi\AppData\Local\Programs\MiKTeX\tex/latex/base\book.cls
 Document Class: book 2022/07/02 v1.4n Standard LaTeX document class
@@ -640,7 +640,7 @@ File: ot1xcmss.fd 2021/06/22
 File: l3backend-pdftex.def 2023-03-30 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count335
 \l__pdf_internal_box=\box62
-) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\output\master.aux (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\output\title.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\output\task-1.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\output\task-3.aux))
+) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\OLD\output\master.aux (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\OLD\output\title.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\OLD\output\task-1.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\OLD\output\task-3.aux))
 \openout1 = `master.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmssm/m/it on input line 6.
@@ -734,7 +734,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package hyperref Info: Link coloring OFF on input line 6.
-(y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\output\master.out) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\output\master.out)
+(y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\OLD\output\master.out) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\OLD\output\master.out)
 \@outlinefile=\write4
 \openout4 = `master.out'.
 
@@ -777,7 +777,7 @@ LaTeX Font Warning: Font shape `OT1/xcmss/b/n' in size <14.4> not available
 LaTeX Font Warning: Font shape `OT1/xcmss/b/n' in size <20.74> not available
 (Font)              Font shape `OT1/xcmss/bx/n' tried instead on input line 9.
 
-(y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\output\master.toc
+(y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\OLD\output\master.toc
 
 LaTeX Font Warning: Font shape `OT1/xcmss/b/n' in size <10> not available
 (Font)              Font shape `OT1/xcmss/bx/n' tried instead on input line 2.
@@ -836,40 +836,71 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--20
 
 Package svg Warning: You didn't enable `shell escape' (or `write18')
 (svg)                so it wasn't possible to launch the Inkscape export
-(svg)                for `Graph.svg' on input line 24.
+(svg)                for `figures/Graph.svg' on input line 28.
 
 
-task-1.tex:24: Package svg Error: File `Graph_svg-tex.pdf' is missing.
+task-1.tex:28: Package svg Error: File `Graph_svg-tex.pdf' is missing.
 
 See the svg package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.24 \includesvg[width= 1.0in]{Graph}
-                                     
+l.28 	\includesvg[width=1.0in]{figures/Graph}
+                                             
 Did you run the export with Inkscape? There's no file
 `./svg-inkscape/Graph_svg-tex.pdf'
-although `Graph.svg' was found.
+although `figures/Graph.svg' was found.
 
 
-task-1.tex:24: Package svg Error: File `Graph_svg-tex.pdf_tex' is missing.
+task-1.tex:28: Package svg Error: File `Graph_svg-tex.pdf_tex' is missing.
 
 See the svg package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.24 \includesvg[width= 1.0in]{Graph}
-                                     
+l.28 	\includesvg[width=1.0in]{figures/Graph}
+                                             
 Did you run the export with Inkscape? There's no file
 `./svg-inkscape/Graph_svg-tex.pdf_tex'
-although `Graph.svg' was found.
+although `figures/Graph.svg' was found.
 
-(figures/Graph.pdf_tex
-<figures/Graph.pdf, id=35, page=1, 522.11916pt x 122.27335pt>
-File: figures/Graph.pdf Graphic file (type pdf)
-<use figures/Graph.pdf, page 1>
-Package pdftex.def Info: figures/Graph.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 284.52756pt x 66.63484pt.
+)
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.11 \include{task-1.tex}
+                          [1
 
-!pdfTeX error: pdflatex (file ./figures/Graph.pdf): PDF inclusion: required page does not exist <1>
- ==> Fatal error occurred, no output PDF file produced!
+
+
+]
+\openout2 = `task-3.aux'.
+
+ (task-3.tex
+Chapter 2.
+
+pdfTeX warning (font expansion): font should be expanded before its first use
+[2
+
+
+
+
+]) [3] (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\OLD\output\master.aux (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\OLD\output\title.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\OLD\output\task-1.aux) (y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\OLD\output\task-3.aux))
+Package rerunfilecheck Info: File `master.out' has not changed.
+(rerunfilecheck)             Checksum: 5645244C0F78EF8318EBB233C7C509CE;466.
+ ) 
+Here is how much of TeX's memory you used:
+ 19963 strings out of 476331
+ 345331 string characters out of 5787766
+ 1864660 words of memory out of 5000000
+ 39981 multiletter control sequences out of 15000+600000
+ 521507 words of font info for 84 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 99i,15n,95p,1105b,510s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssbx12.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssbx17.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssbx9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssex9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssmi6.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmssmi9.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmsssy6.pfb><C:/Users/Austi/AppData/Local/Programs/MiKTeX/fonts/type1/public/sansmathfonts/cmsssy9.pfb>
+Output written on y:/Documents\University\Y2T1\ICCS208-data-structures-and-abstraction\asignments\a7\a7-written\OLD\output\master.pdf (5 pages, 165630 bytes).
+PDF statistics:
+ 118 PDF objects out of 1000 (max. 8388607)
+ 9 named destinations out of 1000 (max. 500000)
+ 26149 words of extra memory for PDF output out of 29859 (max. 10000000)
+
