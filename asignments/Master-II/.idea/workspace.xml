@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="21c54546-723e-4b0b-869e-7dc36ac2d5cb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../a8/a8-project/src/KFact/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/L18/Lecture18.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/L18/Lecture18Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/a1-dev/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/a1-dev/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/a1-dev/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/a1-dev/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/a1-dev/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/a1-dev/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/a1-dev/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/a1-dev/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/a1-dev/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/a1-dev/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/a1-dev/a1-dev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/a1-dev/a1-dev.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/a1-dev/src/A1/Diamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/a1-dev/src/A1/Diamond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/a1-dev/src/A1/Fib.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/a1-dev/src/A1/Fib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/a1-dev/src/A1/Happy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/a1-dev/src/A1/Happy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/a1-dev/src/A1/Hidden.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/a1-dev/src/A1/Hidden.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/a1-dev/src/A1/Roman.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/a1-dev/src/A1/Roman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/a1-dev/src/A1/Subsel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/a1-dev/src/A1/Subsel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/submission/Diamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/submission/Diamond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/submission/Fib.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/submission/Fib.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/submission/Happy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/submission/Happy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/submission/Hidden.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/submission/Hidden.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/submission/Roman.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/submission/Roman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a1/submission/Subsel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a1/submission/Subsel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task1/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task1/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task1/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task1/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task1/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task1/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task1/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task1/a2-task1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task1/a2-task1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task1/src/MinMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task1/src/MinMax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task1/src/MinMaxTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task1/src/MinMaxTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task2/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task2/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task2/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task2/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task2/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task2/a2-task2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task2/a2-task2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/a2-task3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/a2-task3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/src/ArrayDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/src/ArrayDeque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/src/LinkedListDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-dev/a2-task3/src/LinkedListDeque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-sub/MinMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-sub/MinMax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-sub/mydeque/ArrayDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-sub/mydeque/ArrayDeque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a2/a2-sub/mydeque/LinkedListDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a2/a2-sub/mydeque/LinkedListDeque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/deque-palindrome/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/deque-palindrome/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/deque-palindrome/src/main/java/ArrayDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/deque-palindrome/src/main/java/ArrayDeque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/deque-palindrome/src/main/java/Deque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/deque-palindrome/src/main/java/Deque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/deque-palindrome/src/main/java/LinkedListDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/deque-palindrome/src/main/java/LinkedListDeque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/deque-palindrome/src/main/java/OffByN.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/deque-palindrome/src/main/java/OffByN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/deque-palindrome/src/main/java/OffByOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/deque-palindrome/src/main/java/OffByOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/deque-palindrome/src/main/java/Palindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/deque-palindrome/src/main/java/Palindrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/zuul/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/zuul/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/zuul/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/zuul/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/Map.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/Map.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/color/TerminalColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/color/TerminalColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/command/CommandAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/command/CommandAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/command/CommandActionParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/command/CommandActionParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/command/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/command/Commands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/history/History.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/history/History.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/map/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/map/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/message/MessageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/message/MessageProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a3/a3-starter/zuul/src/main/java/game/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/reports/tests/test/classes/game.WordDatabaseTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/reports/tests/test/classes/game.WordDatabaseTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/reports/tests/test/classes/game.WordTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/reports/tests/test/classes/game.WordTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/reports/tests/test/classes/histogram.SimpleHistogramTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/reports/tests/test/classes/histogram.SimpleHistogramTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/reports/tests/test/packages/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/reports/tests/test/packages/game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/reports/tests/test/packages/histogram.html" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/reports/tests/test/packages/histogram.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/resources/main/ascii-ui.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/resources/main/ascii-ui.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/resources/main/testwords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/resources/main/testwords.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/scripts/histogame.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/scripts/histogame.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/test-results/test/TEST-game.WordDatabaseTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/test-results/test/TEST-game.WordDatabaseTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/test-results/test/TEST-game.WordTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/test-results/test/TEST-game.WordTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/test-results/test/TEST-histogram.SimpleHistogramTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/test-results/test/TEST-histogram.SimpleHistogramTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/tmp/jar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/build/tmp/jar/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/color/TerminalColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/color/TerminalColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/command/CommandAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/command/CommandAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/command/CommandActionParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/command/CommandActionParam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/command/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/command/Commands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/message/MessageProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/message/MessageProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/parser/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/word/WordBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/java/game/word/WordBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/resources/ascii-ui.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/resources/ascii-ui.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/resources/testwords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/main/resources/testwords.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/test/java/game/WordDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/test/java/game/WordDatabaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/test/java/game/WordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/histogame/src/test/java/game/WordTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/smallman/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/smallman/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/smallman/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/smallman/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/smallman/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/smallman/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/smallman/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/smallman/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/smallman/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/smallman/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/smallman/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/smallman/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/smallman/build/reports/tests/test/classes/MyPriorityQueueTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/smallman/build/reports/tests/test/classes/MyPriorityQueueTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/smallman/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/smallman/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/smallman/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/smallman/build/reports/tests/test/packages/default-package.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/smallman/build/test-results/test/TEST-MyPriorityQueueTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/smallman/build/test-results/test/TEST-MyPriorityQueueTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/smallman/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/smallman/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/a4-starter/smallman/src/main/java/Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/a4-starter/smallman/src/main/java/Example.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/proofs/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/proofs/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/proofs/a4.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/proofs/a4.fdb_latexmk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/proofs/a4.fls" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/proofs/a4.fls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/proofs/a4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/proofs/a4.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/proofs/preamble.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/proofs/preamble.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/proofs/task-1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/proofs/task-1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/proofs/task-2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/proofs/task-2.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/proofs/test.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/proofs/test.fdb_latexmk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/proofs/test.fls" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/proofs/test.fls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a4/proofs/title.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a4/proofs/title.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/.vscode/ltex.hiddenFalsePositives.en-US.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/.vscode/ltex.hiddenFalsePositives.en-US.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/code-snippets/untitled/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/code-snippets/untitled/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/code-snippets/untitled/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/code-snippets/untitled/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/output/master.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/output/master.fdb_latexmk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/output/master.fls" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/output/master.fls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/src/master.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/src/master.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/src/preamble.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/src/preamble.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/src/task-1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/src/task-1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/src/task-2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/src/task-2.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/src/task-3.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/src/task-3.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/src/task-4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/src/task-4.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/src/task-5.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/src/task-5.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/src/task-6.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/src/task-6.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/src/task-7.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/src/task-7.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a5/latex/src/title.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a5/latex/src/title.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/a6-project/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/a6-project/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/a6-project/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/a6-project/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/a6-project/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/a6-project/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/a6-project/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/a6-project/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/a6-project/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/a6-project/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/a6-project/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/a6-project/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/a6-project/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/a6-project/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/a6-project/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/a6-project/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/a6-project/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/a6-project/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/a6-project/src/main/java/Last.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/a6-project/src/main/java/Last.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/a6-project/src/main/java/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/a6-project/src/main/java/Zombie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/a6-project/src/test/java/LastTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/a6-project/src/test/java/LastTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/a6-sub/Last.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/a6-sub/Last.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/a6-sub/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/a6-sub/Zombie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/hacker-rank-problems/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/hacker-rank-problems/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/hacker-rank-problems/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/hacker-rank-problems/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/hacker-rank-problems/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/hacker-rank-problems/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/hacker-rank-problems/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/hacker-rank-problems/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/hacker-rank-problems/Untitled-1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/hacker-rank-problems/Untitled-1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/latex/.vscode/ltex.hiddenFalsePositives.en-US.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/latex/.vscode/ltex.hiddenFalsePositives.en-US.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/latex/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/latex/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/latex/code-snippets/untitled/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/latex/code-snippets/untitled/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/latex/code-snippets/untitled/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/latex/code-snippets/untitled/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/latex/output/master.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/latex/output/master.fdb_latexmk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/latex/output/master.fls" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/latex/output/master.fls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/latex/src/master.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/latex/src/master.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/latex/src/preamble.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/latex/src/preamble.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/latex/src/task-1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/latex/src/task-1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/latex/src/task-2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/latex/src/task-2.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/latex/src/task-3.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/latex/src/task-3.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a6/latex/src/title.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a6/latex/src/title.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/src/main/java/Decor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/src/main/java/Decor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/src/main/java/MakeTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/src/main/java/MakeTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/src/main/java/MultiWayMerge.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/src/main/java/MultiWayMerge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/src/main/java/Uproot.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/src/main/java/Uproot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/src/test/java/DecorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/src/test/java/DecorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/src/test/java/Helpers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/src/test/java/Helpers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/src/test/java/MakeTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/src/test/java/MakeTreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/src/test/java/MultiwayMergeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/src/test/java/MultiwayMergeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-project/src/test/java/UprootTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-project/src/test/java/UprootTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/NEW/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/NEW/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/NEW/a4.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/NEW/a4.fdb_latexmk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/NEW/a4.fls" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/NEW/a4.fls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/NEW/a4.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/NEW/a4.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/NEW/preamble.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/NEW/preamble.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/NEW/task-1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/NEW/task-1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/NEW/task-2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/NEW/task-2.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/NEW/test.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/NEW/test.fdb_latexmk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/NEW/test.fls" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/NEW/test.fls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/NEW/title.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/NEW/title.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/OLD/.vscode/ltex.hiddenFalsePositives.en-US.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/OLD/.vscode/ltex.hiddenFalsePositives.en-US.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/OLD/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/OLD/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/OLD/code-snippets/untitled/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/OLD/code-snippets/untitled/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/OLD/code-snippets/untitled/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/OLD/code-snippets/untitled/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/OLD/output/master.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/OLD/output/master.fdb_latexmk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/OLD/output/master.fls" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/OLD/output/master.fls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/OLD/src/master.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/OLD/src/master.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/OLD/src/preamble.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/OLD/src/preamble.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/OLD/src/task-1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/OLD/src/task-1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/OLD/src/task-2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/OLD/src/task-2.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/OLD/src/task-3.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/OLD/src/task-3.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../a7/a7-written/OLD/src/title.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../a7/a7-written/OLD/src/title.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../practice/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../practice/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../practice/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../practice/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice/src/main/java/AllCaps.java" beforeDir="false" afterPath="$PROJECT_DIR$/../practice/src/main/java/AllCaps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice/src/main/java/BoundedSkipper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../practice/src/main/java/BoundedSkipper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice/src/main/java/CountIf.java" beforeDir="false" afterPath="$PROJECT_DIR$/../practice/src/main/java/CountIf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice/src/main/java/Predicate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../practice/src/main/java/Predicate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice/src/main/java/isEven.java" beforeDir="false" afterPath="$PROJECT_DIR$/../practice/src/main/java/isEven.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice/src/test/java/AllCapsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../practice/src/test/java/AllCapsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice/src/test/java/BoundedSkipperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../practice/src/test/java/BoundedSkipperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practice/src/test/java/CountIfTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../practice/src/test/java/CountIfTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../assignment-test-cases" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment-test-cases" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-1/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-1/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-1/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-1/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-1/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-1/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-1/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-1/Lecture-1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-1/Lecture-1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-1/src/Universe.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-1/src/Universe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-1/src/UsefulNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-1/src/UsefulNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-2/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-2/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-2/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-2/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-2/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-2/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-2/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-2/Lecture-2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-2/Lecture-2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-2/src/Exercise2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-2/src/Exercise2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-2/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-2/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dev/Lecture-2/src/Max.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../dev/Lecture-2/src/Max.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../exams/m1-starter/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../exams/m1-starter/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../exams/m1-starter/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../exams/m1-starter/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../exams/m1-starter/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../exams/m1-starter/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../exams/m1-starter/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../exams/m1-starter/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../exams/m1-starter/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../exams/m1-starter/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../exams/m1-starter/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../exams/m1-starter/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../exams/m1-starter/build/reports/tests/test/classes/PusheenWalkerTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../exams/m1-starter/build/reports/tests/test/classes/PusheenWalkerTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../exams/m1-starter/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../exams/m1-starter/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../exams/m1-starter/build/reports/tests/test/packages/default-package.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../exams/m1-starter/build/reports/tests/test/packages/default-package.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../exams/m1-starter/build/test-results/test/TEST-PusheenWalkerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../exams/m1-starter/build/test-results/test/TEST-PusheenWalkerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../exams/m1-starter/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../../exams/m1-starter/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/code-snippets/puzzle.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/code-snippets/puzzle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/output/master.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/output/master.fdb_latexmk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/output/master.fls" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/output/master.fls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/src/master.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/src/master.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/src/preamble.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/src/preamble.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/src/task-1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/src/task-1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/src/title.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L12-Performace-Characterization/src/title.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/code-snippets/untitled/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/code-snippets/untitled/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/code-snippets/untitled/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/code-snippets/untitled/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/output/master.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/output/master.fdb_latexmk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/output/master.fls" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/output/master.fls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/src/master.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/src/master.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/src/preamble.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/src/preamble.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/src/task-1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/src/task-1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/src/title.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L14-Performace-Characterization/tex/src/title.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/src/main/java/SLList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/src/main/java/SLList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/src/test/java/SLListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/L8-inclass-exercise/src/test/java/SLListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/.vs/ProjectSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/.vs/ProjectSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/.vs/VSWorkspaceState.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/.vs/VSWorkspaceState.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/sandbox.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/sandbox.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/A5/DJ.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/A5/DJ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/A5/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/A5/Rule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/A6/CountingSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/A6/CountingSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/A6/Pairs.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/A6/Pairs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Exercises/CH3/CH31.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Exercises/CH3/CH31.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Exercises/CH3/CH32.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Exercises/CH3/CH32.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/L14/Lecture14.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/L14/Lecture14.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/L14/P2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/L14/P2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/L17/MyPriorityQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/L17/MyPriorityQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/L17/MyPriorityQueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/L17/MyPriorityQueueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/L17/PQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/L17/PQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/L18/Tree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/L20/L20.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/L20/L20.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture10/SLList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture10/SLList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture15/Lecture15.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture15/Lecture15.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture3/Feline.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture3/Feline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture3/IntNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture3/IntNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture3/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture3/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture4/Lecture4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture4/Lecture4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture4/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture4/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture4/SLList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture4/SLList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture4/Unknown.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture4/Unknown.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture5/AList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture5/AList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture7/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture7/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture7/L7.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture7/L7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture7/MaxDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Lecture7/MaxDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/S5/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/S5/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/S5/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/S5/Stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/S7/S7.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/S7/S7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Searching/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Searching/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/TbCh73/Change.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/TbCh73/Change.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Trees/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/Trees/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/quiz2/Attack.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/quiz2/Attack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/quiz2/Carry.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/quiz2/Carry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/quiz2/Magic.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/quiz2/Magic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/quiz2/Moba.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/quiz2/Moba.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/quiz2/MyArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/quiz2/MyArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/quiz2/OddIndexView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/quiz2/OddIndexView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/quiz2/Valhein.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sandbox/src/quiz2/Valhein.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lecture-sandbox/sorting/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lecture-sandbox/sorting/MergeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/.vscode copy/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/.vscode copy/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/code-snippets/untitled/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/code-snippets/untitled/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/code-snippets/untitled/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/code-snippets/untitled/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/output/master.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/output/master.fdb_latexmk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/output/master.fls" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/output/master.fls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/src/master.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/src/master.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/src/preamble.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/src/preamble.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/src/task-1.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/src/task-1.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/src/title.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/src/title.tex" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2SX71onHCoKzcedf6eM5XmqKN8X" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Austin/OneDrive/Personal/Documents/University/Y2T1/ICCS208-data-structures-and-abstraction/asignments/Master-II",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Master-II" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Master-II" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="21c54546-723e-4b0b-869e-7dc36ac2d5cb" name="Changes" comment="" />
+      <created>1689280860651</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689280860651</updated>
+      <workItem from="1689280864193" duration="742000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

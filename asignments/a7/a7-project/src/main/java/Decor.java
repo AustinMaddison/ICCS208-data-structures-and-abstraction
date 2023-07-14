@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class Decor {
@@ -7,59 +8,60 @@ public class Decor {
 
     public static BinaryTreeNode mkTree(List<Integer> postOrder, List<Integer> inOrder) {
 
+
+        // map inorder key to index
+        HashMap<Integer, Integer> IoKeyToIdxMap = new HashMap<>();
+        for(int i = 0; i < inOrder.size(); i++)
+            IoKeyToIdxMap.put(inOrder.get(i), i);
+
         // Create root.
         Integer rootKey = postOrder.get(postOrder.size() - 1);
-        int inOrderRootIdx = inOrder.indexOf(rootKey);
+        int IoRootIdx = IoKeyToIdxMap.get(rootKey);
         BinaryTreeNode root = new BinaryTreeNode(null, rootKey, null);
 
         // Grow tree.
-        mkTreeHelper(root, postOrder.size() - 1, inOrderRootIdx, postOrder, inOrder);
+        mkTreeHelper(root, postOrder.size() - 1, IoRootIdx, postOrder, inOrder, IoKeyToIdxMap, 0, 0, postOrder.size());
 
         return root;
     }
 
     private static void mkTreeHelper(BinaryTreeNode parent,
-                                     int postOrderParentIdx, int inOrderParentIdx,
-                                     List<Integer> postOrder, List<Integer> inOrder) {
-        if (parent == null)
+                                     int PoParentIdx, int IoParentIdx,
+                                     List<Integer> PoLst, List<Integer> IoLst, HashMap<Integer, Integer> IoKeyToIdxMap,
+                                     int PoStart, int IoStart, int size) {
+        if (parent == null || size == 1)
             return;
 
-        // Split the lists using last parent positions.
-        // Post-order:
-        List<Integer> leftPostOrder = new ArrayList<>();
-        List<Integer> rightPostOrder = new ArrayList<>();
+        // Calculate pointers for left and right subtrees
 
-        for (int i = 0; i < inOrderParentIdx; i++)
-            leftPostOrder.add(postOrder.get(i));
-        for (int i = inOrderParentIdx; i < postOrderParentIdx; i++)
-            rightPostOrder.add(postOrder.get(i));
 
-        // In-order:
-        List<Integer> leftInOrder = new ArrayList<>();
-        List<Integer> rightInOrder = new ArrayList<>();
+        int sizeLeft = IoParentIdx - IoStart;
+        int sizeRight = size - sizeLeft - 1;
 
-        for (int i = 0; i < inOrderParentIdx; i++)
-            leftInOrder.add(inOrder.get(i));
-        for (int i = inOrderParentIdx + 1; i < inOrder.size(); i++)
-            rightInOrder.add(inOrder.get(i));
+        int IoStartLeft = IoStart;
+        int IoStartRight = PoStart+sizeLeft;
+
+        int PoStartLeft = PoStart;
+        int PoStartRight = IoParentIdx+1 ;
 
 
         // Add children to last parent.
-        if (leftPostOrder.size() > 0) {
-            int leftChildPostOrderIdx = leftPostOrder.size() - 1;
-            int leftChildKey = leftPostOrder.get(leftChildPostOrderIdx);
-            int leftChildInOrderIdx = leftInOrder.indexOf(leftChildKey);
+        if (sizeLeft > 0) {
+            int leftChildPoIdx = PoStartLeft + sizeLeft - 1;
+            int leftChildKey = PoLst.get(leftChildPoIdx);
+            int leftChildIoIdx = IoKeyToIdxMap.get(leftChildKey);
 
             parent.left = new BinaryTreeNode(leftChildKey);
-            mkTreeHelper(parent.left, leftChildPostOrderIdx, leftChildInOrderIdx, leftPostOrder, leftInOrder);
+            mkTreeHelper(parent.left, leftChildPoIdx, leftChildIoIdx, PoLst, IoLst, IoKeyToIdxMap, PoStartLeft, IoStartLeft, sizeLeft);
         }
-        if (rightPostOrder.size() > 0) {
-            int rightChildPostOrderIdx = rightPostOrder.size() - 1;
-            int rightChildKey = rightPostOrder.get(rightChildPostOrderIdx);
-            int rightChildInOrderIdx = rightInOrder.indexOf(rightChildKey);
+        if (sizeRight > 0) {
+            int rightChildPoIdx = PoStartRight + sizeRight - 1;
+            int rightChildKey = PoLst.get(rightChildPoIdx);
+            int rightChildIoIdx = IoKeyToIdxMap.get(rightChildKey);
 
             parent.right = new BinaryTreeNode(rightChildKey);
-            mkTreeHelper(parent.right, rightChildPostOrderIdx, rightChildInOrderIdx, rightPostOrder, rightInOrder);
+            mkTreeHelper(parent.right, rightChildPoIdx, rightChildIoIdx, PoLst, IoLst, IoKeyToIdxMap, PoStartRight, IoStartRight, sizeRight);
         }
+
     }
 }
